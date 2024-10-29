@@ -1,0 +1,74 @@
+@import"./reset.scss";
+@import "./vars.scss";
+
+//  Import de la police de titre
+
+@font-face {
+  font-family: 'Overhaul';
+  src: url("./font/Overhaul.woff") format("woff");
+}
+
+// Import de la police de corps de texte
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+html{
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1{
+  font-family: 'Overhaul', sans-serif;
+  font-size: 5vh;
+  color: $colored-white;
+  background-color: $medium-green-transparent;
+  border-radius: $border-radius;
+  width: fit-content;
+  padding: $padding-title;
+  text-shadow: 0px 6px 5px $dark-black;
+}
+
+h2 {
+  font-family: 'Overhaul', sans-serif;
+  font-size: 4vh;
+  color: $dark-black;
+}
+
+h3 {
+  font-family: 'Overhaul', sans-serif;
+  font-size: 3vh;
+  color: $white;
+  background-color: $dark-green;
+  padding: $padding-title;
+  border-radius: $border-radius;
+  width: fit-content;
+}
+
+a{
+  background-color: $medium-green;
+  color: $colored-white;
+  padding: 1vh 4vh;
+  border-radius: $border-radius;
+  text-decoration: none;
+}
+
+a:hover{
+  background-color: $red;
+}
+
+button {
+  font-size: 2vh;
+  font-weight: 800;
+  color: $white;
+  background-color: $dark-green;
+  border-radius: $border-radius;
+  padding: 1vh 15vh;
+}
+
+input {
+  padding: 1vh;
+  border-radius: $border-radius;
+}
+
+p{
+  line-height: 3vh;
+}
