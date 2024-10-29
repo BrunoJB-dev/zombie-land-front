@@ -1,0 +1,37 @@
+@import "../../styles/vars.scss";
+
+.zombies-footer{
+  background-image: url('../../../public/footer.png');
+  background-repeat: repeat-x;
+  background-size: contain;
+  height: 100px;
+  width: 100vw;
+}
+
+.footer {
+  background: $dark-black;
+  color: $white;
+  display: flex;
+  padding: 4vh 5vh;
+  gap: 5vh;
+  justify-content: space-evenly;
+  position: relative;
+  top: -1px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+    
+    a {
+     background: $dark-black;
+     padding: 0;
+     font-size: small;
+   }
+
+    p {
+      font-weight: 800;
+      padding-bottom: 5px;
+    }
+  }
+}

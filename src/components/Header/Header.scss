@@ -1,0 +1,50 @@
+@import "../../styles/vars.scss";
+
+.header {
+  background-color: $dark-black;
+  display: flex;
+  padding: 1vh 5vh;
+  justify-content: space-between;
+  align-items: center;
+  a{
+    background-color: transparent;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    border-bottom: $dark-black 2px solid;
+  };
+
+  a:hover {
+    background-color: transparent;
+    border-bottom: $red 2px solid;
+    border-radius: 0
+  };
+
+  i{
+    color: $white;
+  };
+  img{
+    width: 11vh;
+  }
+  nav{
+    display: flex;
+    width:60%;
+    justify-content: space-evenly;
+  }
+  div{
+    display: flex;
+    width: 10%;
+    gap: 2vh;
+    justify-content: space-around;
+
+  }
+  .booking{
+    background-color: $red;
+    border: none;
+  }
+
+  .booking:hover{
+    background-color: $dark-green;
+    border: none;
+    border-radius: $border-radius;
+  }
+};

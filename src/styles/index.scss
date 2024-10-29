@@ -8,7 +8,7 @@
   src: url("./font/Overhaul.woff") format("woff");
 }
 
-// Import de la police de corps de texte
+// Import de la police de corps de texte (Noto Sans)
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -43,7 +43,11 @@ h3 {
   width: fit-content;
 }
 
-a{
+.button:hover {
+  cursor: pointer; //A mettre ailleurs aussi (user friendly ?
+}
+
+a {
   background-color: $medium-green;
   color: $colored-white;
   padding: 1vh 4vh;
@@ -51,7 +55,7 @@ a{
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   background-color: $red;
 }
 
@@ -69,6 +73,6 @@ input {
   border-radius: $border-radius;
 }
 
-p{
+p {
   line-height: 3vh;
 }
