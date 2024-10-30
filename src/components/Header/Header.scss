@@ -8,7 +8,8 @@
   align-items: center;
   a{
     background-color: transparent;
-    font-weight: 600;
+    font-weight: 500;
+    font-size: x-large;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     border-bottom: $dark-black 2px solid;
   };
@@ -46,5 +47,8 @@
     background-color: $dark-green;
     border: none;
     border-radius: $border-radius;
+  }
+  .logo, .logo:hover {
+    border :none;
   }
 };
