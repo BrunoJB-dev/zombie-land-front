@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionList';
 import AttractionCategoryPage from './pages/AttractionCategoryPage/AttractionCategoryPage';
+import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
       {
         path: '/attractions/category/:id',
         element: <AttractionCategoryPage />,
-      }
+      },
+      {
+        path: '/attractions/:id',
+        element: <AttractionDetailPage/>
+      },
     ],
   },
 ]);
