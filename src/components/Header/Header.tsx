@@ -5,10 +5,10 @@ import "./Header.scss";
 function Header() {
     return (
   <div className="header">
-    <img src="../../public/logo-zombieland.png" alt="logo zombieland" />
+    <Link className="logo" to ='/'><img src="../../public/logo-zombieland.png" alt="logo zombieland" /></Link>
     <nav>
       <Link to="/">Accueil</Link>
-      <Link to="/">Découvrez les attractions</Link>
+      <Link to="/attractions">Découvrez les attractions</Link>
       <Link to="/">Billeterie</Link>
     </nav>
     <div>

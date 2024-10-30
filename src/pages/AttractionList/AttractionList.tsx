@@ -3,6 +3,8 @@ import AttractionList from '../../components/AttractionList/AttractionList.tsx';
 import type { Attraction, Category } from '../../@types/attraction';
 import { instanceAxios } from '../../utils/axios';
 
+import "./AttractionList.scss";
+
 function AttractionListPage() {
   const [attractions, setAttractions] = useState<Attraction[]>([]);
   const [filteredAttractions, setFilteredAttractions] = useState<Attraction[]>([]);
@@ -41,8 +43,10 @@ function AttractionListPage() {
   };
 
   return (
-    <div>
-      <h1>Liste des attractions</h1>
+    <main>
+      <div className='banner'>
+        <h1>Liste des attractions</h1>
+      </div>
 
       <select value={filter} onChange={handleFilterChange}>
         <option value="">Toutes les catégories</option>
@@ -52,7 +56,7 @@ function AttractionListPage() {
       </select>
 
       <AttractionList items={filteredAttractions} />
-    </div>
+      </main>
   );
 }
 
