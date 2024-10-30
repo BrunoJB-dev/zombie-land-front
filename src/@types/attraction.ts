@@ -1,5 +1,6 @@
 export type Attraction = {
   id: number,
+  name: string,
   image: string,
   description_short: string,
   description_long: string, 
