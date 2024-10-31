@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { instanceAxios } from '../../utils/axios.ts';
 import ReservationCalendar from '../../components/ReservationCalendar/ReservationCalendar.tsx';
 import ReservationRecap from '../../components/ReservationRecap/ReservationRecap.tsx';
 
