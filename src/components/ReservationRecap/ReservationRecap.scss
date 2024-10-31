@@ -1,0 +1,78 @@
+@import "../../styles/vars.scss";
+
+.reservation-recap{
+  padding: $padding-content;
+  margin: 0 15vh 5vh 15vh;
+  background-color: $dark-green;
+  color: $colored-white;
+  border-radius: $border-radius;
+}
+
+.reservation-border{
+  padding: $padding-content;
+  border: 2px solid $medium-green;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.reservation-head{
+  display: flex;
+  gap: 2vh;
+}
+
+.reservation-head div{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+
+.reservation-billet{
+  font-family: "Overhaul";
+  justify-content: center;
+}
+
+.reservation-head img{
+  width: 10vh;
+}
+
+.reservation-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-price{
+display: flex;
+padding: $padding-content;
+justify-content: space-between;
+font-size: large;
+}
+
+.reservation-total{
+  display: flex;
+  padding: $padding-content;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 3vh;
+}
+
+.space{
+  width: 90%;
+  border-bottom: 2px $colored-white dotted;
+}
+
+.totale-text{
+  font-weight: 800;
+  font-size: large;
+}
+
+.total-price{
+  background-color: $medium-green;
+  padding: 1vh 2vh;
+  border-radius: $border-radius;
+  font-weight: 800;
+  font-size: large;
+}
+
