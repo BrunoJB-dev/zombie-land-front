@@ -15,17 +15,18 @@ function AttractionListPage() {
   useEffect(() => {
     instanceAxios.get('/api/attractions').then(({ data }) => {
       setAttractions(data);
-      setFilteredAttractions(data); // Initialise filteredAttractions avec toutes les attractions
+      setFilteredAttractions(data);
+      setCategories(data); // Initialise filteredAttractions avec toutes les attractions
     });
   }, []);
 
   // Récupère les catégories au chargement
-  useEffect(() => {
+  /*useEffect(() => {
     instanceAxios.get('/api/attractions/categories').then(({ data }) => {
       console.log(data);
       setCategories(data);
     });
-  }, []);
+  }, []);*/
 
   // Gère le changement de filtre
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
