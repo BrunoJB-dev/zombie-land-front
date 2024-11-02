@@ -17,8 +17,45 @@ h2{
   margin-top: 4rem;
 }
 
-h3{
-  margin: 0;
+.attractions-display-btn{
+  display: block;
+  margin: -5rem auto 7rem auto;
+  background-color: #63878C;
+  border: none;
+  cursor: pointer;
+}
+.attractions-display-btn:hover{
+  background-color: #BE3B40;
+}
+
+.parc-presentation{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  background-color: black;
+  margin-bottom: 8rem;
+  padding-bottom: 5rem;
+
+}
+
+.parc-presentation h3{
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: center;
+  background-color: black;
+}
+
+.parc-presentation img{
+  grid-column: 1;  
+}
+
+.parc-presentation p{
+  grid-column: 2;
+  align-self: center;
+  color: aliceblue;
+  margin-left: 2rem;
 }
 
 .attraction-img{
@@ -26,8 +63,25 @@ h3{
   margin: 0;
 }
 span{
-  display: flex
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
   
+}
+.info-icones{
+  display: flex;
+  justify-content: space-between;
+  background-color: #243037;
+  color: aliceblue;
+  padding-bottom: 3rem;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  border-radius: 0.5rem;
+}
+.info-icones span{
+  background-color: #7fb4af;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 .modal{
   text-align: center;
