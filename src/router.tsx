@@ -1,8 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import HomePage from './pages/HomePage';
-import AttractionListPage from './pages/AttractionList/AttractionList';
+import HomePage from './pages/HomePage/HomePage';
+import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
+import ReservationPage from './pages/Reservation/ReservationPage';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +21,14 @@ const router = createBrowserRouter([
       {
         path: '/attractions/:id',
         element: <AttractionDetailPage/>
-      }
+      },
+      {
+        path: '/reservation',
+        element: <ReservationPage/>
+      },
     ],
   },
 ]);
 
 export default router;
+

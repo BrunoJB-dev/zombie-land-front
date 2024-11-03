@@ -8,10 +8,6 @@ function MainLayout (){
   return(
     <div>
       <Header />
-      <br />
-      <a href="/">Je suis un lien</a>
-      <br />
-      <br />
       <Outlet />
       <Footer />
     </div>
