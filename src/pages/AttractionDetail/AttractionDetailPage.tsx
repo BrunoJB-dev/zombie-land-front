@@ -4,6 +4,8 @@ import type { Attraction } from "../../@types/attraction";
 import { instanceAxios } from "../../utils/axios";
 import AttractionDetail from "../../components/AttractionDetail/AttractionDetail";
 
+import "./AttractionDetail.scss";
+
 AttractionDetail
 function AttractionDetailPage() {
   const params = useParams();
