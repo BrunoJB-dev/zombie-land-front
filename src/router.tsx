@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
+import Error404 from './components/Error404/Error404';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: '/reservation',
         element: <ReservationPage/>
+      },
+      {
+        path: '*',
+        element: <Error404 />
       },
     ],
   },
