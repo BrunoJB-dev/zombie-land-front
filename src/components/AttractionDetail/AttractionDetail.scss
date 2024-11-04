@@ -1,6 +1,6 @@
 @import "../../styles/vars.scss";
 
-.banner-datail{
+.banner-detail{
   width: 100%;
   height: 50vh;
   background-image: url('../../public/ZombieLand-HomePage-Banner.webp');
@@ -18,10 +18,75 @@
 
 .div-article {
   display: flex;
-  padding: 15vh;
+  flex-direction: column;
+  padding: 6rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.article-img {
+  display: flex;
+  padding-bottom: 4rem;
+  gap: 10rem;
+  align-items: center;
 }
 
 .img {
-  border-radius: 10px;
-  max-width: 40%;
+  border-radius: 20px !important;
+  max-width: 35%;
 }
+
+.img img {
+  border-radius: 20px !important;
+}
+
+.detail-icon{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  background-color: $medium-green;
+  padding: 4rem;
+  gap: 2rem;
+}
+
+.detail-icon div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2vh;
+  width: fit-content;
+  max-width: 25%;
+  height: 5vh;
+}
+
+.div-test {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 5rem;
+}
+
+.carousel-slider {
+  border-radius: 20px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel .thumb.selected, .carousel .thumb:hover {
+  border-radius: 20px;
+  border-color:  $medium-green;
+}
+
+.carousel-slider {
+  box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
+}
+
+.carousel .thumb {
+  border: none;
+}
+
+
