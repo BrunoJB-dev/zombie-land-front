@@ -50,19 +50,19 @@ function HomePage() {
       
       <section className='info-icones'>
         <span onClick={() => handleIconClick('horaires')}>
-          <i className="fa-solid fa-calendar-days"></i>
+          <i className="fa-solid fa-calendar-days"/>
           <p>Horaires</p>
         </span> 
         <span onClick={() => handleIconClick('plan')}> 
-          <i className="fa-solid fa-map-location"></i>
+          <i className="fa-solid fa-map-location"/>
           <p>Plan du parc</p>
         </span>  
         <span onClick={() => handleIconClick('acces')}>
-          <i className="fa-solid fa-car"></i>
+          <i className="fa-solid fa-car"/>
           <p>Se rendre au parc</p>
         </span>
         <span onClick={() => handleIconClick('accessibilite')}>
-          <i className="fa-brands fa-accessible-icon"></i>
+          <i className="fa-brands fa-accessible-icon"/>
           <p>Accessibilité</p>
         </span>  
       </section>
