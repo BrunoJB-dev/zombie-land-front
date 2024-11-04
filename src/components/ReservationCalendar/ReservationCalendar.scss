@@ -1,13 +1,16 @@
 @import "../../styles/vars.scss";
 
 .reservation-calendar{
-  padding: $padding-container;
   display: flex;
   flex-direction: column;
+  width: 50%;
+  background-color: $light-green;
+  border-radius: $border-radius;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .reservation-calendar h3{
-  background-color: $medium-green;
+  background-color: $dark-green;
   width: 100%;
   border-radius: 10px 10px 0 0;
   padding: $padding-content;
@@ -15,7 +18,6 @@
 
 .reservation-container {
   display: flex;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   padding: $padding-content;
   justify-content: space-evenly;
   align-items: start;
@@ -28,7 +30,20 @@ margin-bottom: 2vh;
 }
 
 .reservation-container select{
- background-color: $light-green;
+ background-color: $dark-green;
  width: 100%;
  margin: 0;
+}
+
+.react-datepicker__day--selected{
+  background-color: $dark-green;
+}
+
+.react-datepicker__header, .react-datepicker__current-month, .react-datepicker__day-name {
+  background-color: $dark-green;
+  color: $colored-white;
+}
+
+.react-datepicker__month-container{
+  background-color: $colored-white;
 }
