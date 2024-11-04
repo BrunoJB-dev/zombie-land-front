@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
+  const [modalContent, setModalContent] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  
     return (
   <div className="header">
     <Link className="logo" to ='/'><img src="../../public/logo-zombieland.png" alt="logo zombieland" /></Link>

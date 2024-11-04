@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
+import SignUpForm from './components/SignupForm/SignupForm';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/attractions/:id',
         element: <AttractionDetailPage/>
+      },
+      {
+        path: '/login',
+        element: <SignUpForm/>
       },
       {
         path: '/reservation',

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import type { Attraction } from "../../@types/attraction";
-import AttractionList from '../../components/AttractionList/AttractionList';
 import { instanceAxios } from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
+import type { Attraction } from "../../@types/attraction";
+import AttractionList from '../../components/AttractionList/AttractionList';
 import "./HomePage.scss";
 
 function HomePage() {

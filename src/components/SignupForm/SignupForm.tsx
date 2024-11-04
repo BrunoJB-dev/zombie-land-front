@@ -10,19 +10,19 @@ function SignUpForm() {
       <form action="" method="post">
         <div>
           <label htmlFor="email" aria-label="email"/>
-          <input type="email" name="email" id="email" placeholder="Adresse mail"/>
+          <input type="email" name="email" id="email" placeholder="Adresse mail *"/>
         </div>
         <div>
           <label htmlFor="password" aria-label="password"/>
-          <input type="password" name="password" id="password" placeholder="Mot de passe"/>
+          <input type="password" name="password" id="password" placeholder="Mot de passe *"/>
         </div>
         <div>
           <label htmlFor="password" aria-label="password"/>
-          <input type="password" name="password" id="password" placeholder="Confirmation"/>
+          <input type="password" name="password" id="password" placeholder="Confirmation *"/>
         </div>
         <div>
           <label htmlFor="lastname" aria-label="lastname"/>
-          <input type="text" name="lastname" id="lastname" placeholder="Nom"/>
+          <input type="text" name="lastname" id="lastname" placeholder="Nom *"/>
         </div>
         <div>
           <label htmlFor="firstname" aria-label="firstname"/>
@@ -30,15 +30,15 @@ function SignUpForm() {
         </div>
         <div>
           <label htmlFor="adress" aria-label="adress"/>
-          <input type="text" name="adress" id="adress" placeholder="Adresse"/>
+          <input type="text" name="adress" id="adress" placeholder="Adresse *"/>
         </div>
         <div>
           <label htmlFor="postcode" aria-label="postcode"/>
-          <input type="number" name="postcode" id="postcode" placeholder="Code postal"/>
+          <input type="text" name="postcode" id="postcode" placeholder="Code postal *"/>
         </div>
         <div>
           <label htmlFor="city" aria-label="city"/>
-          <input type="text" name="city" id="city" placeholder="Ville"/>
+          <input type="text" name="city" id="city" placeholder="Ville *"/>
         </div>
         <div>
           <label htmlFor="pseudo" aria-label="pseudo"/>
