@@ -15,7 +15,14 @@
 }
 
 .reservation .title{
- margin-top: 10vh;
+ margin-top: 5vh;
  text-align: center;
 }
 
+.calendar-recap{
+  display: flex;
+  align-items: stretch;
+  padding: 10vh 15vh;
+  gap: 5vh;
+
+}
