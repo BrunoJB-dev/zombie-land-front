@@ -23,7 +23,6 @@ function AttractionListPage() {
   // Récupère les catégories au chargement
   useEffect(() => {
     instanceAxios.get('/api/attractions/categories').then(({ data }) => {
-      console.log(data);
       setCategories(data);
     });
   }, []);
