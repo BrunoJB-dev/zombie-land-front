@@ -97,3 +97,13 @@ font-size: large;
   padding: 1vh;
   border-radius: 10px;
 }
+.warning-message{
+  font-style: italic;
+  font-weight: 500;
+  background-color: $colored-white;
+  color: $red;
+  margin-bottom: 2vh;
+  width: fit-content;
+  padding: 1vh;
+  border-radius: $border-radius;
+}
