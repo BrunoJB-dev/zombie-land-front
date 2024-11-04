@@ -9,50 +9,51 @@ function SignUpForm() {
       <h1>Créer votre compte</h1>
       <form action="" method="post">
         <div>
-          <label for="email" id="email"/>
+          <label htmlFor="email" aria-label="email"/>
           <input type="email" name="email" id="email" placeholder="Adresse mail"/>
         </div>
         <div>
-          <label htmlFor="password" id="password"/>
+          <label htmlFor="password" aria-label="password"/>
           <input type="password" name="password" id="password" placeholder="Mot de passe"/>
         </div>
         <div>
-          <label for="password" id="password"/>
+          <label htmlFor="password" aria-label="password"/>
           <input type="password" name="password" id="password" placeholder="Confirmation"/>
         </div>
         <div>
-          <label for="lastname" id="lastname"/>
+          <label htmlFor="lastname" aria-label="lastname"/>
           <input type="text" name="lastname" id="lastname" placeholder="Nom"/>
         </div>
         <div>
-          <label for="firstname" id="firstname"/>
+          <label htmlFor="firstname" aria-label="firstname"/>
           <input type="text" name="firstname" id="firstname" placeholder="Prénom"/>
         </div>
         <div>
-          <label for="adress" id="adress"/>
+          <label htmlFor="adress" aria-label="adress"/>
           <input type="text" name="adress" id="adress" placeholder="Adresse"/>
         </div>
         <div>
-          <label for="postcode" id="postcode"/>
+          <label htmlFor="postcode" aria-label="postcode"/>
           <input type="number" name="postcode" id="postcode" placeholder="Code postal"/>
         </div>
         <div>
-          <label for="city" id="city"/>
+          <label htmlFor="city" aria-label="city"/>
           <input type="text" name="city" id="city" placeholder="Ville"/>
         </div>
         <div>
-          <label for="pseudo" id="pseudo"/>
+          <label htmlFor="pseudo" aria-label="pseudo"/>
           <input type="text" name="pseudo" id="pseudo" placeholder="Pseudo"/>
         </div>
         <div>
-          <label for="avatar" id="avatar"/>
+          <label htmlFor="avatar" aria-label="avatar"/>
           <input type="text" name="avatar" id="avatar" placeholder="Choix de l'avatar"/>
+        </div>
+        <div>
+          <button type="submit" value="S'inscrire">S'incrire</button>
         </div>
       </form>
     </section>
   );
-
-;
 }
 
 export default SignUpForm;
