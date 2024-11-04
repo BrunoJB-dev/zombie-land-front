@@ -2,12 +2,18 @@ import { useEffect, useState } from 'react';
 import type { Attraction } from "../../@types/attraction";
 import AttractionList from '../../components/AttractionList/AttractionList';
 import { instanceAxios } from "../../utils/axios";
+import { useNavigate } from 'react-router-dom';
 import "./HomePage.scss";
 
 function HomePage() {
   const [randomAttractions, setRandomAttractions] = useState<Attraction[]>([]);
   const [modalContent, setModalContent] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate('/attractions'); 
+  };
 
   // Définir le contenu pour chaque icône
   const iconContent = {
@@ -39,30 +45,34 @@ function HomePage() {
       </div>
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
+
+      <button className='attractions-display-btn' onClick={handleNavigation}>
+        Voir toutes les attractions
+      </button>
       
       <section className='parc-presentation'>
         <h3>Titre de présentation du parc</h3>
         <img src="../../public/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" />
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aperiam optio expedita, ea velit fugit excepturi ipsam, saepe delectus nostrum numquam explicabo aliquam fugiat consequuntur consequatur atque! Omnis, velit obcaecati?
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aperiam optio expedita, ea velit fugit excepturi ipsam, saepe delectus nostrum numquam explicabo aliquam fugiat consequuntur consequatur atque! Omnis, velit obcaecati? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab odit fugiat necessitatibus. Consequatur voluptatibus deleniti corrupti perferendis ipsa dolores culpa labore, exercitationem delectus et consequuntur, maxime debitis sit inventore maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque provident cumque dolorem, in officia! Error itaque porro, debitis natus, obcaecati quod tempore optio dolor ipsum id nemo quo non. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda accusamus laborum, aliquid provident cupiditate corporis, rem illo doloribus quasi architecto nihil vitae tempora officia quae voluptates ullam veniam porro esse.
         </p>
       </section>
       
       <section className='info-icones'>
         <span onClick={() => handleIconClick('horaires')}>
-          <i className="fa-solid fa-calendar-days"></i>
+          <i className="fa-solid fa-calendar-days"/>
           <p>Horaires</p>
         </span> 
         <span onClick={() => handleIconClick('plan')}> 
-          <i className="fa-solid fa-map-location"></i>
+          <i className="fa-solid fa-map-location"/>
           <p>Plan du parc</p>
         </span>  
         <span onClick={() => handleIconClick('acces')}>
-          <i className="fa-solid fa-car"></i>
+          <i className="fa-solid fa-car"/>
           <p>Se rendre au parc</p>
         </span>
         <span onClick={() => handleIconClick('accessibilite')}>
-          <i className="fa-brands fa-accessible-icon"></i>
+          <i className="fa-brands fa-accessible-icon"/>
           <p>Accessibilité</p>
         </span>  
       </section>
