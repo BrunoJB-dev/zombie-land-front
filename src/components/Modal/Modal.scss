@@ -1,10 +1,10 @@
 @import "../../styles/vars.scss";
 
 .modal-overlay{
-  background-color: #F0F;
-  position: absolute;
-  width: 150vw;
-  height: 100vh;
+  position: fixed;
+  /* Top et left nécessaire pour avoir la croix bien placée. Si parade trouvée, les deux peuvent disparaître */
+  top: 15vh;
+  left: 18vh;
 }
 
 .modal-content {
@@ -14,4 +14,9 @@
 
 .modal-button {
   width: 1vw;
+  padding: 1vh 2vh;
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+  font-family: 'Overhaul', sans-serif;
 }

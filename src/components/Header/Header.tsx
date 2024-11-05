@@ -3,7 +3,9 @@ import { useState } from 'react';
 
 import "./Header.scss";
 import SignUpForm from "../SignupForm/SignupForm.tsx";
+import LoginForm from "../LoginForm/LoginForm.tsx";
 import Modal from "../Modal/Modal.tsx";
+
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -16,11 +18,13 @@ function Header() {
       <Link to="/attractions">Découvrez les attractions</Link>
       <Link to="/">Billeterie</Link>
     </nav>
-    <div>
+    <div className="icons">
       <i className="fa-solid fa-magnifying-glass fa-2xl"/>
-      <button type="button" onClick={() => setIsModalOpen(true)}><i className="fa-solid fa-user fa-2xl"/></button>
+      <button type="button" className="user-button" onClick={() => setIsModalOpen(true)}><i className="fa-solid fa-user fa-2xl"/></button>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <button type="button" className="modal-button" >X</button>
         <SignUpForm />
+        <LoginForm />
       </Modal>
     </div>
     <Link className="booking" to="/">Réserver</Link>

@@ -6,6 +6,7 @@
   padding: 1vh 5vh;
   justify-content: space-between;
   align-items: center;
+  
   a{
     background-color: transparent;
     font-weight: 500;
@@ -23,21 +24,24 @@
   i{
     color: $white;
   };
+
   img{
     width: 11vh;
   }
+
   nav{
     display: flex;
     width:60%;
     justify-content: space-evenly;
   }
-  div{
+
+  .icons{
     display: flex;
     width: 10%;
     gap: 2vh;
     justify-content: space-around;
-
   }
+
   .booking{
     background-color: $red;
     border: none;
@@ -48,7 +52,14 @@
     border: none;
     border-radius: $border-radius;
   }
+
   .logo, .logo:hover {
     border :none;
+  }
+
+  .icons .user-button{
+    border: none;
+    background-color: transparent;
+    padding: 0;
   }
 };

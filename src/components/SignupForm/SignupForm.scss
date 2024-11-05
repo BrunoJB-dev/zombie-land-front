@@ -1,9 +1,65 @@
 @import "../../styles/vars.scss";
 
-/* .FormSection {
-  width: 200vh;
-  position: absolute;
-  background-color: #F0F;
-  left: 50vh;
-  top: 20vh;
-} */
+.SignUpSection {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background-color: $light-green;
+  padding: 0;
+  width: 42vw;
+  height: 100vh;
+  position: fixed;
+  top: 15vh;
+  left: 18vh;
+
+  h1 {
+    background-color: $light-green;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .password {
+    display: flex;
+    margin:0;
+  }
+
+  .identity {
+    display: flex;
+    margin: 0;
+  }
+
+  #email {
+    width: -webkit-fill-available;
+  }
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 50vh;
+
+  :nth-last-child(1){
+    align-self: center;
+  }
+
+  div {
+    margin: 1.5vh 0;
+  }
+
+  input {
+    background-color: $light-green;
+    border: solid 2px $colored-white;
+    margin-right: 4vh;
+    width: -webkit-fill-available;
+  }
+}
+
+::placeholder{
+  color: $colored-white;
+}
+
+::-ms-input-placeholder {
+  color: $colored-white;
+}
