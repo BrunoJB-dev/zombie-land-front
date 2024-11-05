@@ -13,7 +13,9 @@ function Header() {
     </nav>
     <div>
       <i className="fa-solid fa-magnifying-glass fa-2xl"/>
+      <Link to="/login">
       <i className="fa-solid fa-user fa-2xl"/>
+      </Link>
     </div>
     <Link className="booking" to="/">Réserver</Link>
   </div>
