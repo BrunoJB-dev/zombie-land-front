@@ -1,0 +1,17 @@
+@import "../../styles/vars.scss";
+
+.modal-overlay{
+  background-color: #F0F;
+  position: absolute;
+  width: 150vw;
+  height: 100vh;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-button {
+  width: 1vw;
+}
