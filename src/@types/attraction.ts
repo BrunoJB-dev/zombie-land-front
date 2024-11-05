@@ -10,7 +10,10 @@ export type Attraction = {
   weather_hazard: string,
   height_restriction: number,
   health_hazard: string,
-  categories: Category[];
+  caroussel1: string,
+  caroussel2: string,
+  caroussel3: string,
+  categories: Category[]
 }
 
 export type Category = {

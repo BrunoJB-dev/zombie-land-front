@@ -2,10 +2,12 @@
 
 .reservation-recap{
   padding: $padding-content;
-  margin: 0 15vh 5vh 15vh;
   background-color: $dark-green;
   color: $colored-white;
   border-radius: $border-radius;
+  width: 50%;
+  height: fit-content;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .reservation-border{
@@ -82,3 +84,26 @@ font-size: large;
   font-size: large;
 }
 
+.error-message{
+ background-color: $red;
+ margin-top: 2vh;
+ padding: 1vh;
+ border-radius: 10px;
+}
+
+.success-message{
+  background-color: $light-green;
+  margin-top: 2vh;
+  padding: 1vh;
+  border-radius: 10px;
+}
+.warning-message{
+  font-style: italic;
+  font-weight: 500;
+  background-color: $colored-white;
+  color: $red;
+  margin-bottom: 2vh;
+  width: fit-content;
+  padding: 1vh;
+  border-radius: $border-radius;
+}
