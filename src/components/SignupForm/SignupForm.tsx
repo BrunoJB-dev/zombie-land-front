@@ -1,8 +1,6 @@
 import { useState } from "react";
 
 function SignUpForm() {
-  const [modalContent, setModaleContent] = useState();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section>
