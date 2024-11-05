@@ -48,7 +48,7 @@ function AttractionListPage() {
         <h1>Liste des attractions</h1>
       </div>
 
-      <select value={filter} onChange={handleFilterChange}>
+      <select className='select-list' value={filter} onChange={handleFilterChange}>
         <option value="">Toutes les catégories</option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>{category.name}</option>

@@ -6,7 +6,7 @@ import AttractionDetail from "../../components/AttractionDetail/AttractionDetail
 
 import "./AttractionDetail.scss";
 
-AttractionDetail
+
 function AttractionDetailPage() {
   const params = useParams();
 

@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
+import ProfilePage from './pages/myProfil/profilPage';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
         path: '/reservation',
         element: <ReservationPage/>
       },
+      {
+        path: '/profile',
+        element: <ProfilePage/>
+      }
     ],
   },
 ]);
