@@ -1,15 +1,20 @@
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
+import { instanceAxios } from "../../utils/axios";
 import avatarFemme from '../../../public/avatar-femme.webp';
 import avatarHomme from '../../../public/avatar-homme.webp';
-
+import type { User } from '../../@types/user';
 import "./myProfil.scss"
 
-
-
-
 function myProfile() {
+
   const [selectedAvatar, setSelectedAvatar] = useState(avatarFemme);
+  const [user, setUser] = useState<User>()
+
+  useEffect(()=> {
+    instanceAxios.get('/api/profile').then(({data}) => {
+      setUser(data)
+    })
+  })
 
   // Fonction pour gérer le changement d'avatar
   const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -27,11 +32,11 @@ function myProfile() {
         <div className='separation-label'>
           <div>
             <label htmlFor="firstname">Nom</label>
-            <input type="text" id="firstname" placeholder="Nom*" defaultValue="coucou"/>        
+            <input type="text" id="firstname" placeholder="Nom*" defaultValue={user?.lastname}/>        
           </div>
           <div>
             <label htmlFor="lastname">Prénom</label>
-            <input type="text" id="lastname" placeholder="Prénom*"/>
+            <input type="text" id="lastname" placeholder="Prénom*"defaultValue={user?.firstname}/>
           </div>
           <div>
             <label htmlFor="pseudo">Pseudo</label>
@@ -39,7 +44,7 @@ function myProfile() {
           </div>
           <div>
             <label htmlFor="mail">Mail</label>
-            <input type="text" id="mail" placeholder="Adresse email*"/>
+            <input type="text" id="mail" placeholder="Adresse email*"defaultValue={user?.email}/>
           </div>
           <div>
             <label htmlFor="address">Adresse</label>

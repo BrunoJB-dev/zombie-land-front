@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars.scss";
 
 .banner-detail{
   width: 100%;
@@ -89,4 +89,22 @@
   border: none;
 }
 
+@media (max-width: 1024px) {
+  .article-img {
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  .img {
+    max-width: 80%;
+    margin-left: 3rem;
+  }
+  .detail-icon{
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 720px) {
+
+}
 
