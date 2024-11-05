@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import "./Header.scss";
 import SignUpForm from "../SignupForm/SignupForm.tsx";

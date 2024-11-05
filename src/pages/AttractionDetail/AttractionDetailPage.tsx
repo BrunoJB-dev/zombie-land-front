@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Attraction } from "../../@types/attraction";
+import type { Attraction } from "../../@types/attraction";
 import { instanceAxios } from "../../utils/axios";
 import AttractionDetail from "../../components/AttractionDetail/AttractionDetail";
+
+import "./AttractionDetail.scss";
 
 AttractionDetail
 function AttractionDetailPage() {
@@ -13,7 +15,7 @@ function AttractionDetailPage() {
   useEffect(() => {
     instanceAxios.get(`/api/attractions/${params.id}`).then(({data}) => {
       setDetail(data)
-      console.log(data);     
+      console.log(data);    
     })
   }, [
     params.id,
