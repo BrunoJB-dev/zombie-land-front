@@ -1,22 +1,36 @@
 @import "../../styles/vars.scss";
 
-.modal-overlay{
+/*.modal-overlay{
   position: fixed;
-  /* Top et left nécessaire pour avoir la croix bien placée. Si parade trouvée, les deux peuvent disparaître */
+  Top et left nécessaire pour avoir la croix bien placée. Si parade trouvée, les deux peuvent disparaître.
   top: 15vh;
   left: 18vh;
-}
+}*/
 
 .modal-content {
+  position: fixed;
+  width: 80%;
+  top: 15vh;
+  left: 10%;
   display: flex;
   flex-direction: column;
+  background-color: $colored-white;
 }
 
 .modal-button {
-  width: 1vw;
-  padding: 1vh 2vh;
-  background-color: transparent;
+  width: fit-content;
+  background-color: $colored-white;
+  color: $dark-black;
+  padding: 2vh;
+  margin: 1vh;
   border: none;
   z-index: 2;
   font-family: 'Overhaul', sans-serif;
+  text-align: center;
+  line-height: 0;
+  align-self: flex-end;
 }
+
+.children-div {
+  display: flex;
+};

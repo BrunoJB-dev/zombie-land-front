@@ -26,7 +26,7 @@ const LoginForm = () => {
           <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
         <p>Mot de passe oublié ?</p>
-        <button type="submit">Se connecter</button>
+        <div><button type="submit">Se connecter</button></div>
       </form>
     </section>
   );

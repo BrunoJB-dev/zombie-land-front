@@ -16,7 +16,7 @@ function Header() {
     <nav>
       <Link to="/">Accueil</Link>
       <Link to="/attractions">Découvrez les attractions</Link>
-      <Link to="/">Billeterie</Link>
+      <Link to="/reservation">Billeterie</Link>
     </nav>
     <div className="icons">
       <i className="fa-solid fa-magnifying-glass fa-2xl"/>
@@ -26,7 +26,7 @@ function Header() {
           <LoginForm />
       </Modal>
     </div>
-    <Link className="booking" to="/">Réserver</Link>
+    <Link className="booking" to="/reservation">Réserver</Link>
   </div>
   );
 }
