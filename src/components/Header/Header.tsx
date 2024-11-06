@@ -22,9 +22,8 @@ function Header() {
       <i className="fa-solid fa-magnifying-glass fa-2xl"/>
       <button type="button" className="user-button" onClick={() => setIsModalOpen(true)}><i className="fa-solid fa-user fa-2xl"/></button>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <button type="button" className="modal-button" >X</button>
-        <SignUpForm />
-        <LoginForm />
+          <SignUpForm />
+          <LoginForm />
       </Modal>
     </div>
     <Link className="booking" to="/">Réserver</Link>
