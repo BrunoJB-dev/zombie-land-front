@@ -29,8 +29,11 @@
 margin-bottom: 2vh;
 }
 
-.reservation-container select{
+.calendar-select{
  background-color: $dark-green;
+ color: $colored-white;
+ padding: 1vh 2vh;
+ border-radius: $border-radius;
  width: 100%;
  margin: 0;
 }
