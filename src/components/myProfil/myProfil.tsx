@@ -13,18 +13,21 @@ function myProfile() {
   useEffect(()=> {
     instanceAxios.get('/api/profile').then(({data}) => {
       setUser(data)
+      console.log(data);    
     })
   })
 
   // Fonction pour gérer le changement d'avatar
   const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedAvatar(event.target.value);
+    console.log(event.target.value);
+    
   };
 
   return(
     <div className="myProfile">
       <div className="title-myProfile">
-        <h3>Mes information personnelles</h3>
+        <h3>Mes informations personnelles</h3>
       </div>
 
       <div className="informations-label">

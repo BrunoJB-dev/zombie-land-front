@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
+//import Login from './components/LoginForm/LoginForm';
 import ProfilePage from './pages/myProfil/profilPage';
 
 const router = createBrowserRouter([
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/attractions',
-        element: <AttractionListPage />,
+        element: <AttractionListPage/>,
       },
       {
         path: '/attractions/:id',
@@ -30,7 +31,11 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <ProfilePage/>
-      }
+      },
+/*       {
+        path: "/login",
+        element: <Login />
+      } */
     ],
   },
 ]);
