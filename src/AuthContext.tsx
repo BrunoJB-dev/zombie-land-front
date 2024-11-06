@@ -1,9 +1,18 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect, type ReactNode } from 'react';
 import { instanceAxios } from './utils/axios';
 
-const AuthContext = createContext();
+type AuthContextType = {
+  login : () => void;
+  logout : () => void;
+}
 
-export const AuthProvider = ({ children }) => {
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+interface AuthProviderProps{
+  children: ReactNode;
+}
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(() => localStorage.getItem('token'));
 
