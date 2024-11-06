@@ -24,7 +24,7 @@ function myProfile() {
   return(
     <div className="myProfile">
       <div className="title-myProfile">
-        <h3 className='porfil-h2'>Mes information personnelles</h3>
+        <h3>Mes information personnelles</h3>
       </div>
 
       <div className="informations-label">

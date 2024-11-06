@@ -1,5 +1,5 @@
 import MyProfile from "../../components/myProfil/myProfil";
-
+import MyReservation from "../../components/reservationByProfil/myReservation";
 
 import "./profilPage.scss"
 
@@ -11,6 +11,7 @@ function ProfilePage() {
       </div>
       <div>
         <MyProfile/>
+        <MyReservation/>
       </div>
     </main>
   )
