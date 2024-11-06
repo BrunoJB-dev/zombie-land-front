@@ -1,0 +1,20 @@
+@import"./reset.scss";
+@import "./vars.scss";
+
+.modal-content{
+  display: block;
+  margin-right: 20rem;
+  margin-left: 10rem;
+  border-radius: 2rem;
+  background-color: #63878c;
+}
+
+.modal-title{
+  display: block;
+  margin-bottom: 2rem;
+}
+.modal-text{
+  color: aliceblue;
+}
+
+
