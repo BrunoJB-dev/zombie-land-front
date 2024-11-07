@@ -27,11 +27,10 @@ function ReservationCalendar({
   const handleNumberChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedNumber = Number.parseInt(event.target.value);
     setNumber(selectedNumber);
+    setPlaceholder(false); 
   };
 
-  const  handleClickSelect = () => {
-    setPlaceholder(false)
-  }
+
   // Fonction pour gérer le changement de date de visite
   const handleDateChange = (date: Date | null) => {
     setStartDate(date);
@@ -52,7 +51,7 @@ function ReservationCalendar({
         </div>
         <div>
           <p> Choisissez le nombre de billets que vous souhaitez</p>
-          <select className='calendar-select' value={number} onChange={handleNumberChange} onFocus={handleClickSelect}>
+          <select className='calendar-select' value={number} onChange={handleNumberChange}>
           {placeholder && <option value="">Faire mon choix </option>}
             <option value="1">1</option>
             <option value="2">2</option>
