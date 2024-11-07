@@ -1,18 +1,40 @@
-import { createContext, useState, useContext } from 'react';
-import { instanceAxios } from './utils/axios';
+import { createContext, useState, useContext, type ReactNode } from 'react';
+import instanceAxios from './utils/axios';
+import { useEffect } from 'react';
 
-const AuthContext = createContext();
+type AuthContextType = {
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(() => localStorage.getItem('token'));
+  user: User | null;
+  token: string | null;
+  login: (email: string, password: string) => Promise<void>;
+  logout: () => void;
+}
 
-  const login = async (email, password) => {
+const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+interface AuthProviderProps{
+  children: ReactNode;
+}
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  password: string
+}
+
+export const AuthProvider = ({ children }: AuthProviderProps) => {
+
+  const [user, setUser] = useState<User | null>(null);
+  const [token, setToken] = useState<string | null>(() => localStorage.getItem('token'));
+
+  const login = async (email: string, password: string): Promise<void> => {
+
     try {
-      console.log("Login data:", {email, password});
-      const response = await instanceAxios.post('/api/login', { email, password });
-      console.log("data", response.data);
+    
+      const response = await instanceAxios.post('/api/login', { email, password });     
       setUser(response.data.user);
+      localStorage.setItem('user', JSON.stringify(response.data.user));     
       setToken(`Bearer ${response.data.accessToken}`);
       localStorage.setItem('token', response.data.accessToken); // Stocke le token dans le localStorage
     } catch (error) {
@@ -20,10 +42,18 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if(savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []); 
+
   const logout = () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem('token'); // Supprime le token du localStorage
+    localStorage.removeItem('user'); // Supprime le user du localStorage
   };
 
   return (
@@ -34,41 +64,10 @@ export const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => {
-  return useContext(AuthContext);
-};
-
-/*import { createContext, useContext, useState } from 'react';
-
-interface User {
-  name: string;
-  email: string;
-}
-
-interface UserContextType {
-  user: User | null;
-  setUser: (user: User | null) => void;
-}
-
-const UserContext = createContext<UserContextType>({
-  user: null,
-  setUser: () => {},
-});
-
-export const useUser = () => {
-  const context = useContext(UserContext);
-
+  const context = useContext(AuthContext);
   if (!context) {
-    throw new Error('useUser must be used within a UserProvider');
+    throw new Error("useAuth must be used within an AuthProvider");
   }
   return context;
 };
 
-export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
-};*/

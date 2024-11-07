@@ -1,4 +1,4 @@
-import { instanceAxios } from './utils/axios';
+import  instanceAxios  from './utils/axios';
 
 export async function signingUp (firstname: string, lastname: string, email: string, password: string,  ) {
 

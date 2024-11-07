@@ -16,7 +16,7 @@ function Header() {
     <nav>
       <Link to="/">Accueil</Link>
       <Link to="/attractions">Découvrez les attractions</Link>
-      <Link to="/reservation">Billeterie</Link>
+      <Link to="/profile">Mon compte</Link>
     </nav>
     <div className="icons">
       <i className="fa-solid fa-magnifying-glass fa-2xl"/>

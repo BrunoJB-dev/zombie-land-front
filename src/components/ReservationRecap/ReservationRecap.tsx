@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { instanceAxios } from '../../utils/axios.ts';
+import instanceAxios from '../../utils/axios.ts';
 
 import './ReservationRecap.scss';
 
@@ -112,7 +112,8 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
       };
 
       // Envoie les données de réservation à l'API
-      const response = await instanceAxios.post(
+      //const response = await instanceAxios.post(
+      await instanceAxios.post(
         '/api/reservation',
         reservationData,
       );
