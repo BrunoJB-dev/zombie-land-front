@@ -5,6 +5,7 @@ import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
 import Error404 from './components/Error404/Error404';
+import Login from './pages/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '*',
         element: <Error404 />
+      },
+        {
+          path: "/login",
+        element: <Login />
       },
     ],
   },

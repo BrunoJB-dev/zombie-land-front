@@ -14,6 +14,7 @@
 
 html{
   font-family: "Noto Sans", sans-serif;
+  background-color: $colored-white;
 }
 
 h1{
@@ -36,7 +37,7 @@ h2 {
 h3 {
   font-family: 'Overhaul', sans-serif;
   font-size: 3vh;
-  color: $white;
+  color: $colored-white;
   background-color: $dark-green;
   padding: $padding-title;
   border-radius: $border-radius;
@@ -62,7 +63,7 @@ a:hover {
 button {
   font-size: 2vh;
   font-weight: 800;
-  color: $white;
+  color: $colored-white;
   background-color: $dark-green;
   border-radius: $border-radius;
   padding: 1vh 15vh;

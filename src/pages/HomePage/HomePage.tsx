@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import type { Attraction } from "../../@types/attraction";
-import AttractionList from '../../components/AttractionList/AttractionList';
 import { instanceAxios } from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
+import type { Attraction } from "../../@types/attraction";
+import AttractionList from '../../components/AttractionList/AttractionList';
 import "./HomePage.scss";
 
 function HomePage() {
@@ -51,28 +51,30 @@ function HomePage() {
       </button>
       
       <section className='parc-presentation'>
-        <h3>Titre de présentation du parc</h3>
+        <h3>Le Parc d'Attractions Post-Apocalyptique le Plus Immersif au Monde !</h3>
         <img src="../../public/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" />
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aperiam optio expedita, ea velit fugit excepturi ipsam, saepe delectus nostrum numquam explicabo aliquam fugiat consequuntur consequatur atque! Omnis, velit obcaecati? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab odit fugiat necessitatibus. Consequatur voluptatibus deleniti corrupti perferendis ipsa dolores culpa labore, exercitationem delectus et consequuntur, maxime debitis sit inventore maiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi atque provident cumque dolorem, in officia! Error itaque porro, debitis natus, obcaecati quod tempore optio dolor ipsum id nemo quo non. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda accusamus laborum, aliquid provident cupiditate corporis, rem illo doloribus quasi architecto nihil vitae tempora officia quae voluptates ullam veniam porro esse.
+        Plongez dans un monde post-apocalyptique à ZombieLand, l'expérience immersive ultime où l'apocalypse des zombies prend vie. Ce parc d'attractions unique vous transporte dans un environnement dévasté, où chaque coin de rue est une nouvelle aventure terrifiante. Explorez 20 attractions palpitantes, allant des montagnes russes vertigineuses aux labyrinthes hantés, en passant par des expériences VR intenses et des maisons hantées effrayantes.
+ZombieLand n'est pas pour les cœurs sensibles : des hordes de zombies animatroniques rôdent dans les zones dévastées, où les visiteurs doivent faire preuve de courage pour affronter des défis inattendus. Entre courses-poursuites avec les morts-vivants et manèges à sensations fortes, chaque visiteur est plongé dans un cauchemar vivant. Avec des décors post-apocalyptiques détaillés, des effets spéciaux à couper le souffle, et une ambiance angoissante, Zombie Land promet une montée d'adrénaline à chaque pas.
+Que vous soyez un amateur de sensations fortes ou un passionné d'horreur, ZombieLand vous invite à survivre à cette expérience inoubliable. Entrez dans un monde où la terreur est reine... si vous l'osez.
         </p>
       </section>
       
       <section className='info-icones'>
         <span onClick={() => handleIconClick('horaires')}>
-          <i className="fa-solid fa-calendar-days"/>
+          <i className="fa-solid fa-calendar-days fa-2xl"/>
           <p>Horaires</p>
         </span> 
         <span onClick={() => handleIconClick('plan')}> 
-          <i className="fa-solid fa-map-location"/>
+          <i className="fa-solid fa-map-location fa-2xl"/>
           <p>Plan du parc</p>
         </span>  
         <span onClick={() => handleIconClick('acces')}>
-          <i className="fa-solid fa-car"/>
+          <i className="fa-solid fa-car fa-2xl"/>
           <p>Se rendre au parc</p>
         </span>
         <span onClick={() => handleIconClick('accessibilite')}>
-          <i className="fa-brands fa-accessible-icon"/>
+          <i className="fa-brands fa-accessible-icon fa-2xl"/>
           <p>Accessibilité</p>
         </span>  
       </section>
