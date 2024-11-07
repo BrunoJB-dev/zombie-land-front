@@ -89,6 +89,8 @@ font-size: large;
  margin-top: 2vh;
  padding: 1vh;
  border-radius: 10px;
+ animation: fadeOut 3s ease-in-out forwards;
+ animation-delay: 1s;
 }
 
 .success-message{
@@ -96,8 +98,10 @@ font-size: large;
   margin-top: 2vh;
   padding: 1vh;
   border-radius: 10px;
+  animation: fadeOut 3s ease-in-out forwards;
+  animation-delay: 1s;
 }
-.warning-message{
+.warning-message, .error-auth-message{
   font-style: italic;
   font-weight: 500;
   background-color: $colored-white;
@@ -108,3 +112,19 @@ font-size: large;
   border-radius: $border-radius;
 }
 
+.error-auth-message{
+  background-color: $red;
+  color: $colored-white;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

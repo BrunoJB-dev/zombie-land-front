@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import instanceAxios from '../../utils/axios.ts';
+import { useAuth } from '../../AuthContext';
 
 import './ReservationRecap.scss';
+import { set } from 'react-datepicker/dist/date_utils';
 
 // Déclaration des types pour les props du composant ReservationRecap
 type ReservationRecapProps = {
@@ -20,6 +22,8 @@ type AvailabilityItem = {
 
 // Composant ReservationRecap : Affiche un récapitulatif de la réservation
 function ReservationRecap({ startDate, number }: ReservationRecapProps) {
+  const { user } = useAuth();
+  
   // États pour les messages d'erreur
   const [dateError, setDateError] = useState<string | null>(null);
   const [numberError, setNumberError] = useState<string | null>(null);
@@ -30,6 +34,10 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
   const [remainingTickets, setRemainingTickets] = useState<number>(100);
   const [remainingInfos, setRemainingInfos] = useState<string | null>(null);
 
+  const [userId, setUserId] = useState <number | null>(null);
+  const [authError, setAuthError] = useState<string | null>(null);
+
+  
   // Formate la date de début en format "YYYY-MM-DD" ou affiche "Date non sélectionnée" si la date est nulle
   const formatedDate = startDate
     ? startDate.toLocaleDateString('fr-CA')
@@ -47,25 +55,26 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
 
   // Met à jour les tickets restants en fonction de la date sélectionnée
   useEffect(() => {
-     // Si aucune date n'est sélectionnée, remet les places à 100 et enlève le message d'information
+    // Si aucune date n'est sélectionnée, remet les places à 100 et enlève le message d'information
     if (formatedDate === 'Date non sélectionnée') {
       setRemainingTickets(100);
       setRemainingInfos(null);
       return;
     }
 
+    
     // Recherche la disponibilité pour la date sélectionnée
     const availabilityForDate = availabilityData.find(
       (item) => item.date === formatedDate,
     );
 
-     // Si aucune disponibilité n'est trouvée, réinitialise les places et infos
+    // Si aucune disponibilité n'est trouvée, réinitialise les places et infos
     if (!availabilityForDate) {
       setRemainingTickets(100);
       setRemainingInfos(null);
     }
 
-     // Si la disponibilité est trouvée, met à jour les places et infos selon le nombre disponible
+    // Si la disponibilité est trouvée, met à jour les places et infos selon le nombre disponible
     if (availabilityForDate) {
       setRemainingTickets(availabilityForDate.available);
       if (remainingTickets === 0) {
@@ -76,11 +85,15 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
         setRemainingInfos(
           `Il reste ${remainingTickets} billets disponibles pour cette date.`,
         );
-      } 
+      }
     }
-
-    console.log(`je cherche ${remainingTickets}`);
   }, [formatedDate, availabilityData, remainingTickets]);
+
+  useEffect(() => {
+    if (user) {
+      setUserId(Number.parseInt(user.id))
+    }
+  }, [user]);
 
   // Fonction pour gérer la soumission de la réservation
   const handleReservationSubmit = async () => {
@@ -88,6 +101,12 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
     setDateError(null);
     setNumberError(null);
     setSuccessMessage(null);
+    setAuthError(null);
+
+    if (!user) {
+      setAuthError('Veuillez vous connecter pour effectuer une réservation')
+      return
+    }
 
     // Vérifie que la date et le nombre de billets sont bien sélectionnés
     let hasError = false;
@@ -109,14 +128,13 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
         date: formatedDate,
         ticket: number,
         price: price,
+        user_id: userId,
       };
+
 
       // Envoie les données de réservation à l'API
       //const response = await instanceAxios.post(
-      await instanceAxios.post(
-        '/api/reservation',
-        reservationData,
-      );
+      await instanceAxios.post('/api/reservation', reservationData);
 
       // Met à jour le message de succès en cas de réussite
       setSuccessMessage('Votre réservation a été confirmée avec succès !');
@@ -148,17 +166,20 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
             <p className="totale-text">TOTAL</p>
             <p className="total-price">{price} €</p>
           </div>
-          {remainingInfos && <p className="warning-message">{remainingInfos}</p>}
-          <button type='submit' onClick={handleReservationSubmit}>
+          {remainingInfos && (
+            <p className="warning-message">{remainingInfos}</p>
+          )}
+           {authError && <p className="error-auth-message">{authError}</p>}
+          <button type="submit" onClick={handleReservationSubmit}>
             Valider ma réservation
           </button>
           {/* Affiche les messages d'erreur si la date ou le nombre de billets est manquant */}
           {dateError && <p className="error-message">{dateError}</p>}
           {numberError && <p className="error-message">{numberError}</p>}
           {/* Affiche un message de succès si la réservation est réussie */}
-          {successMessage && 
+          {successMessage && (
             <p className="success-message">{successMessage}</p>
-          }
+          )}
         </div>
       </div>
     </div>
