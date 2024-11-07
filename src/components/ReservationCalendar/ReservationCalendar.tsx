@@ -52,7 +52,7 @@ function ReservationCalendar({
         </div>
         <div>
           <p> Choisissez le nombre de billets que vous souhaitez</p>
-          <select value={number} onChange={handleNumberChange} onFocus={handleClickSelect}>
+          <select className='calendar-select' value={number} onChange={handleNumberChange} onFocus={handleClickSelect}>
           {placeholder && <option value="">Faire mon choix </option>}
             <option value="1">1</option>
             <option value="2">2</option>

@@ -1,0 +1,109 @@
+@import "../../styles/vars.scss";
+
+.my-reservation-test {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.my-reservation{
+  border: solid 1px #2b050e;
+  margin: 4rem auto;
+  border-radius: 20px;
+  box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
+  max-width: 60%;
+}
+
+.title-myReservation {
+  background-color: #243037;
+  border-radius: 20px 20px 0 0;
+}
+
+.title-myReservation h3 {
+  padding-left: 3vh;
+}
+
+.my-reservation-border{
+  width: 25%;
+  margin: 3vh;
+  color: aliceblue;
+  background-color: $dark-green;
+  padding: $padding-content;
+  border: 2px solid $medium-green;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.my-reservation-border p {
+  line-height: normal;
+}
+
+.my-reservation-head{
+  display: flex;
+  gap: 2vh;
+}
+
+.my-reservation-head div{
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.my-reservation-billet{
+  font-family: "Overhaul";
+  justify-content: center;
+}
+
+.my-reservation-head img{
+  max-width: 7vh;
+}
+
+.my-reservation-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.my-reservation-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reservation-button{
+  background-color: $light-green;
+  border: none;
+  box-shadow: $dark-black 0px 1px 2px 0px, $dark-black 0px 2px 6px 2px;
+  padding: 0.5vh 4vh;
+  font-weight: normal;
+}
+
+.my-reservation-price{
+display: flex;
+justify-content: space-between;
+font-size: large;
+}
+
+.reservation-total{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.my-space{
+  width: 90%;
+  border-bottom: 2px $colored-white dotted;
+}
+
+.my-totale-text{
+  font-weight: 800;
+  font-size: large;
+}
+
+.my-total-price{
+  background-color: $medium-green;
+  padding: 1vh 2vh;
+  border-radius: $border-radius;
+  font-weight: 800;
+  font-size: large;
+}

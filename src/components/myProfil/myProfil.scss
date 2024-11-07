@@ -1,0 +1,98 @@
+@import "../../styles/vars.scss";
+
+.myProfile {
+  border: solid 1px #2b050e;
+  margin: 4rem auto;
+  border-radius: 20px;
+  box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
+  max-width: 60%;
+}
+
+.title-myProfile {
+  background-color: #243037;
+  border-radius: 20px 20px 0 0;
+}
+
+.title-myProfile h3 {
+  padding-left: 3vh;
+}
+
+.informations-label {
+  display: flex;
+  padding-top: 2rem;
+}
+
+.informations-label input {
+  background-color: #7fb4af;
+  width: 80%;
+  border: none;
+}
+
+.separation-label div {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.button-profile {
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
+}
+
+.button-style {
+  font-size: 1rem;
+  padding: 1rem 3rem;
+}
+
+.avatar {
+  max-width: 40%;
+  border-radius: 1.2rem;
+}
+
+.separation-label {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-left: 2rem;
+}
+
+.avatar-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+.select-profil {
+  margin: 2rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #7fb4af;
+}
+
+@media (max-width: 1024px) {
+  .informations-label {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;   
+  }
+
+  .separation-label {
+    width: 100%;
+    padding-right: 2rem;
+  }
+
+  .avatar-profil {
+    width: 100%;
+    padding-top: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+
+}

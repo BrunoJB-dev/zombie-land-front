@@ -4,8 +4,10 @@ import HomePage from './pages/HomePage/HomePage';
 import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
+import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
+import ProfilePage from './pages/myProfil/profilPage';
 import Error404 from './components/Error404/Error404';
-import Login from './pages/Login/Login';
+
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/attractions',
-        element: <AttractionListPage />,
+        element: <AttractionListPage/>,
       },
       {
         path: '/attractions/:id',
@@ -28,13 +30,21 @@ const router = createBrowserRouter([
         path: '/reservation',
         element: <ReservationPage/>
       },
+      /**
+       * Pour protéger une route, element prend des ()
+       * et on encapsule le composant cible avec ProtectedRoute.
+       */
+      {
+        path: '/profile',
+        element: (
+          <ProtectedRoute>
+            <ProfilePage/>
+          </ProtectedRoute>
+      )
+      },
       {
         path: '*',
         element: <Error404 />
-      },
-        {
-          path: "/login",
-        element: <Login />
       },
     ],
   },
