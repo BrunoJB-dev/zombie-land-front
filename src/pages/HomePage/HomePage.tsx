@@ -46,7 +46,7 @@ function HomePage() {
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
 
-      <button className='attractions-display-btn' onClick={handleNavigation}>
+      <button type='button' className='attractions-display-btn' onClick={handleNavigation}>
         Voir toutes les attractions
       </button>
       
