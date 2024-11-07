@@ -5,8 +5,9 @@ import AttractionListPage from './pages/AttractionList/AttractionListPage';
 import AttractionDetailPage from './pages/AttractionDetail/AttractionDetailPage';
 import ReservationPage from './pages/Reservation/ReservationPage';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
-//import Login from './components/LoginForm/LoginForm';
 import ProfilePage from './pages/myProfil/profilPage';
+import Error404 from './components/Error404/Error404';
+
 
 const router = createBrowserRouter([
   {
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
           </ProtectedRoute>
       )
       },
-/*    {
-        path: "/login",
-        element: <Login />
-      } */
+      {
+        path: '*',
+        element: <Error404 />
+      },
     ],
   },
 ]);
