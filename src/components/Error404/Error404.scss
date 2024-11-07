@@ -1,0 +1,27 @@
+@import "../../styles/vars.scss";
+
+
+.element-404{
+  background-color: black;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.title-404{
+  margin: 2rem auto;
+}
+
+.img-404{
+  max-width: 50%;
+  margin: 0 auto;
+  border-radius: 80%;
+  filter: blur(0.05rem);
+}
+
+.message-404{
+  text-align: center;
+  margin-top: 2rem;
+  font-family: Overhaul;
+  font-size: 2rem;
+  color: #BE3B40;
+}
