@@ -4,12 +4,12 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  // align-content: center;
   background-color: $medium-green;
   padding: 0;
   width: 50%;
-  height: 100vh;
-  position: fixed;
+  height: 75vh;
+  /* position: fixed; */
   left: 87vh;
 
   h1 {
@@ -23,7 +23,8 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 50vh;
+  height: 40%;
+  justify-content: space-between;
 
   :nth-last-child(1){
     align-self: center;
@@ -43,7 +44,7 @@
     font-weight: bold;
     font-size: 2vh;
     margin-left: auto;
-    margin-bottom: 6vh;
+    margin-bottom: 4vh;
   }
 }
 

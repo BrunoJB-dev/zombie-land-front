@@ -13,14 +13,14 @@ function Modal ({isOpen, onClose, children} : ModalProps) {
   }
 
   return (
-    <div className="modal-overlay">
+
       <div className="modal-content">
         <button type="button" className="modal-button" onClick={onClose}>X</button>
-        {children}
+        <div className="children-div">{children}</div>
       </div>
-    </div>
   );
 
 };
 
 export default Modal;
+

@@ -4,12 +4,12 @@
   display:flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  /* align-content: center; */
   background-color: $light-green;
   padding: 0;
   width: 50%;
-  height: 100vh;
-  position: fixed;
+  height: 75vh;
+  // position: fixed;
   top: 15vh;
   left: 18vh;
 
@@ -21,12 +21,24 @@
 
   .password {
     display: flex;
+    justify-content: space-between;
     margin:0;
+    gap: 1vh;
+  }
+
+  .password div, .identity div {
+    width: 47%;
+  }
+
+  #password, #passwordConfirmation, #lastname, #firstname{
+    width: 100%;
   }
 
   .identity {
     display: flex;
     margin: 0;
+    justify-content: space-between;
+    gap: 1vh;
   }
 
   #email {
@@ -38,21 +50,21 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 50vh;
+  height: 40%;
+  justify-content: space-between;
 
   :nth-last-child(1){
     align-self: center;
   }
 
-  div {
+   div {
     margin: 1.5vh 0;
-  }
+  } 
 
   input {
     background-color: $light-green;
     border: solid 2px $colored-white;
-    margin-right: 4vh;
-    width: -webkit-fill-available;
+    //width: -webkit-fill-available;
   }
 }
 

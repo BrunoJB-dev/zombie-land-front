@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { instanceAxios } from "../../utils/axios";
+import instanceAxios from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
 import type { Attraction } from "../../@types/attraction";
 import AttractionList from '../../components/AttractionList/AttractionList';
 import Modal from '../../components/Modal/Modal';
 import InfoCarPark from '../../components/InfoCarPark/InfoCarPark';
 import InfoDisability from '../../components/InfoDisabilityAccess/InfoDisability';
-import InfoSchedules from '../../components/ParcSchedules/InfoSchedules';
+import InfoSchedules from '../../components/InfoSchedules/InfoSchedules';
 import InfoPlan from '../../components/InfoPlan/InfoPlan';
 import "./HomePage.scss";
 
@@ -51,7 +51,7 @@ function HomePage() {
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
 
-      <button className='attractions-display-btn' onClick={handleNavigation}>
+      <button type='button' className='attractions-display-btn' onClick={handleNavigation}>
         Voir toutes les attractions
       </button>
       
@@ -66,19 +66,19 @@ Que vous soyez un amateur de sensations fortes ou un passionné d'horreur, Zombi
       </section>
       
       <section className='info-icones'>
-        <span onClick={() => handleIconClick('horaires')}>
+        <span onClick={() => handleIconClick('horaires')} onKeyDown={() => handleIconClick('horaires')}>
           <i className="fa-solid fa-calendar-days fa-2xl"/>
           <p>Horaires</p>
         </span> 
-        <span onClick={() => handleIconClick('plan')}> 
+        <span onClick={() => handleIconClick('plan')} onKeyDown={() => handleIconClick('plan')}> 
           <i className="fa-solid fa-map-location fa-2xl"/>
           <p>Plan du parc</p>
         </span>  
-        <span onClick={() => handleIconClick('acces')}>
+        <span onClick={() => handleIconClick('acces')} onKeyDown={() => handleIconClick('acces')}>
           <i className="fa-solid fa-car fa-2xl"/>
           <p>Se rendre au parc</p>
         </span>
-        <span onClick={() => handleIconClick('accessibilite')}>
+        <span onClick={() => handleIconClick('accessibilite')} onKeyDown={() => handleIconClick('accessibilite')}>
           <i className="fa-brands fa-accessible-icon fa-2xl"/>
           <p>Accessibilité</p>
         </span>  

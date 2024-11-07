@@ -3,14 +3,16 @@ import './LoginForm.scss';
 import { useState } from 'react';
 import { useAuth } from '../../AuthContext';
 
+
 const LoginForm = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await login(email, password);
+    login(email, password);
+    
   };
 
   return (
@@ -26,7 +28,7 @@ const LoginForm = () => {
           <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
         </div>
         <p>Mot de passe oublié ?</p>
-        <button type="submit">Se connecter</button>
+        <div><button type="submit">Se connecter</button></div>
       </form>
     </section>
   );
