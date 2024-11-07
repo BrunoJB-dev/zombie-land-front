@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import type { Attraction } from "../../@types/attraction";
-import { instanceAxios } from "../../utils/axios";
+import instanceAxios from "../../utils/axios";
 import AttractionDetail from "../../components/AttractionDetail/AttractionDetail";
 
 import "./AttractionDetail.scss";
 
-AttractionDetail
+
 function AttractionDetailPage() {
   const params = useParams();
 
