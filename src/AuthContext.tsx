@@ -2,10 +2,8 @@ import { createContext, useState, useContext, type ReactNode } from 'react';
 import instanceAxios from './utils/axios';
 import { useEffect } from 'react';
 
-
 type AuthContextType = {
 
-  // Modif içi
   user: User | null;
   token: string | null;
   login: (email: string, password: string) => Promise<void>;
@@ -18,38 +16,25 @@ interface AuthProviderProps{
   children: ReactNode;
 }
 
-// Modif içi
 interface User {
   id: string;
   name: string;
   email: string;
   password: string
-  // ajoute d'autres propriétés ici si nécessaire
 }
 
-
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  //const [user, setUser] = useState(null);
-  //const [token, setToken] = useState(() => localStorage.getItem('token'));
 
-  // Modif içi
   const [user, setUser] = useState<User | null>(null);
   const [token, setToken] = useState<string | null>(() => localStorage.getItem('token'));
 
-
-  //const login = async (email, password) => {
   const login = async (email: string, password: string): Promise<void> => {
 
     try {
-      console.log("Login data:", {email, password});  // ?? Est-ce normal qu'on voit le mdp en console.log ?
-
-      const response = await instanceAxios.post('/api/login', { email, password });
-      console.log("User data from API:", response.data.user);
-
-      console.log("data", response.data);
+    
+      const response = await instanceAxios.post('/api/login', { email, password });     
       setUser(response.data.user);
-      localStorage.setItem('user', JSON.stringify(response.data.user));
-      
+      localStorage.setItem('user', JSON.stringify(response.data.user));     
       setToken(`Bearer ${response.data.accessToken}`);
       localStorage.setItem('token', response.data.accessToken); // Stocke le token dans le localStorage
     } catch (error) {
@@ -57,7 +42,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   };
 
- // Modif içi
   useEffect(() => {
     const savedUser = localStorage.getItem('user');
     if(savedUser) {
@@ -79,7 +63,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   );
 };
 
-// Modif içi
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -88,38 +71,3 @@ export const useAuth = () => {
   return context;
 };
 
-/*import { createContext, useContext, useState } from 'react';
-
-interface User {
-  name: string;
-  email: string;
-}
-
-interface UserContextType {
-  user: User | null;
-  setUser: (user: User | null) => void;
-}
-
-const UserContext = createContext<UserContextType>({
-  user: null,
-  setUser: () => {},
-});
-
-export const useUser = () => {
-  const context = useContext(UserContext);
-
-  if (!context) {
-    throw new Error('useUser must be used within a UserProvider');
-  }
-  return context;
-};
-
-export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
-};*/
