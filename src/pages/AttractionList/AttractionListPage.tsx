@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import AttractionList from '../../components/AttractionList/AttractionList.tsx';
 import type { Attraction, Category } from '../../@types/attraction.ts';
-import { instanceAxios } from '../../utils/axios.ts';
+import instanceAxios from '../../utils/axios.ts';
 
 import "./AttractionList.scss";
 

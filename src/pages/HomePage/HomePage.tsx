@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { instanceAxios } from "../../utils/axios";
+import instanceAxios from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
 import type { Attraction } from "../../@types/attraction";
 import AttractionList from '../../components/AttractionList/AttractionList';

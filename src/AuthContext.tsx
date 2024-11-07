@@ -1,11 +1,9 @@
 import { createContext, useState, useContext, type ReactNode } from 'react';
-import { instanceAxios } from './utils/axios';
+import instanceAxios from './utils/axios';
 import { useEffect } from 'react';
 
 
 type AuthContextType = {
-  /* login : () => void;
-  logout : () => void; */
 
   // Modif içi
   user: User | null;
@@ -50,7 +48,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
 
       console.log("data", response.data);
       setUser(response.data.user);
-      console.log(user);
+      localStorage.setItem('user', JSON.stringify(response.data.user));
       
       setToken(`Bearer ${response.data.accessToken}`);
       localStorage.setItem('token', response.data.accessToken); // Stocke le token dans le localStorage
@@ -60,24 +58,19 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
   };
 
  // Modif içi
-/*  useEffect(() => {
-  console.log("Updated user:", user);
-}, [user]); */
+  useEffect(() => {
+    const savedUser = localStorage.getItem('user');
+    if(savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []); 
 
   const logout = () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem('token'); // Supprime le token du localStorage
-    localStorage.removeItem('user'); // Supprime user de localStorage
+    localStorage.removeItem('user'); // Supprime le user du localStorage
   };
-
-   // Modif içi
-    useEffect(() => {
-      const savedUser = localStorage.getItem('user');
-      const savedToken = localStorage.getItem('token');
-      if (savedUser) setUser(JSON.parse(savedUser));
-      if (savedToken) setToken(savedToken);
-    }, []);
 
   return (
     <AuthContext.Provider value={{ user, token, login, logout }}>
@@ -85,11 +78,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     </AuthContext.Provider>
   );
 };
-
-// Modif içi
-/* export const useAuth = () => {
-  return useContext(AuthContext);
-}; */
 
 // Modif içi
 export const useAuth = () => {

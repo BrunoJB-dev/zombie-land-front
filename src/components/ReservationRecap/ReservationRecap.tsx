@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { instanceAxios } from '../../utils/axios.ts';
+import instanceAxios from '../../utils/axios.ts';
 
 import './ReservationRecap.scss';
 

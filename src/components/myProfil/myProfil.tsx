@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { instanceAxios } from "../../utils/axios";
+import instanceAxios from "../../utils/axios";
 import avatarFemme from '../../../public/avatar-femme.webp';
 import avatarHomme from '../../../public/avatar-homme.webp';
 import type { User } from '../../@types/user';
@@ -12,16 +12,13 @@ function myProfile() {
 
   useEffect(()=> {
     instanceAxios.get('/api/profile').then(({data}) => {
-      setUser(data)
-      console.log(data);    
+      setUser(data)   
     })
-  })
+  }, []);
 
   // Fonction pour gérer le changement d'avatar
   const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedAvatar(event.target.value);
-    console.log(event.target.value);
-    
   };
 
   return(

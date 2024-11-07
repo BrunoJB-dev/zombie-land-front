@@ -11,7 +11,7 @@ interface ProtectedRouteProps {
  */
 export function ProtectedRoute({children}: ProtectedRouteProps){
     const { user } = useAuth();
-    console.log('user :>> ', user);
+    //console.log('user :>> ', user);
     if(!user){
         return <Navigate to='/' />
     }

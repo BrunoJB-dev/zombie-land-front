@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { instanceAxios } from "../../utils/axios";
+import instanceAxios from "../../utils/axios";
 import type { Reservation } from "../../@types/reservation";
 
 import "./myReservation.scss";
@@ -10,6 +10,7 @@ function MyReservation() {
   useEffect(() => {
     instanceAxios.get('/api/profile/reservation').then(({ data }) => {
       setReservations(data);
+      // console.log(data);
     });
   },[]);
 
