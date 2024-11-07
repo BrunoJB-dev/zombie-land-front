@@ -3,6 +3,7 @@ import './InfoCarPark.scss';
 
 function InfoCarPark() {
   return (
+    
     <div className="modal-container">
       <h3 className="modal-title">Où vous garer ?</h3>
       <p className="modal-text">
