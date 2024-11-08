@@ -1,82 +1,218 @@
 import { useEffect, useState } from 'react';
-import instanceAxios from "../../utils/axios";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../../AuthContext.tsx";
+import instanceAxios from '../../utils/axios';
 import avatarFemme from '../../../public/avatar-femme.webp';
 import avatarHomme from '../../../public/avatar-homme.webp';
 import type { User } from '../../@types/user';
-import "./myProfil.scss"
+import './myProfil.scss';
 
 function myProfile() {
-
   const [selectedAvatar, setSelectedAvatar] = useState(avatarFemme);
-  const [userId, setUserId] = useState<User>()
-  
-  useEffect(()=> {
-    instanceAxios.get('/api/profile').then(({data}) => {
-      setUserId(data)   
-    })
-  }, []);
+  const [user, setUser] = useState<User>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  
+  const { logout } = useAuth();
+
+/*   useEffect(() => {
+    instanceAxios.get('/api/profile').then(({ data }) => {
+      setUser(data);
+    });
+  }, []); */
+
+
+  const [placeholder, setPlaceholder] = useState(true);
+  // Fonction pour gérer le changement d'avatar
   const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-      setSelectedAvatar(event.target.value);
+    setSelectedAvatar(event.target.value);
+    setPlaceholder(false);
+  };
+
+  const handleDelete = () => {
+    setIsModalOpen(true);
+  };
+
+  const confirmDelete = () => {
+    instanceAxios.delete('/api/profile/del').then(() => {});
+    setIsModalOpen(false);
+    navigate('/');
+    logout();
   };
    
+  const cancelDelete = () => {
+    setIsModalOpen(false);
+  };
 
-  return(
+  // ------------------------ Update user ------------------
+  //const [userData, setUserData] = useState<User | null>(null);
+  //console.log(userData);
+  
+    // États pour chaque champ
+    const [firstname, setFirstname] = useState('');
+    const [lastname, setLastname] = useState('');
+    const [pseudo, setPseudo] = useState('');
+    const [email, setEmail] = useState('');
+    const [adress, setAdress] = useState('');
+    const [postalCode, setPostalCode] = useState('');
+    const [country, setCountry] = useState('');
+  
+    useEffect(() => {
+      instanceAxios.get('/api/profile').then(({ data }) => {
+        setUser(data);
+        setFirstname(data.firstname);
+        setLastname(data.lastname);
+        setPseudo(data.pseudo);
+        setEmail(data.email);
+        setAdress(data.adress);
+        setPostalCode(data.postal_code);
+        setCountry(data.country);
+      });
+    }, []);
+
+    const handleUpdate = async () => {
+      try {
+        await instanceAxios.patch('/api/profile/update', {
+          firstname,
+          lastname,
+          pseudo,
+          email,
+          adress,
+          postal_code: postalCode,
+          country
+        });
+        alert("Informations mises à jour avec succès");
+      } catch (error) {
+        console.error("Erreur lors de la mise à jour du profil :", error);
+        alert("Échec de la mise à jour");
+      }
+    };
+
+
+  // ----------------------Fin Update user -----------------
+  return (
     <div className="myProfile">
       <div className="title-myProfile">
         <h3>Mes informations personnelles</h3>
       </div>
 
       <div className="informations-label">
-
-        <div className='separation-label'>
+        <div className="separation-label">
           <div>
             <label htmlFor="firstname">Nom</label>
-            <input type="text" id="firstname" placeholder="Nom*" defaultValue={userId?.lastname} />        
+            <input
+              type="text"
+              id="firstname"
+              placeholder="Nom*"
+              defaultValue={user?.firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="lastname">Prénom</label>
-            <input type="text" id="lastname" placeholder="Prénom*"defaultValue={userId?.firstname} />
+            <input
+              type="text"
+              id="lastname"
+              placeholder="Prénom*"
+              defaultValue={user?.lastname}
+              onChange={(e) => setLastname(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="pseudo">Pseudo</label>
-            <input type="text" id="pseudo" placeholder="Pseudo*"defaultValue={userId?.pseudo} />
+            <input type="text" id="pseudo" placeholder="Pseudo*" 
+            defaultValue={user?.pseudo}
+            onChange={(e) => setPseudo(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="mail">Mail</label>
-            <input type="text" id="mail" placeholder="Adresse email*"defaultValue={userId?.email} />
+            <input
+              type="text"
+              id="mail"
+              placeholder="Adresse email*"
+              defaultValue={user?.email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div>
-            <label htmlFor="address">Adresse</label>
-            <input type="text" id="address" placeholder="Adresse*"defaultValue={userId?.adress} />
+            <label htmlFor="adress">Adresse</label>
+            <input type="text" id="adress" placeholder="Adresse*" 
+            defaultValue={user?.adress}
+            onChange={(e) => setAdress(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="postal_code">CP</label>
-            <input type="text" id="postal_code" placeholder="Code postal*"defaultValue={userId?.postal_code} />
+            <input type="text" id="postal_code" placeholder="Code postal*" 
+            defaultValue={user?.postal_code}
+            onChange={(e) => setPostalCode(e.target.value)}
+            />
           </div>
           <div>
             <label htmlFor="country">Ville</label>
-            <input type="text" id="country" placeholder="Ville*"defaultValue={userId?.country} />
+            <input type="text" id="country" placeholder="Ville*" 
+            defaultValue={user?.country}
+            onChange={(e) => setCountry(e.target.value)}
+            />
           </div>
         </div>
-          
-        <div className='avatar-profil'>
-          <img className='avatar' src={selectedAvatar} alt="avatar" />
-          <select className='select-profil' name="avatar" id="avatar" onChange={handleAvatarChange}>
-          <option value="" disabled selected>Choisissez un avatar</option>
+
+        <div className="avatar-profil">
+          <img className="avatar" src={selectedAvatar} alt="avatar" />
+          <select
+            className="select-profil"
+            name="avatar"
+            id="avatar"
+            onChange={handleAvatarChange}
+          >
+            {placeholder && <option value="">Faire mon choix </option>}{' '}
             <option value={avatarFemme}>Avatar femme</option>
             <option value={avatarHomme}>Avatar homme</option>
           </select>
         </div>
-
       </div>
       <div className="button-profile">
-        <button className="button-style" type="button" >Modifier mes informations</button>
+        <button className="button-style" type="button" onClick={handleUpdate}>
+          Modifier mes informations
+        </button>
       </div>
+      <div className="button-profile-delete">
+        <button
+          className="button-style-delete"
+          type="button"
+          onClick={handleDelete}
+        >
+          Supprimer mon profil
+        </button>
+      </div>
+      {isModalOpen && (
+        <div className="modal modal-myprofile">
+          <h4>Confirmer la suppression</h4>
+          <p>
+            Êtes-vous sûr de vouloir supprimer votre profil ? Cette action est
+            irréversible.
+          </p>
+          <div className='button-myprofile'>
+            <button
+              type="button"
+              className="button-confirm"
+              onClick={confirmDelete}
+            >
+              Confirmer
+            </button>
+            <button
+              type="button"
+              className="button-cancel"
+              onClick={cancelDelete}
+            >
+              Annuler
+            </button>
+          </div>
+        </div>
+      )}
     </div>
-  )
+  );
 }
 
 export default myProfile;
-

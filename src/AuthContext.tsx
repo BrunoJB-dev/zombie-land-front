@@ -20,7 +20,6 @@ interface User {
   id: string;
   name: string;
   email: string;
-  password: string
 }
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
