@@ -12,63 +12,46 @@ function myProfile() {
   const [user, setUser] = useState<User>();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [pseudo, setPseudo] = useState('');
+  const [email, setEmail] = useState('');
+  const [adress, setAdress] = useState('');
+  const [postalCode, setPostalCode] = useState('');
+  const [country, setCountry] = useState('');
 
   const { logout } = useAuth();
 
-/*   useEffect(() => {
+  useEffect(() => {
     instanceAxios.get('/api/profile').then(({ data }) => {
       setUser(data);
     });
-  }, []); */
+  }, []); useEffect(() => {
+    instanceAxios.get('/api/profile').then(({ data }) => {
+      setUser(data);
+    });
+  }, []);
 
+
+  useEffect(() => {
+    instanceAxios.get('/api/profile').then(({ data }) => {
+      setUser(data);
+      setFirstname(data.firstname);
+      setLastname(data.lastname);
+      setPseudo(data.pseudo);
+      setEmail(data.email);
+      setAdress(data.adress);
+      setPostalCode(data.postal_code);
+      setCountry(data.country);
+    });
+  }, []);
 
   const [placeholder, setPlaceholder] = useState(true);
-  // Fonction pour gérer le changement d'avatar
+  
   const handleAvatarChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedAvatar(event.target.value);
     setPlaceholder(false);
   };
-
-  const handleDelete = () => {
-    setIsModalOpen(true);
-  };
-
-  const confirmDelete = () => {
-    instanceAxios.delete('/api/profile/del').then(() => {});
-    setIsModalOpen(false);
-    navigate('/');
-    logout();
-  };
-   
-  const cancelDelete = () => {
-    setIsModalOpen(false);
-  };
-
-  // ------------------------ Update user ------------------
-  //const [userData, setUserData] = useState<User | null>(null);
-  //console.log(userData);
-  
-    // États pour chaque champ
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
-    const [pseudo, setPseudo] = useState('');
-    const [email, setEmail] = useState('');
-    const [adress, setAdress] = useState('');
-    const [postalCode, setPostalCode] = useState('');
-    const [country, setCountry] = useState('');
-  
-    useEffect(() => {
-      instanceAxios.get('/api/profile').then(({ data }) => {
-        setUser(data);
-        setFirstname(data.firstname);
-        setLastname(data.lastname);
-        setPseudo(data.pseudo);
-        setEmail(data.email);
-        setAdress(data.adress);
-        setPostalCode(data.postal_code);
-        setCountry(data.country);
-      });
-    }, []);
 
     const handleUpdate = async () => {
       try {
@@ -89,7 +72,23 @@ function myProfile() {
     };
 
 
-  // ----------------------Fin Update user -----------------
+  const handleDelete = () => {
+    setIsModalOpen(true);
+  };
+  
+
+  const confirmDelete = () => {
+     instanceAxios.delete('/api/profile/delete').then(() => {
+       setIsModalOpen(false);
+       navigate('/');
+      });
+      setTimeout(logout, 50);
+  };
+   
+  const cancelDelete = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="myProfile">
       <div className="title-myProfile">
