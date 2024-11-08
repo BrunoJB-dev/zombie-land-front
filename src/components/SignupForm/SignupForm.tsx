@@ -5,11 +5,13 @@ import { signingUp } from '../../SignupContext';
 function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmedPassword, setConfirmedPassword] = useState('');
   const [lastname, setLastname] = useState('');
   const [firstname, setFirstname] = useState('');
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState('fa-regular fa-eye-slash');
   
+  //* Variable qui gère le changement d'icône et type du champ de mot de passe
   const handleToggle = () => {
     if (type === 'password') {
       setIcon('fa-regular fa-eye');
@@ -20,11 +22,21 @@ function SignUpForm() {
     }
   }
 
-
+//* Variable qui gère l'envoi des données au back pour enregistrer un nouvel utilisateur
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await signingUp(firstname, lastname, email, password);
-    
+
+    //On vérifie que les deux mots de passe coïncident, si oui, on envoie
+
+    if (password !== confirmedPassword) {
+      return (console.log("Vos mots de passes ne sont pas identiques"));
+    }
+      await signingUp(firstname, lastname, email, password, confirmedPassword);
+      setFirstname('');
+      setLastname('');
+      setEmail('');
+      setPassword('');
+      setConfirmedPassword('');
   };
 
   return (
@@ -45,10 +57,10 @@ function SignUpForm() {
           </div>
           <div>
             <label htmlFor="passwordConfirmation" aria-label="password"/>
-            <input type={type} name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmation *" required/>
+            <input type={type} name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmation *" value={confirmedPassword} onChange={(e) => setConfirmedPassword(e.target.value)} required/>
             <span onClick={handleToggle} onKeyUp={handleToggle}>
               <i className={icon}/>
-            </span>
+              </span>
           </div>
         </div>
         <div className='identity'>
