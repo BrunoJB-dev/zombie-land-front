@@ -8,11 +8,22 @@ const LoginForm = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState('fa-regular fa-eye-slash');
   
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon('fa-regular fa-eye');
+      setType('text');
+    } else {
+      setIcon('fa-regular fa-eye-slash');
+      setType('password');
+    }
+  }
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     login(email, password);
-    
   };
 
   return (
@@ -23,9 +34,10 @@ const LoginForm = () => {
           <label htmlFor="email" aria-label="email"/>
           <input type="email" placeholder="Adresse mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </div>
-        <div>
+        <div className='password-div'>
           <label htmlFor="password" aria-label="password"/>
-          <input type="password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input type={type} placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <span onClick={handleToggle} onKeyUp={handleToggle}><i className={icon}/></span>
         </div>
         <p>Mot de passe oublié ?</p>
         <div><button type="submit">Se connecter</button></div>

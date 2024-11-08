@@ -5,14 +5,26 @@ import { signingUp } from '../../SignupContext';
 function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [confirmedPassword, setConfirmedPassword] = useState('');
   const [lastname, setLastname] = useState('');
   const [firstname, setFirstname] = useState('');
+  const [type, setType] = useState("password");
+  const [icon, setIcon] = useState('fa-regular fa-eye-slash');
+  
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon('fa-regular fa-eye');
+      setType('text');
+    } else {
+      setIcon('fa-regular fa-eye-slash');
+      setType('password');
+    }
+  }
 
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     await signingUp(firstname, lastname, email, password);
+    
   };
 
   return (
@@ -26,11 +38,17 @@ function SignUpForm() {
         <div className='password'>
           <div>
             <label htmlFor="password" aria-label="password"/>
-            <input type="password" name="password" id="password" placeholder="Mot de passe *" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            <input type={type} name="password" id="password" placeholder="Mot de passe *" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+            <span onClick={handleToggle} onKeyUp={handleToggle}>
+              <i className={icon}/>
+            </span>
           </div>
           <div>
             <label htmlFor="passwordConfirmation" aria-label="password"/>
-            <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmation *" required/>
+            <input type={type} name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmation *" required/>
+            <span onClick={handleToggle} onKeyUp={handleToggle}>
+              <i className={icon}/>
+            </span>
           </div>
         </div>
         <div className='identity'>
