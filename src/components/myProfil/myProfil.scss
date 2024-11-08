@@ -102,3 +102,24 @@
 @media (max-width: 720px) {
 
 }
+.modal-myprofile{
+  background-image: none;
+  background-color: $red;
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  width: fit-content;
+}
+
+.modal-myprofile h4{
+  font-size: xx-large;
+}
+
+.button-confirm, .button-cancel {
+  width: fit-content;
+}
+
+.button-myprofile{
+  display: flex;
+  gap: 3vh;
+}
