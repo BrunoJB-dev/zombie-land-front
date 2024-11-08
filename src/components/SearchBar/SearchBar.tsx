@@ -1,60 +1,65 @@
-// SearchBar.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import instanceAxios from '../../utils/axios.ts';
+import type { Attraction, Category } from '../../@types/attraction.ts';  // Assurez-vous d'utiliser le bon chemin pour axios
 
 function SearchBar() {
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState<string>('');
+  const [attractions, setAttractions] = useState<Attraction[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [filteredAttractions, setFilteredAttractions] = useState<{ name: string, id: string }[]>([]);  // Stocke les attractions filtrées
+  const [filteredCategories, setFilteredCategories] = useState<{ name: string, id: string }[]>([]);  // Stocke les catégories filtrées
 
-  const attractions = [
-    { name: "Zombie escape coaster" },
-    { name: "The infected swamp" },
-    { name: "Deadly labyrinth" },
-    { name: "Virus outbreak VR" },
-    { name: "The quarantine zone" },
-    { name: "Zombie assault: laser battle" },
-    { name: "The apocalypse coaster" },
-    { name: "Zombie carnival" },
-  ];
+  // Récupère les attractions et catégories depuis l'API
+  useEffect(() => {
+    // Récupère les attractions
+    instanceAxios.get('/api/attractions').then(({ data }) => {
+      setAttractions(data);
+    });
 
-  const categories = [
-    { name: "Montagnes russes" },
-    { name: "Attractions aquatiques" },
-    { name: "Expériences interactives" },
-    { name: "Maisons hantées" }
-  ];
+    // Récupère les catégories
+    instanceAxios.get('/api/attractions/categories').then(({ data }) => {
+      setCategories(data);
+    });
+  }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
-  // Initialisation des listes des résultats filtrés
-  let filteredAttractions = [];
-  let filteredCategories = [];
-  
-  if (searchInput.length > 0) {
-    // Vérifier si le début de `searchInput` correspond à "attraction" ou "categorie"
-    if (searchInput.toLowerCase().startsWith("att")) {
-      // Afficher uniquement les noms des attractions
-      filteredAttractions = attractions.map((attraction) => ({
-        name: attraction.name,
-        category: null,
-      }));
-    } else if (searchInput.toLowerCase().startsWith("cat")) {
-      // Afficher uniquement les catégories
-      filteredCategories = categories.map((category) => ({
-        name: category.name,
-        category: null,
-      }));
-    } else {
-      // Filtrage standard pour d'autres mots-clés
-      filteredAttractions = attractions.filter((attraction) =>
-        attraction.name.toLowerCase().includes(searchInput.toLowerCase())
-      );
+  useEffect(() => {
+    // Filtrage des attractions et des catégories en fonction de l'input de recherche
+    let filteredAttractionsList = [];
+    let filteredCategoriesList = [];
 
-      filteredCategories = categories.filter((category) =>
-        category.name.toLowerCase().includes(searchInput.toLowerCase())
-      );
+    if (searchInput.length > 0) {
+      // Si l'input commence par "att", on filtre les attractions uniquement
+      if (searchInput.toLowerCase().startsWith('att')) {
+        filteredAttractionsList = attractions.filter((attraction) =>
+          attraction.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      } else if (searchInput.toLowerCase().startsWith('cat')) {
+        // Si l'input commence par "cat", on filtre les catégories uniquement
+        filteredCategoriesList = categories.filter((category) =>
+          category.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      } else {
+        // Sinon, on filtre les deux
+        filteredAttractionsList = attractions.filter((attraction) =>
+          attraction.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+
+        filteredCategoriesList = categories.filter((category) =>
+          category.name.toLowerCase().includes(searchInput.toLowerCase())
+        );
+      }
     }
-  }
+
+    // Mise à jour des états avec les résultats filtrés
+    setFilteredAttractions(filteredAttractionsList);
+    setFilteredCategories(filteredCategoriesList);
+
+  }, [searchInput, attractions, categories]); // Le useEffect se déclenche lorsque searchInput, attractions, ou categories changent
 
   return (
     <div>
@@ -68,25 +73,28 @@ function SearchBar() {
       {/* Affichage conditionnel du tableau uniquement si des résultats existent */}
       {searchInput.length > 0 && (filteredAttractions.length > 0 || filteredCategories.length > 0) && (
         <table>
-          {/*<thead>
-            <tr>
-              <th>Attraction</th>
-              <th>Catégorie</th>
-            </tr>
-          </thead>*/}
           <tbody>
             {/* Affichage des attractions */}
-            {filteredAttractions.map((attraction, index) => (
-              <tr key={`attraction-${index}`}>
-                <td>{attraction.name || '-'}</td>
-                <td>{attraction.category || '-'}</td>
+            {filteredAttractions.map((attraction) => (
+              <tr key={attraction.id}>
+                <td>
+                  <Link to={`/attractions/${attraction.id}`}>{attraction.name}
+                  <i>
+                  (Attraction)
+                  </i>
+                  </Link>
+                </td>
               </tr>
             ))}
             {/* Affichage des catégories */}
-            {filteredCategories.map((category, index) => (
-              <tr key={`category-${index}`}>
-                <td>{category.name || '-'}</td>
-                <td>{category.category || '-'}</td>
+            {filteredCategories.map((category) => (
+              <tr key={category.id}>
+                <td>
+                  {category.name}
+                  <i>
+                    (Catégorie)
+                  </i>
+                  </td>
               </tr>
             ))}
           </tbody>
