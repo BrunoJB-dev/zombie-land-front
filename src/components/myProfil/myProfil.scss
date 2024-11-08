@@ -37,13 +37,13 @@
   align-items: center;
 }
 
-.button-profile {
+.button-profile, .button-profile-delete {
   display: flex;
   justify-content: flex-end;
   padding: 3rem;
 }
 
-.button-style {
+.button-style, .button-style-delete {
   font-size: 1rem;
   padding: 1rem 3rem;
 }
@@ -73,6 +73,12 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   background-color: #7fb4af;
+}
+
+.button-style-delete{
+  background-color: $colored-white;
+  border: $red 1px solid;
+  color: $red
 }
 
 @media (max-width: 1024px) {
