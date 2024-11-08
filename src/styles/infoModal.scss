@@ -1,0 +1,49 @@
+@import"./reset.scss";
+@import "./vars.scss";
+
+.modal-content{
+  display: block;
+  margin: 0 auto;
+  border-radius: 2rem;
+  background-color: #63878c;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;;
+}
+
+.modal-title{
+  display: block;
+  margin-bottom: 2rem;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;;
+}
+.modal-text{
+  color: aliceblue;
+  margin-right: 50rem;
+}
+.modal-car-park{
+  background-image: url(/public/MadMaxCar.jpg);
+  background-position: 50% 70%;
+}
+.modal-schedule{
+  background-image: url(/public/ClockTower.jpg);
+  background-position: 50% 30%;
+}
+.modal-disability{
+  background-image: url(/public/WheelchairGun.jpg);
+  background-position: 50% 20%;  
+}
+.modal-plan{
+  background-image: url(/public/CityII.jpg);
+  background-position: 50% 80%;  
+
+}
+.modal-car-park, .modal-disability, .modal-schedule, .modal-plan{
+  background-size: cover;
+}
+.access-img{
+  display: block;
+  margin: 0 auto;
+  border-radius: 2rem;
+  width: 40%;
+}
+
+
+

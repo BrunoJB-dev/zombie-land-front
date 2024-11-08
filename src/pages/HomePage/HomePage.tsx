@@ -3,11 +3,16 @@ import instanceAxios from "../../utils/axios";
 import { useNavigate } from 'react-router-dom';
 import type { Attraction } from "../../@types/attraction";
 import AttractionList from '../../components/AttractionList/AttractionList';
+import Modal from '../../components/Modal/Modal';
+import InfoCarPark from '../../components/InfoCarPark/InfoCarPark';
+import InfoDisability from '../../components/InfoDisabilityAccess/InfoDisability';
+import InfoSchedules from '../../components/InfoSchedules/InfoSchedules';
+import InfoPlan from '../../components/InfoPlan/InfoPlan';
 import "./HomePage.scss";
 
 function HomePage() {
   const [randomAttractions, setRandomAttractions] = useState<Attraction[]>([]);
-  const [modalContent, setModalContent] = useState('');
+  const [modalType, setModalType] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -15,21 +20,21 @@ function HomePage() {
     navigate('/attractions'); 
   };
 
-  // Définir le contenu pour chaque icône
-  const iconContent = {
+  /*const iconContent = {
     horaires: 'Informations sur les horaires : Le parc est ouvert de 10h à 22h.',
     plan: 'Informations sur le plan du parc : Consultez notre plan interactif.',
     acces: 'Informations sur l\'accès au parc : Nous avons des parkings disponibles.',
     accessibilite: 'Informations sur l\'accessibilité : Le parc est accessible aux personnes à mobilité réduite.'
-  };
+  };*/
 
-  const handleIconClick = (key) => {
-    setModalContent(iconContent[key]); // Récupérer le contenu correspondant à la clé
+  const handleIconClick = (type: string) => {
+    setModalType(type);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setModalType(null); // Réinitialise le type pour éviter d'afficher le contenu précédent
   };
 
   useEffect(() => {
@@ -79,14 +84,13 @@ Que vous soyez un amateur de sensations fortes ou un passionné d'horreur, Zombi
         </span>  
       </section>
       
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal} onKeyDown={closeModal}>&times;</span>
-            <p>{modalContent}</p>
-          </div>
-        </div>
-      )}
+      {/* Utilisation du composant Modal pour afficher le contenu spécifique */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {modalType === 'horaires' && <InfoSchedules />}
+        {modalType === 'plan' && <InfoPlan />}
+        {modalType === 'acces' && <InfoCarPark />}
+        {modalType === 'accessibilite' && <InfoDisability />}
+      </Modal>
     </>
   );
 }
