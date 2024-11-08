@@ -34,7 +34,7 @@ function myProfile() {
   const confirmDelete = () => {
     instanceAxios.delete('/api/profile/del').then(() => {});
     setIsModalOpen(false);
-    navigate('/')
+    navigate('/');
     logout();
   };
 
@@ -124,26 +124,28 @@ function myProfile() {
         </button>
       </div>
       {isModalOpen && (
-        <div className="modal">
+        <div className="modal modal-myprofile">
           <h4>Confirmer la suppression</h4>
           <p>
             Êtes-vous sûr de vouloir supprimer votre profil ? Cette action est
             irréversible.
           </p>
-          <button
-            type="button"
-            className="button-confirm"
-            onClick={confirmDelete}
-          >
-            Confirmer
-          </button>
-          <button
-            type="button"
-            className="button-cancel"
-            onClick={cancelDelete}
-          >
-            Annuler
-          </button>
+          <div className='button-myprofile'>
+            <button
+              type="button"
+              className="button-confirm"
+              onClick={confirmDelete}
+            >
+              Confirmer
+            </button>
+            <button
+              type="button"
+              className="button-cancel"
+              onClick={cancelDelete}
+            >
+              Annuler
+            </button>
+          </div>
         </div>
       )}
     </div>

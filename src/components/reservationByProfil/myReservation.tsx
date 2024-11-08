@@ -1,18 +1,75 @@
-import { useEffect, useState } from "react";
-import instanceAxios from "../../utils/axios";
-import type { Reservation } from "../../@types/reservation";
+import { useEffect, useState } from 'react';
+import instanceAxios from '../../utils/axios';
+import { useNavigate } from 'react-router-dom';
+import type { Reservation } from '../../@types/reservation';
+import { differenceInDays } from 'date-fns';
 
-import "./myReservation.scss";
+import './myReservation.scss';
 
 function MyReservation() {
   const [reservations, setReservations] = useState<Reservation[]>([]);
-
+  const [reservationsWithDays, setReservationsWithDays] = useState<
+    { reservation: Reservation; diffInDays: number }[]
+  >([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedReservationId, setSelectedReservationId] = useState<
+    number | null
+  >(null);
+  const navigate = useNavigate();
+ 
   useEffect(() => {
     instanceAxios.get('/api/profile/reservation').then(({ data }) => {
       setReservations(data);
-      // console.log(data);
+      
     });
-  },[]);
+  }, []);
+
+  const handleDelete = (reservationId: number) => {
+    setSelectedReservationId(reservationId);
+    setIsModalOpen(true);
+  };
+
+  const confirmDelete = () => {
+    instanceAxios
+      .delete('/api/profile/reservation/del', {
+        data: { reservationId: selectedReservationId },
+      })
+      .then(() => {
+        setReservations(
+          reservations.filter(
+            (reservation) => reservation.id !== selectedReservationId,
+          ),
+        );
+        setIsModalOpen(false);
+        navigate('/profile');
+      });
+  };
+
+  const cancelDelete = () => {
+    setIsModalOpen(false);
+  };
+
+
+  //Fonction pour calculer la différence entre la date du jour et la date de réservation
+  
+ // const daysDifference = (reservationDate: string) => {
+   // const today = new Date();
+ //   const reservationDay = new Date(); //comment recup la date de chaque resa ?
+ //  const diffInDays = differenceInDays(reservationDay, today);
+   //setDiff(diffInDays)
+ // }
+
+useEffect(()=> {
+  const today = new Date();
+    const reservationsWithDays = reservations.map((reservation) => {
+      const reservationDay = new Date(reservation.date);
+      const diffInDays = differenceInDays(reservationDay, today);
+      return { reservation, diffInDays };
+    });
+    setReservationsWithDays(reservationsWithDays);
+  }, [reservations]);
+
+
 
   return (
     <div className="my-reservation">
@@ -21,22 +78,25 @@ function MyReservation() {
       </div>
 
       <div className="my-reservation-test">
-        {reservations.length > 0 ? (
-          reservations.map((reservation) => (
-            <div key={reservation.user_id} className="my-reservation-border">
+        {reservationsWithDays.length > 0 ? (
+          reservationsWithDays.map(({reservation, diffInDays}) => (
+            
+            <div key={reservation.id} className="my-reservation-border">
               <div className="my-reservation-head">
                 <img src="../../../public/favicon.jpg" alt="Favicon" />
                 <div>
                   <p className="my-reservation-billet">
                     {reservation.ticket} Billet(s) Daté(s) 1 jour
                   </p>
-                  <p className="reservation-date">Valable le {reservation.date}</p>
+                  <p className="reservation-date">
+                    Valable le {reservation.date}
+                  </p>
                   <p>Annulation possible jusqu'à 10 jours</p>
                 </div>
               </div>
               <div className="my-reservation-content">
                 <div className="my-reservation-price">
-                  <p>x</p>
+                  <p>{reservation.ticket}x</p>
                   <p className="my-space"> </p>
                   <p>60 €</p>
                 </div>
@@ -46,10 +106,41 @@ function MyReservation() {
                 </div>
               </div>
               <div className="my-reservation-button">
-                <button className="reservation-button" type="submit">
+              {diffInDays >= 10 && (
+                <button
+                  className="reservation-button"
+                  type="button"
+                  onClick={() => {handleDelete(reservation.id);}}
+                >
                   Annuler
                 </button>
+        )}
               </div>
+              {isModalOpen && (
+                <div className="modal modal-myprofile">
+                  <h4>Confirmer la suppression</h4>
+                  <p>
+                    Êtes-vous sûr de vouloir annuler votre réservation ? Cette
+                    action est irréversible.
+                  </p>
+                  <div className="button-myprofile">
+                    <button
+                      type="button"
+                      className="button-confirm"
+                      onClick={confirmDelete}
+                    >
+                      Confirmer
+                    </button>
+                    <button
+                      type="button"
+                      className="button-cancel"
+                      onClick={cancelDelete}
+                    >
+                      Annuler
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           ))
         ) : (
