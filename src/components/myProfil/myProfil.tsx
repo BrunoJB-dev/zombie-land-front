@@ -7,7 +7,9 @@ import avatarHomme from '../../../public/avatar-homme.webp';
 import type { User } from '../../@types/user';
 import './myProfil.scss';
 
+
 function myProfile() {
+  
   const [selectedAvatar, setSelectedAvatar] = useState(avatarFemme);
   const [user, setUser] = useState<User>();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +20,7 @@ function myProfile() {
   const [email, setEmail] = useState('');
   const [adress, setAdress] = useState('');
   const [postalCode, setPostalCode] = useState('');
-  const [country, setCountry] = useState('');
+  const [city, setCity] = useState('');
 
   const { logout } = useAuth();
 
@@ -42,7 +44,7 @@ function myProfile() {
       setEmail(data.email);
       setAdress(data.adress);
       setPostalCode(data.postal_code);
-      setCountry(data.country);
+      setCity(data.city);
     });
   }, []);
 
@@ -54,6 +56,8 @@ function myProfile() {
   };
 
     const handleUpdate = async () => {
+      
+      setSuccessMessage(null);
       try {
         await instanceAxios.patch('/api/profile/update', {
           firstname,
@@ -62,14 +66,17 @@ function myProfile() {
           email,
           adress,
           postal_code: postalCode,
-          country
+          city
         });
-        alert("Informations mises à jour avec succès");
+        setSuccessMessage('Vous avez mis à jour vortre profil avec succès !');
       } catch (error) {
         console.error("Erreur lors de la mise à jour du profil :", error);
         alert("Échec de la mise à jour");
       }
     };
+
+
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
 
   const handleDelete = () => {
@@ -151,12 +158,11 @@ function myProfile() {
           <div>
             <label htmlFor="country">Ville</label>
             <input type="text" id="country" placeholder="Ville*" 
-            defaultValue={user?.country}
-            onChange={(e) => setCountry(e.target.value)}
+            defaultValue={user?.city}
+            onChange={(e) => setCity(e.target.value)}
             />
           </div>
         </div>
-
         <div className="avatar-profil">
           <img className="avatar" src={selectedAvatar} alt="avatar" />
           <select
@@ -172,10 +178,18 @@ function myProfile() {
         </div>
       </div>
       <div className="button-profile">
+
+        <div>
+          {successMessage && (
+                  <p className="success-message">{successMessage}</p>
+                )}
+        </div>
+        
         <button className="button-style" type="button" onClick={handleUpdate}>
           Modifier mes informations
         </button>
       </div>
+
       <div className="button-profile-delete">
         <button
           className="button-style-delete"

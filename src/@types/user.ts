@@ -6,5 +6,5 @@ export type User = {
   pseudo: string
   adress: string
   postal_code: string
-  country: string
+  city: string
 }
