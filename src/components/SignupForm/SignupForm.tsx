@@ -24,6 +24,7 @@ function SignUpForm() {
 
 //* Variable qui gère l'envoi des données au back pour enregistrer un nouvel utilisateur
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    
     event.preventDefault();
 
     //On vérifie que les deux mots de passe coïncident, si oui, on envoie
