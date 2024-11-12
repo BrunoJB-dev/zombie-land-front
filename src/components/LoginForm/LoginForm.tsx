@@ -15,7 +15,7 @@ const LoginForm = ({onClose} : LoginFormProps) => {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState('fa-regular fa-eye-slash');
 
-  
+
   const handleToggle = () => {
     if (type === 'password') {
       setIcon('fa-regular fa-eye');
