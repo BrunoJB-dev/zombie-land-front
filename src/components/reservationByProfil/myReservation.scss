@@ -67,15 +67,19 @@
 
 .my-reservation-button {
   display: flex;
-  justify-content: flex-end;
+width: 100%;
+gap: 1vh;
+justify-content: space-between;
 }
 
 .reservation-button{
   background-color: $light-green;
   border: none;
   box-shadow: $dark-black 0px 1px 2px 0px, $dark-black 0px 2px 6px 2px;
-  padding: 0.5vh 4vh;
+  padding: 0.5vh 1vh;
   font-weight: normal;
+  width: 45%;
+  text-align: center;
 }
 
 .my-reservation-price{
@@ -130,6 +134,3 @@ font-size: large;
   gap: 3vh;
 }
 
-.button-qui-sert-a-r {
-  width: 5px;
-}
