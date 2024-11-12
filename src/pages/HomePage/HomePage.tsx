@@ -9,6 +9,7 @@ import InfoDisability from '../../components/InfoDisabilityAccess/InfoDisability
 import InfoSchedules from '../../components/InfoSchedules/InfoSchedules';
 import InfoPlan from '../../components/InfoPlan/InfoPlan';
 import "./HomePage.scss";
+import SearchBar from '../../components/SearchBar/SearchBar';
 
 function HomePage() {
   const [randomAttractions, setRandomAttractions] = useState<Attraction[]>([]);
@@ -48,6 +49,7 @@ function HomePage() {
       <div className="banner-homePage">
         <h1>Bienvenue à ZombieLand</h1>
       </div>
+      <SearchBar/>
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
 
