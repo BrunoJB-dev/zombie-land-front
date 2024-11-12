@@ -85,8 +85,6 @@ useEffect(()=> {
     setReservationsWithDays(reservationsWithDays);
   }, [reservations]);
 
-
-
   return (
     <div className="my-reservation">
       <div className="title-myReservation">
@@ -100,7 +98,8 @@ useEffect(()=> {
             <Carousel 
                 showThumbs={false} 
                 showStatus={false} 
-                infiniteLoop>
+                infiniteLoop
+                emulateTouch>
               {reservationsWithDays.map(({ reservation, diffInDays }) => (
                 <div key={reservation.id} className="my-reservation-border">
                   {/* Contenu de chaque réservation */}
