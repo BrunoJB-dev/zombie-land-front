@@ -3,13 +3,16 @@ import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
 import { AuthProvider } from './AuthContext';
 import { ToastContainer } from 'react-toastify';
+import {ReservationCalendarProvider} from './ReservationCalendarContext'
 import router from './router';
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     {/* L'authentification est sur toutes les routes ? */}
    <AuthProvider> 
+    <ReservationCalendarProvider>
     <RouterProvider router={router}/>
+   </ReservationCalendarProvider>
    </AuthProvider>
    <ToastContainer /> 
   </StrictMode>,
