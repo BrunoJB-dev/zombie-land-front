@@ -6,6 +6,7 @@ import "./Header.scss";
 import SignUpForm from "../SignupForm/SignupForm.tsx";
 import LoginForm from "../LoginForm/LoginForm.tsx";
 import Modal from "../Modal/Modal.tsx";
+import SearchBar from "../SearchBar/SearchBar.tsx";
 
 
 function Header() {
