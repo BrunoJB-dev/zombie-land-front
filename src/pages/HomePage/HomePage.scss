@@ -48,7 +48,8 @@ h2{
 }
 
 .parc-presentation img{
-  grid-column: 1;  
+  grid-column: 1;
+    
 }
 
 .parc-presentation p{
@@ -105,4 +106,60 @@ span{
   background-color:#7fb4af;
   padding: 2rem;
 
+}
+
+/* Responsive pour les écrans de moins de 768px */
+@media (max-width: 767px){
+  .parc-presentation{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    background-color: black;
+    margin-bottom: 8rem;
+    padding-bottom: 5rem;
+  }
+  
+  .parc-presentation h3 {
+    grid-column: 1 / -1;
+    justify-self: start;
+    align-self: center;
+    background-color: black;
+    order: 1; /* Le titre apparaît en premier */
+    font-size: 1.5rem;
+  }
+  
+  .parc-presentation p {
+    grid-column: 1 / -1; /* Le texte occupe toute la largeur */
+    align-self: center;
+    color: aliceblue;
+    margin-left: 0;
+    text-align: center;
+    order: 2; /* Le texte vient après le titre */
+    font-size: small;
+    line-height: 1rem;
+  }
+  
+  .parc-presentation img {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    order: 3; /* L'image vient en dernier */
+    margin-top: 2rem;
+    
+  }
+  .info-icones {
+    display: none;
+  }
+  
+}
+/* Responsive pour les écrans entre 768px et 1024px */
+@media (min-width: 768px) and (max-width: 1024px){
+
+}
+/* Responsive pour les écrans de 1025px et plus */
+@media (min-width: 1025px){
+  
 }

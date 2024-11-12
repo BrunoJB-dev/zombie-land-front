@@ -9,52 +9,81 @@ section{
   justify-content: center;
 }
 
- .attraction-card {
-    display: flex;
-    flex-direction: column;
-    width: 30%; 
-    justify-content: space-between;
-    padding: $padding-content;
-    text-align: center;
-    
+
+.attraction-card {
+  display: flex;
+  flex-direction: column;
+  width: 30%; 
+  justify-content: space-between;
+  padding: $padding-content;
+  text-align: center;
+  margin: 0; /* Ajouté pour s'assurer qu'il n'y a pas de marges inutiles */
+}
+
+.attraction-card img {
+  height: 60%;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0; /* Ajouté pour éviter un espace entre l'image et le reste du contenu */
+}
+
+.attraction-card div {
+  background-color: $dark-green;
+  width: 100%;
+  height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $padding-content;
+  gap: 2vh;
+  border-radius: 0 0 10px 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  margin-top: 0; /* Supprime l'espace entre l'image et ce bloc */
+}
+
+.attraction-card div p {
+  background-color: $light-green;
+  padding: 0.5vh 1vh;
+  width: fit-content;
+  border-radius: 20px;
+  align-self: flex-end;
+  margin-top: 0; /* Supprime l'espace au-dessus du texte */
+}
+
+.attraction-card div h3 {
+  width: 100%;
+  margin-top: 0; /* Supprime l'espace au-dessus du titre */
+}
+
+.attraction-link {
+  background-color: $medium-green;
+  padding: 1vh 2vh;
+  width: fit-content;
+  border-radius: $border-radius;
+  align-self: flex-end;
+  height: fit-content;
+  margin-top: 0; /* Supprime l'espace avant le lien */
+}
+
+/* Responsive pour les petits écrans (moins de 768px) */
+@media (max-width: 767px) {
+  .attraction-card {
+    width: 100%; /* Les cartes prennent toute la largeur de l'écran sur les petits appareils */
+    margin-bottom: 2rem; /* Espace entre les cartes */
   }
 
-  .attraction-card img{
-    height: 60%;
-    border-radius: 10px 10px 0 0;
+  .attraction-card img {
+    height: 50%; /* Réduit la hauteur de l'image sur les petits écrans */
+    margin: none;
+  }
+}
+
+/* Responsive pour les écrans entre 768px et 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .attraction-card {
+    width: 45%; /* Les cartes prennent 45% de la largeur sur les écrans moyens */
   }
 
-  .attraction-card div{
-    background-color: $dark-green;
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: $padding-content;
-    gap: 2vh;
-    border-radius: 0 0 10px 10px ;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
+  .attraction-card img {
+    height: 55%; /* Ajuste la hauteur de l'image */
   }
-
-  .attraction-card div p {
-    background-color: $light-green;
-    padding: 0.5vh 1vh;
-    width: fit-content;
-    border-radius: 20px;
-    align-self: flex-end;
-  }
-
-  .attraction-card div h3 {
-    width: 100%;
-  }
-
-  .attraction-link {
-    background-color: $medium-green;
-    padding: 1vh 2vh;
-    width: fit-content;
-    border-radius: $border-radius;
-    align-self: flex-end;
-    height: fit-content;
-  }
+}
