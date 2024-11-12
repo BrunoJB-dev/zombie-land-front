@@ -201,8 +201,7 @@ function MyReservation() {
 
       <div className="my-reservation-test">
         {reservationsWithDays.length > 0 ? (
-        
-          
+                 
           isMobile ? (
             <Carousel 
                 showThumbs={false} 
