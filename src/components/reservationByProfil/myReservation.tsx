@@ -1,18 +1,21 @@
 import { useEffect, useState } from 'react';
 import instanceAxios from '../../utils/axios';
-import { useNavigate } from 'react-router-dom';
 import type { Reservation } from '../../@types/reservation';
 import { differenceInDays } from 'date-fns';
 import ReservationCalendar from '../ReservationCalendar/ReservationCalendar';
+
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 
 import './myReservation.scss';
 
 function MyReservation() {
   // Déclaration des types pour les props du composant ReservationRecap
-  type ReservationRecapProps = {
+  /* type ReservationRecapProps = {
     startDate: Date | null;
     number: number;
-  };
+  }; */
 
   // Type pour le tableau de disponibilités
   type AvailabilityData = AvailabilityItem[];
@@ -44,9 +47,19 @@ function MyReservation() {
 
   // Définit l'état pour le nombre de billets réservés (initialisé à 0)
   const [number, setNumber] = useState<number>(0);
-  const navigate = useNavigate();
 
   // Fonction pour récupérer les réservations et mettre à jour l'état
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+
+    // Détection du changement de taille de l'écran
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 1024);
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
   const fetchReservations = () => {
     instanceAxios.get('/api/profile/reservation').then(({ data }) => {
       setReservations(data);})};
@@ -188,7 +201,72 @@ function MyReservation() {
 
       <div className="my-reservation-test">
         {reservationsWithDays.length > 0 ? (
-          reservationsWithDays.map(({ reservation, diffInDays }) => (
+        
+          
+          isMobile ? (
+            <Carousel 
+                showThumbs={false} 
+                showStatus={false} 
+                infiniteLoop>
+              {reservationsWithDays.map(({ reservation, diffInDays }) => (
+                <div key={reservation.id} className="my-reservation-border">
+                  {/* Contenu de chaque réservation */}
+                  <div className="my-reservation-head">
+                    <img src="../../../public/favicon.jpg" alt="Favicon" />
+                    <div>
+                      <p className="my-reservation-billet">
+                        {reservation.ticket} Billet(s) Daté(s) 1 jour
+                      </p>
+                      <p className="reservation-date">
+                        Valable le {reservation.date}
+                      </p>
+                      <p>Annulation possible jusqu'à 10 jours</p>
+                    </div>
+                  </div>
+                  <div className="my-reservation-content">
+                    <div className="my-reservation-price">
+                      <p>{reservation.ticket}x</p>
+                      <p className="my-space"> </p>
+                      <p>60 €</p>
+                    </div>
+                    <div className="reservation-total">
+                      <p className="my-totale-text">TOTAL</p>
+                      <p className="my-total-price">{reservation.total_price} €</p>
+                    </div>
+                  </div>
+                  <div className="my-reservation-button">
+                    {diffInDays >= 10 && (
+                      <button
+                        className="reservation-button"
+                        type="button"
+                        onClick={() => { handleDelete(reservation.id); }}
+                      >
+                        Annuler
+                      </button>
+                    )}
+                  </div>
+                  {isModalOpen && (
+                    <div className="modal modal-myprofile">
+                      <h4>Confirmer la suppression</h4>
+                      <p>Êtes-vous sûr de vouloir annuler votre réservation ? Cette action est irréversible.</p>
+                      <div className="button-myprofile">
+                        <button type="button" className="button-confirm" onClick={confirmDelete}>
+                          Confirmer
+                        </button>
+                        <button type="button" className="button-cancel" onClick={cancelDelete}>
+                          Annuler
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </Carousel>
+
+          ) : (
+            
+          reservationsWithDays.map(({reservation, diffInDays}) => (
+            
             <div key={reservation.id} className="my-reservation-border">
               <div className="my-reservation-head">
                 <img src="../../../public/favicon.jpg" alt="Favicon" />
@@ -263,7 +341,7 @@ function MyReservation() {
                 </div>
               )}
               {isModalUpdateOpen && (
-                <div className="modal modal-myprofile">
+                <div className="modal modal-myprofile modal-myprofile-update">
                   <h4>Modifier la réservation</h4>
                   <ReservationCalendar
                     startDate={startDate}
@@ -283,24 +361,26 @@ function MyReservation() {
                   {successMessage && (
                     <p className="success-message">{successMessage}</p>
                   )}
-                  <button
-                    type="button"
-                    className="button-confirm"
-                    onClick={confirmUpdate}
-                  >
-                    Confirmer
-                  </button>
-                  <button
-                    type="button"
-                    className="button-cancel"
-                    onClick={cancelUpdate}
-                  >
-                    Annuler
-                  </button>
+                  <div className='buttons-update'>
+                    <button
+                      type="button"
+                      className="button-confirm"
+                      onClick={confirmUpdate}
+                    >
+                      Confirmer
+                    </button>
+                    <button
+                      type="button"
+                      className="button-cancel"
+                      onClick={cancelUpdate}
+                    >
+                      Annuler
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
-          ))
+          )))
         ) : (
           <p>Aucune réservation disponible.</p>
         )}

@@ -134,3 +134,71 @@ font-size: large;
   gap: 3vh;
 }
 
+
+@media (max-width: 2160px) {
+  .myProfile {
+    max-width: 80%;
+  }
+  .my-reservation {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1580px) {
+  .my-reservation-border{
+    width: 30%;
+  }
+}
+
+@media (max-width: 1780px) {
+  .myProfile {
+    max-width: 90%;
+  }
+  .my-reservation {
+    max-width: 90%;
+    margin: 3vh 5vh;
+  }
+}
+
+@media (max-width: 1300px) {
+  .my-reservation-test {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .my-reservation-border {
+    width: 50%;
+    margin: 3vh auto;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .my-reservation-test {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .my-reservation-border {
+    width: 80%;
+    margin: 3vh auto;
+  }
+}
+
+.modal-myprofile-update{
+  background-color: $medium-green;
+  z-index: 5;
+}
+
+.reservation-calendar{
+  width: 100%;
+}
+
+.buttons-update{
+  display: flex;
+  gap: 2vh;
+}
