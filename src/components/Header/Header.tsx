@@ -28,7 +28,7 @@ function Header() {
         </button>
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
           <SignUpForm />
-          <LoginForm />
+          <LoginForm onClose={() => setIsModalOpen(false)}/>
         </Modal>
       </div>
       <Link className="booking" to="/reservation">Réserver</Link>

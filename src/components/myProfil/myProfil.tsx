@@ -12,8 +12,8 @@ function myProfile() {
   
   const [selectedAvatar, setSelectedAvatar] = useState(avatarFemme);
   const [user, setUser] = useState<User>();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [firstname, setFirstname] = useState('');
   const [lastname, setLastname] = useState('');
   const [pseudo, setPseudo] = useState('');

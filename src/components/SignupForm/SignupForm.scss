@@ -24,10 +24,20 @@
     justify-content: space-between;
     margin:0;
     gap: 1vh;
+
+    div {
+      display: flex;
+    }
+
+    .fa-eye, .fa-eye-slash {
+      position: absolute;
+      font-weight: 600;
+      margin-left: 0.5vh;
+    }
   }
 
   .password div, .identity div {
-    width: 47%;
+    width: 45%;
   }
 
   #password, #passwordConfirmation, #lastname, #firstname{
