@@ -49,7 +49,7 @@ function HomePage() {
       <div className="banner-homePage">
         <h1>Bienvenue à ZombieLand</h1>
       </div>
-      <SearchBar/>
+      
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
 
