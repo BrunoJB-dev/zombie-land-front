@@ -1,88 +1,72 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import instanceAxios from '../../utils/axios.ts';
-import type { Attraction, Category } from '../../@types/attraction.ts';
+import type { Attraction } from '../../@types/attraction.ts';
+import './SearchBar.scss';
+
 
 function SearchBar() {
+  // State to manage the current search input from the user
   const [searchInput, setSearchInput] = useState<string>('');
+  
+  // State to store the list of all attractions retrieved from the API
   const [attractions, setAttractions] = useState<Attraction[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  
+  // State to store the filtered list of attractions based on the search input
   const [filteredAttractions, setFilteredAttractions] = useState<{ name: string, id: string }[]>([]);
-  const [filteredCategories, setFilteredCategories] = useState<{ name: string, id: string }[]>([]);
 
+  // Initialize the navigation hook to programmatically navigate to other routes
   const navigate = useNavigate();
 
+  // Fetch attractions from the API once the component mounts
   useEffect(() => {
     instanceAxios.get('/api/attractions').then(({ data }) => setAttractions(data));
-    instanceAxios.get('/api/attractions/categories').then(({ data }) => setCategories(data));
   }, []);
 
+  // Handle changes in the search input field by updating the searchInput state
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
+  // Filter attractions based on the search input whenever searchInput or attractions change
   useEffect(() => {
-    let filteredAttractionsList = [];
-    let filteredCategoriesList = [];
-
-    if (searchInput.length > 0) {
-      if (searchInput.toLowerCase().startsWith('att')) {
-        filteredAttractionsList = attractions.filter((attraction) =>
+    const filteredAttractionsList = searchInput.length > 0
+      ? attractions.filter((attraction) =>
           attraction.name.toLowerCase().includes(searchInput.toLowerCase())
-        );
-      } else if (searchInput.toLowerCase().startsWith('cat')) {
-        filteredCategoriesList = categories.filter((category) =>
-          category.name.toLowerCase().includes(searchInput.toLowerCase())
-        );
-      } else {
-        filteredAttractionsList = attractions.filter((attraction) =>
-          attraction.name.toLowerCase().includes(searchInput.toLowerCase())
-        );
-        filteredCategoriesList = categories.filter((category) =>
-          category.name.toLowerCase().includes(searchInput.toLowerCase())
-        );
-      }
-    }
-
+        )
+      : [];
+      
+    // Update the filteredAttractions state with the filtered list
     setFilteredAttractions(filteredAttractionsList);
-    setFilteredCategories(filteredCategoriesList);
-  }, [searchInput, attractions, categories]);
-
-  const handleCategoryClick = (categoryId: string) => {
-    navigate(`/attractions`, { state: { categoryId } });
-  };
+  }, [searchInput, attractions]);
 
   return (
-    <div>
+    <div className='searchBarContainer'>
       <input
         type="search"
         placeholder="Rechercher"
         onChange={handleChange}
         value={searchInput}
+        className='searchInput'
       />
-      {searchInput.length > 0 && (filteredAttractions.length > 0 || filteredCategories.length > 0) && (
-        <table>
-          <tbody>
-            {filteredAttractions.map((attraction) => (
-              <tr key={attraction.id}>
-                <td>
-                  <Link to={`/attractions/${attraction.id}`}>
-                    {attraction.name} <i>(Attraction)</i>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-            {filteredCategories.map((category) => (
-              <tr key={category.id}>
-                <td>
-                  <button type='button' onClick={() => handleCategoryClick(category.id)}>
-                    {category.name} <i>(Catégorie)</i>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      
+      {/* Table des résultats de recherche flottante */}
+      {searchInput.length > 0 && filteredAttractions.length > 0 && (
+        <div className='resultsContainer'>
+          <table className='resultsTable'>
+            <tbody>
+              {filteredAttractions.map((attraction) => (
+                <tr key={attraction.id}>
+                  <td className='resultItem'>
+                    <Link to={`/attractions/${attraction.id}`}>
+                      {attraction.name} <i>(Attraction)</i>
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
