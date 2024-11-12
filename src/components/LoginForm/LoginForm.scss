@@ -34,11 +34,24 @@
     margin: 1.5vh 0;
   }
 
+  .password-div{
+    display: flex;
+  
+    .fa-eye, .fa-eye-slash {
+      position: absolute;
+      font-weight: 600;
+      margin-left: 1vh;
+    }
+  
+  }
+
   input {
     background-color: $medium-green;
     border: solid 2px $colored-white;
     width: -webkit-fill-available;
   }
+
+
 
   p {
     font-weight: bold;
