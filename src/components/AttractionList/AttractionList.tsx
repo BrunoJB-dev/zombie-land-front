@@ -12,8 +12,8 @@ function AttractionList({ items }: AttractionListProps) {
     <section>
       {items.map((attraction) => (
         <div className='attraction-card' key={attraction.id}>
-          <img src={`http://localhost:3000/${attraction.image}`} alt="" />
-          <div>
+          <img src={`http://localhost:3000/${attraction.image}`} alt={attraction.name}/>
+          <div className='attraction-title'>
             <p>{attraction.categories[0].name}</p>
             <h3> {attraction.name}</h3>
             <Link className='attraction-link' to={`/attractions/${attraction.id}`}>Je découvre</Link>
