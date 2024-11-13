@@ -1,7 +1,9 @@
+import "./informationPage.scss";
+
 function InformationPage() {
   return (
     <div>
-      <article>
+      <article className="information-footer">
         <div>
           <h2 id="mentions-legales">Mentions légales</h2>
           <p>Dernière mise à jour : 13/11/2024</p>
@@ -36,7 +38,7 @@ function InformationPage() {
           <p>Les présentes mentions légales sont soumises au droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront compétents.</p>
         </div>
       </article>
-      <article>
+      <article className="information-footer">
         <div>
           <h2 id="cgu">Conditions Générales d'Utilisation (CGU)</h2>
           <p>Dernière mise à jour : 13/11/2024</p>
@@ -83,7 +85,7 @@ function InformationPage() {
           <p>Les présentes CGU sont soumises au droit français. En cas de litige et en l'absence de solution amiable, les tribunaux français seront compétents</p>
         </div>
       </article>
-      <article>
+      <article className="information-footer">
         <div>
           <h2 id="cgv">Conditions Générales de Vente (CGV)</h2>
           <p>Dernière mise à jour : 24/11/2024</p>
