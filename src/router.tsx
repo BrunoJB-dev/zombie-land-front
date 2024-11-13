@@ -7,6 +7,7 @@ import ReservationPage from './pages/Reservation/ReservationPage';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import ProfilePage from './pages/myProfil/profilPage';
 import Error404 from './components/Error404/Error404';
+import InformationPage from './pages/InformationPage/InformationPage';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/reservation',
         element: <ReservationPage/>
+      },
+      {
+        path: '/informations',
+        element: <InformationPage/>
       },
       /**
        * Pour protéger une route, element prend des ()

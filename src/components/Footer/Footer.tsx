@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-
+import { HashLink} from "react-router-hash-link";
+// npm install react-router-hash-link
+// Si erreur Biome
+// npm install --save-dev @types/react-router-hash-link
 import "./Footer.scss"
+
 
 function Footer() {
   
@@ -19,16 +23,16 @@ function Footer() {
             <p>Aide</p>
             <Link to="/">Foire aux questions</Link>
             <Link to="/">Adresse</Link>
-            <Link to="/">Téléphone</Link>
+            <HashLink to="/informations#contact">Téléphone</HashLink>
           </div>
 
           <div className ="Tips">
             <p>Informations</p>
-            <Link to="/">Mentions Légales</Link>
-            <Link to="/">CGV / réservations</Link>
-            <Link to="/">CGU</Link>
-            <Link to="/">Politique vie privée et cookies</Link>
-            <Link to="/">Annulation / remboursement</Link>
+            <HashLink to="/informations#mentions-legales">Mentions Légales</HashLink>
+            <HashLink to="/informations#cgv">CGV / réservations</HashLink>
+            <HashLink to="/informations#cgu">CGU</HashLink>
+            <HashLink to="/informations#cookies">Politique vie privée et cookies</HashLink>
+            <HashLink to="/informations#annulation">Annulation / remboursement</HashLink>
           </div>
         </div>
     </div>
