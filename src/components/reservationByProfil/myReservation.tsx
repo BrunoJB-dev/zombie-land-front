@@ -201,13 +201,13 @@ function MyReservation() {
 
       <div className="my-reservation-test">
         {reservationsWithDays.length > 0 ? (
-        
-          
+                 
           isMobile ? (
             <Carousel 
                 showThumbs={false} 
                 showStatus={false} 
-                infiniteLoop>
+                infiniteLoop
+                emulateTouch>
               {reservationsWithDays.map(({ reservation, diffInDays }) => (
                 <div key={reservation.id} className="my-reservation-border">
                   {/* Contenu de chaque réservation */}
