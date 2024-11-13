@@ -22,7 +22,8 @@ function AttractionDetail({ detail }: AttractionListProps) {
             showThumbs={true}
             showStatus={false}
             infiniteLoop
-            stopOnHover>
+            stopOnHover
+            emulateTouch>
             <div>
               <img src={`http://localhost:3000/${detail.image}`} alt={detail.name} />
             </div>
