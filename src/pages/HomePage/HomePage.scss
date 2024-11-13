@@ -32,7 +32,7 @@ h2{
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto 1fr;
-  gap: 20px;
+  gap: 2re;
   align-items: start;
   background-color: black;
   margin-bottom: 8rem;
@@ -45,10 +45,15 @@ h2{
   justify-self: start;
   align-self: center;
   background-color: black;
+  
 }
 
 .parc-presentation img{
   grid-column: 1;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  
     
 }
 
@@ -76,8 +81,8 @@ span{
   background-color: #243037;
   color: aliceblue;
   padding-bottom: 3rem;
-  margin-left: 20rem;
-  margin-right: 20rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
   border-radius: 0.5rem;
 }
 .info-icones span{
@@ -110,6 +115,63 @@ span{
 
 /* Responsive pour les écrans de moins de 768px */
 @media (max-width: 767px){
+
+  h1{
+    font-size: 2rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  .parc-presentation{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    align-items: start;
+    background-color: black;
+    margin-bottom: 8rem;
+    padding-bottom: 5rem;
+  }
+  
+  .parc-presentation h3 {
+    grid-column: 1 / -1;
+    justify-self: start;
+    align-self: center;
+    background-color: black;
+    order: 1; /* Le titre apparaît en premier */
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .parc-presentation p {
+    grid-column: 1 / -1; /* Le texte occupe toute la largeur */
+    align-self: center;
+    color: aliceblue;
+    margin-left: 0;
+    text-align: center;
+    order: 2; /* Le texte vient après le titre */
+    font-size: small;
+    line-height: 1.5rem;
+  }
+  
+  .parc-presentation img {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto; 
+    object-fit: cover; 
+    order: 3; /* L'image vient en dernier */
+    margin-top: 2rem;
+    
+  }
+  .info-icones {
+    display: none;
+  }
+  
+}
+/* Responsive pour les écrans entre 768px et 1024px */
+@media (min-width: 768px) and (max-width: 1700px){
   .parc-presentation{
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -137,29 +199,29 @@ span{
     margin-left: 0;
     text-align: center;
     order: 2; /* Le texte vient après le titre */
-    font-size: small;
-    line-height: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
   
   .parc-presentation img {
     grid-column: 1 / -1;
     width: 100%;
     height: auto; 
-    object-fit: cover; 
+    object-fit: cover;
     order: 3; /* L'image vient en dernier */
     margin-top: 2rem;
     
-  }
-  .info-icones {
-    display: none;
-  }
-  
+    
+    
 }
-/* Responsive pour les écrans entre 768px et 1024px */
-@media (min-width: 768px) and (max-width: 1024px){
+.info-icones{
+  margin: 0;
+}
 
-}
+
+
 /* Responsive pour les écrans de 1025px et plus */
 @media (min-width: 1025px){
   
+}
 }

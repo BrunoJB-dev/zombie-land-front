@@ -17,19 +17,17 @@ section{
   justify-content: space-between;
   padding: $padding-content;
   text-align: center;
-  margin: 0; /* Ajouté pour s'assurer qu'il n'y a pas de marges inutiles */
 }
 
 .attraction-card img {
   height: 60%;
   border-radius: 10px 10px 0 0;
-  margin-bottom: 0; /* Ajouté pour éviter un espace entre l'image et le reste du contenu */
 }
 
 .attraction-card div {
   background-color: $dark-green;
   width: 100%;
-  height: auto; /* Permet à la hauteur de s'ajuster au contenu */
+  height: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -37,7 +35,7 @@ section{
   gap: 2vh;
   border-radius: 0 0 10px 10px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  margin-top: 0; /* Supprime l'espace entre l'image et ce bloc */
+  
 }
 
 .attraction-card div p {
@@ -46,12 +44,10 @@ section{
   width: fit-content;
   border-radius: 20px;
   align-self: flex-end;
-  margin-top: 0; /* Supprime l'espace au-dessus du texte */
 }
 
 .attraction-card div h3 {
   width: 100%;
-  margin-top: 0; /* Supprime l'espace au-dessus du titre */
 }
 
 .attraction-link {
@@ -61,29 +57,54 @@ section{
   border-radius: $border-radius;
   align-self: flex-end;
   height: fit-content;
-  margin-top: 0; /* Supprime l'espace avant le lien */
 }
 
-/* Responsive pour les petits écrans (moins de 768px) */
-@media (max-width: 767px) {
+@media (max-width: 2000px) {
   .attraction-card {
-    width: 100%; /* Les cartes prennent toute la largeur de l'écran sur les petits appareils */
-    margin-bottom: 2rem; /* Espace entre les cartes */
-  }
-
-  .attraction-card img {
-    height: 50%; /* Réduit la hauteur de l'image sur les petits écrans */
-    margin: none;
+    width: 30%; 
+    gap: 0vh;
+    padding: 2vh;
   }
 }
 
-/* Responsive pour les écrans entre 768px et 1024px */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1700px) {
   .attraction-card {
-    width: 45%; /* Les cartes prennent 45% de la largeur sur les écrans moyens */
+    width: 45%; 
   }
+}
 
-  .attraction-card img {
-    height: 55%; /* Ajuste la hauteur de l'image */
+@media (max-width: 1120px) {
+
+  .attraction-card {
+    width: 100%; 
+  }
+  section{
+    padding: 9vh;
+    padding-top: 5vh;
+    gap: 3vh;
+  }
+  .banner h1 {
+    font-size: 3vh;
+  }
+  .select-list {
+    margin: 10vh 0 0 9vh;
+  }
+}
+
+@media (max-width: 840px) {
+
+  .select-list {
+    margin: 10vh 0 0 9vh;
+  }
+  section{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    overflow-x: auto;
+    justify-content: space-around;
+  }
+  .attraction-card{
+    min-width: 80%;
+    flex: 0 0 auto;
   }
 }
