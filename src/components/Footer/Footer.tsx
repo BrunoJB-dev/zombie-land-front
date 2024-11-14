@@ -15,7 +15,7 @@ function Footer() {
           <div className="Visit">
              <p>Le parc</p>
              <Link to="/">Découvrez le parc</Link>
-             <Link to="/">Préparez votre visite</Link>
+             <Link to="/propos">A propos</Link>
              <Link to="/reservation">Billeterie</Link>
           </div>
           
