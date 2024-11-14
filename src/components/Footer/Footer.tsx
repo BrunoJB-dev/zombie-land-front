@@ -22,8 +22,8 @@ function Footer() {
           <div className ="Help">
             <p>Aide</p>
             <Link to="/">Foire aux questions</Link>
-            <Link to="/">Adresse</Link>
-            <HashLink to="/informations#contact">Téléphone</HashLink>
+            <HashLink to="/informations#adress">Adresse: Hébécrevon (50180)</HashLink>
+            <HashLink to="/informations#contact">Téléphone:  02-41-97-28-12 (numéro de téléphone fictif)</HashLink>
           </div>
 
           <div className ="Tips">

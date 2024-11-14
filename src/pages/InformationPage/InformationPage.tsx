@@ -1,8 +1,13 @@
+import LeafletMap from "../../components/Leaflet/LeafletMap";
 import "./informationPage.scss";
 
 function InformationPage() {
   return (
     <div>
+      <div id="adress" className="map">
+        <LeafletMap/> 
+        <p>Le parc "Zombieland est situé sur la commune d'Hébécrevon située dans le département de la Manche</p>
+      </div>
       <article className="information-footer">
         <div>
           <h2 id="mentions-legales">Mentions légales</h2>
@@ -10,7 +15,7 @@ function InformationPage() {
           <h3>Information générales</h3>
           <li>Nom du Site : "Zombieland"</li>
           <li>Éditeur du Site : Team Zombieland</li>
-          <li>Adresse de l'Éditeur : [Adresse postale de l'éditeur]</li>
+          <li>Adresse de l'Éditeur : Situé sur la commune d'Hébécrevon</li>
           <li id="contact">Téléphone : 02-41-97-28-12 (numéro de téléphone fictif)</li>
           <li>Adresse e-mail : zombieland.zombie@gmail.com (adresse email fictive)</li>
           <li>Numéro d'immatriculation : N° de siret: 123 456 789 00012 (numéro de SIRET fictif)</li>
