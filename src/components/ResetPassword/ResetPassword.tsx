@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import type React from 'react';
+import {useState} from 'react';
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import instanceAxios from '../../utils/axios';
 
@@ -11,17 +12,21 @@ export const ResetPassword: React.FC = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
+    //* Récupération du token généré en back dans l'url (coucou les QueryStrings)
     const token = searchParams.get('signature');
 
+    //* A la soumission du formulaire ...
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-
+        
+        //* Comparaison du mot de passe et de sa confirmation
         if(newPassword !== confirmPassword){
             setError('Les mots de passe ne sont pas similaire');
             return;
         }
 
         try {
+            //* Envoi des infos au back
             const response = await instanceAxios.post('/api/resetPassword', {
                 token,
                 newPassword
