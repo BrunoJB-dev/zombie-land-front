@@ -97,7 +97,7 @@ font-size: large;
 }
 
 .my-space{
-  width: 90%;
+  width: 70%;
   border-bottom: 2px $colored-white dotted;
 }
 
@@ -114,14 +114,7 @@ font-size: large;
   font-size: large;
 }
 
-.modal-myprofile{
-  background-image: none;
-  background-color: $red;
-  display: flex;
-  flex-direction: column;
-  gap: 3vh;
-  width: fit-content;
-}
+
 
 .modal-myprofile h4{
   font-size: xx-large;
@@ -205,11 +198,15 @@ font-size: large;
   gap: 2vh;
 }
 
-@media screen and (max-width: 1200px){
-
+@media screen and (max-width: 490px){
+.modal-myprofile-update{
+  padding: 1vh;
+  height: fit-content;
+}
 }
 
 .no-reservation{
   padding: 5vh;
   text-align: center;
 }
+

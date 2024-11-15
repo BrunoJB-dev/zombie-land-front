@@ -81,20 +81,7 @@ background-color: $dark-black;
   padding: 2vh;
   border-radius: $border-radius;
 }
-.modal{
-  text-align: center;
-  background-color: rgb(190, 59, 64, 0.7);
-  margin-right: 40rem;
-  margin-left: 40rem;
-  padding: 2rem;
-  color: aliceblue;
-  transition: opacity 1s ease-in-out;
-  position: fixed;
-  top: 20rem;
-  left: 0;
-  border-radius: 0.5rem;
 
-}
 .modal.show{
   opacity: 1;
 }

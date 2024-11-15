@@ -1,4 +1,4 @@
-import React from "react";import '../../styles/infoModal.scss';
+import '../../styles/infoModal.scss';
 
 function InfoDisability() {
   return (

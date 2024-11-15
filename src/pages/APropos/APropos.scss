@@ -1,0 +1,37 @@
+@import "../../styles/vars.scss";
+
+.a-propos {
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+}
+
+.article-apropos {
+  width: 60%;
+  padding-right: 3rem;
+  
+}
+
+.article-apropos p {
+  padding-bottom: 3vh;
+}
+
+.img-apropos {
+  width: 40%;
+  box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
+  border-radius: $border-radius;
+}
+
+.img-apropos img {
+  width: 100%;
+}
+
+@media (max-width: 1600px) {
+  .a-propos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-apropos {
+    width: 60%;
+  }
+}

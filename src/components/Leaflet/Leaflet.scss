@@ -1,0 +1,43 @@
+@import "../../styles/vars.scss";
+
+.leaflet-control-zoom {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+  display: flex;
+  border-radius: 0%;
+  color: #fff; 
+  display: flex;
+  padding: 0%;
+  border-color: #243037;
+}
+
+.leaflet-control-zoom-in span {
+  justify-content: center;
+  background-color: #63878c;
+}
+
+.leaflet-control-zoom-out span {
+  justify-content: center;
+  background-color: #63878c;
+}
+
+.leaflet-control-attribution {
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+}
+
+.leaflet-control-attribution a {
+  border: none;
+  background-color: #fff;
+  border-radius: 0%;
+  color: #243037;
+}
+
+
+
+
