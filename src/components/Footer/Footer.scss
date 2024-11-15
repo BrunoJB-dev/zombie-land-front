@@ -5,6 +5,8 @@
   background-repeat: repeat-x;
   background-size: contain;
   height: 100px;
+  margin-bottom: -1px;
+  z-index: 0;
 }
 
 .footer {
@@ -14,8 +16,9 @@
   padding: 4vh 5vh;
   gap: 5vh;
   justify-content: space-evenly;
-  position: relative;
-  top: -1px;
+
+  z-index: 0;
+
 
   div {
     display: flex;
@@ -32,5 +35,15 @@
       font-weight: 800;
       padding-bottom: 5px;
     }
+  }
+}
+
+@media screen and (max-width: 490px){
+  .footer .Help, .footer .Visit{
+    display: none;
+  }
+
+  .footer .Tips{
+    text-align: center;
   }
 }

@@ -16,6 +16,7 @@
   padding: $padding-content;
 }
 
+
 .reservation-container {
   display: flex;
   padding: $padding-content;
@@ -38,6 +39,9 @@ margin-bottom: 2vh;
  margin: 0;
 }
 
+.react-datepicker{
+z-index: 0;
+}
 .react-datepicker__day--selected{
   background-color: $dark-green;
 }
@@ -49,4 +53,11 @@ margin-bottom: 2vh;
 
 .react-datepicker__month-container{
   background-color: $colored-white;
+}
+
+@media screen and (max-width: 490px){
+  .reservation-container{
+    flex-direction: column;
+    align-items: center;
+  }
 }
