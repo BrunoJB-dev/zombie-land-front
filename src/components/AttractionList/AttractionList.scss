@@ -1,7 +1,6 @@
 @import "../../styles/vars.scss";
 
-section{
-  padding: $padding-container;
+.attraction-container{
   padding-top: 5vh;
   display: flex;
   flex-wrap: wrap;
@@ -9,11 +8,10 @@ section{
   justify-content: center;
 }
 
-
 .attraction-card {
   display: flex;
   flex-direction: column;
-  width: 30%; 
+  width: 50vh; 
   justify-content: space-between;
   padding: $padding-content;
   text-align: center;
@@ -40,6 +38,7 @@ section{
 
 .attraction-card div p {
   background-color: $light-green;
+  color: $colored-white;
   padding: 0.5vh 1vh;
   width: fit-content;
   border-radius: 20px;
@@ -59,107 +58,28 @@ section{
   height: fit-content;
 }
 
-@media (max-width: 2000px) {
-  .attraction-card {
-    width: 30%; 
-    gap: 0vh;
-    padding: 2vh;
-    justify-content: space-between;
-    padding: $padding-content;
-    text-align: center;   
-  }
-}
-
-@media (max-width: 1700px) {
-  .attraction-card {
-    width: 45%; 
-  }
-}
-
-  .attraction-card div{
-    background-color: $dark-green;
-    width: 100%;
-    height: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: $padding-content;
-    gap: 2vh;
-    border-radius: 0 0 10px 10px ;
-    //box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
-  }
-  section{
-    padding: 9vh;
-    padding-top: 5vh;
-    gap: 3vh;
-  }
-  .banner h1 {
-    font-size: 3vh;
-  }
-  .select-list {
-    margin: 10vh 0 0 9vh;
-  }
 
 
-@media (max-width: 840px) {
 
-  .select-list {
-    margin: 10vh 0 0 9vh;
-  }
-  section{
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    overflow-x: auto;
-    justify-content: space-around;
-  }
-  .attraction-card{
-    min-width: 80%;
-    flex: 0 0 auto;
-  }
-}
 
-  .attraction-title {
-    display: flex;
-  }
 
-  @media (max-width: 2000px) {
-    .attraction-card {
-      width: 30%; 
-      gap: 0vh;
-      padding: 2vh;
-    }
-  }
 
-  @media (max-width: 1700px) {
-    .attraction-card {
-      width: 45%;
-      
-    }
-  }
 
-  @media (max-width: 1120px) {
-    
-    .attraction-card {
-      width: 100%; 
-    }
-    section{
-      padding: 9vh;
-      padding-top: 5vh;
-      gap: 3vh;
-    }
-    .banner h1 {
-      font-size: 3vh;
-    }
-    .select-list {
-      margin: 10vh 0 0 9vh;
-    }
-  }
 
-  @media (max-width: 840px) {
 
-    .select-list {
-      margin: 10vh 0 0 9vh;
-    }
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

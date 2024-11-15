@@ -9,7 +9,7 @@ type AttractionListProps = {
 
 function AttractionList({ items }: AttractionListProps) {
   return (
-    <section>
+    <section className='attraction-container'>
       {items.map((attraction) => (
         <div className='attraction-card' key={attraction.id}>
           <img src={`http://localhost:3000/${attraction.image}`} alt={attraction.name}/>

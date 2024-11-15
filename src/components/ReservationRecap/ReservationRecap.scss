@@ -5,7 +5,7 @@
   background-color: $dark-green;
   color: $colored-white;
   border-radius: $border-radius;
-  width: 50%;
+  width: 100%;
   height: fit-content;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
@@ -21,6 +21,7 @@
 
 .reservation-head{
   display: flex;
+  align-items: center;
   gap: 2vh;
 }
 
@@ -37,7 +38,8 @@
 }
 
 .reservation-head img{
-  width: 10vh;
+  width: 100px;
+  height: 100px;
 }
 
 .reservation-content{
@@ -67,7 +69,7 @@ font-size: large;
 }
 
 .space{
-  width: 90%;
+  width: 70%;
   border-bottom: 2px $colored-white dotted;
 }
 
@@ -127,4 +129,24 @@ font-size: large;
     opacity: 0;
     visibility: hidden;
   }
+}
+
+@media screen and (max-width: 1024px){
+  .reservation-border button {
+    padding: 1vh 3vh;
+  }
+}
+
+@media screen and (max-width: 490px){
+  .reservation-price{
+    padding: 3vh 0;
+  }
+
+
+  .reservation-border{
+    border: none;
+    padding: 0
+  }
+
+  
 }
