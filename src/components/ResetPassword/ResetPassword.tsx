@@ -3,6 +3,7 @@ import {useState} from 'react';
 import {useNavigate, useSearchParams} from 'react-router-dom';
 import instanceAxios from '../../utils/axios';
 
+import "./ResetPassword.scss";
 
 export const ResetPassword: React.FC = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -46,21 +47,21 @@ export const ResetPassword: React.FC = () => {
             <div className='reset-password-container'>
                 {isSuccess ? (
                         <div className='success-message'>
-                            <p> Changement de mot de passe réalisé avec succès, Redirection vers la page d'accueil. </p>
+                            <p>Changement de mot de passe réalisé avec succès, Redirection vers la page d'accueil. </p>
                         </div>
                     ) : (
                         <form onSubmit={handleSubmit} >
-                            <h2>Reinitialiser votre mot de passe : </h2>
+                            <h2>Reinitialiser votre mot de passe</h2>
                             {error && <p>{error}</p>}
                             <div className='form-group'>
                                 <label htmlFor='newPassword'>Nouveau mot de passe : </label>
                                 <input type="password" id="newpassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
                             </div>
                             <div className='form-group'>
-                                <label htmlFor='confirmPassword'>Nouveau mot de passe : </label>
+                                <label htmlFor='confirmPassword'>Confirmer le nouveau mot de passe : </label>
                                 <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
                             </div>
-                            <button type="submit">Changer le mot de passe</button>
+                            <button className="reset-button" type="submit">Changer le mot de passe</button>
                         </form>
                     )
                 }
