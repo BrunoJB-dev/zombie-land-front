@@ -42,27 +42,29 @@ export const ResetPassword: React.FC = () => {
     }
 
     return (
-        <div className='reset-password-container'>
-            {isSuccess ? (
-                    <div className='success-message'>
-                        <p> Changement de mot de passe réalisé avec succès, Redirection vers la page d'accueil. </p>
-                    </div>
-                ) : (
-                    <form onSubmit={handleSubmit} >
-                        <h2>Reinitialiser votre mot de passe : </h2>
-                        {error && <p>{error}</p>}
-                        <div className='form-group'>
-                            <label htmlFor='newPassword'>Nouveau mot de passe : </label>
-                            <input type="password" id="newpassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+        <main>
+            <div className='reset-password-container'>
+                {isSuccess ? (
+                        <div className='success-message'>
+                            <p> Changement de mot de passe réalisé avec succès, Redirection vers la page d'accueil. </p>
                         </div>
-                        <div className='form-group'>
-                            <label htmlFor='confirmPassword'>Nouveau mot de passe : </label>
-                            <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                        </div>
-                        <button type="submit">Changer le mot de passe</button>
-                    </form>
-                )
-            }
-        </div>
+                    ) : (
+                        <form onSubmit={handleSubmit} >
+                            <h2>Reinitialiser votre mot de passe : </h2>
+                            {error && <p>{error}</p>}
+                            <div className='form-group'>
+                                <label htmlFor='newPassword'>Nouveau mot de passe : </label>
+                                <input type="password" id="newpassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+                            </div>
+                            <div className='form-group'>
+                                <label htmlFor='confirmPassword'>Nouveau mot de passe : </label>
+                                <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                            </div>
+                            <button type="submit">Changer le mot de passe</button>
+                        </form>
+                    )
+                }
+            </div>
+        </main>
     )
 }

@@ -34,23 +34,25 @@ export const ForgottenPassword: React.FC = ({onClose} : ForgottenPasswordProps) 
   }
 
   return (
-    <div className='lost-password-container'>
-      {isSuccess ? (
-        <div className='success-message'>
-          <p>Votre adresse mail a été bien confirmée. Un email de renouvellement vous a été envoyée à l'adresse indiquée.</p>
-        </div>
-        ) : (
-        <form onSubmit={handleSubmit}>
-          {error && <p>{error}</p>}
-          <h2>Veuillez saisir l'adresse mail du compte :</h2>
-          <div className='form-group'>
-            <label htmlFor='email'>Votre adresse mail : </label>
-            <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+    <main>
+      <div className='lost-password-container'>
+        {isSuccess ? (
+          <div className='success-message'>
+            <p>Votre adresse mail a été bien confirmée. Un email de renouvellement vous a été envoyée à l'adresse indiquée.</p>
           </div>
-          <button type="submit">Envoyer</button>
-        </form>
-        )
-      }
-    </div>
+          ) : (
+          <form className="forgotten-mail" onSubmit={handleSubmit}>
+            {error && <p>{error}</p>}
+            <h2>Veuillez saisir l'adresse mail du compte</h2>
+            <div className='form-group'>
+              <label htmlFor='email'>Votre adresse mail : </label>
+              <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            </div>
+            <button className="mail-button" type="submit">Envoyer</button>
+          </form>
+          )
+        }
+      </div>
+    </main>
   )
 }
