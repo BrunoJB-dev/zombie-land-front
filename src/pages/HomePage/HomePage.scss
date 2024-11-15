@@ -12,83 +12,74 @@
 .banner-homePage h1{
   margin: auto;
 }
+
 h2{
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 9vh;
 }
 
 .attractions-display-btn{
-  display: block;
-  margin: -5rem auto 7rem auto;
   background-color: #63878C;
   border: none;
   cursor: pointer;
 }
+
 .attractions-display-btn:hover{
   background-color: #BE3B40;
 }
 
 .parc-presentation{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto 1fr;
-  gap: 2re;
-  align-items: start;
-  background-color: black;
-  margin-bottom: 8rem;
-  padding-bottom: 5rem;
-
-}
-
-.parc-presentation h3{
-  grid-column: 1 / -1;
-  justify-self: start;
-  align-self: center;
-  background-color: black;
-  
-}
-
-.parc-presentation img{
-  grid-column: 1;
-  border-radius: 1rem;
-  width: 100%;
-  height: 100%;
-  
-    
-}
-
-.parc-presentation p{
-  grid-column: 2;
-  align-self: center;
-  color: aliceblue;
-  margin-left: 2rem;
-}
-
-.attraction-img{
-  display: block;
-  margin: 0;
-}
-span{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  
+  flex-direction: column;
+  background-color: $dark-black;
+  gap: 5vh;
+  padding: 5vh;
 }
+
+.parc-presentation div{
+  display: flex;
+  gap: 5vh;
+  align-items: center
+};
+
+.parc-presentation img {
+  width: 40%;
+  border-radius: $border-radius;
+}
+
+.parc-presentation p {
+  color: $colored-white;
+  width: 60%;
+}
+
+
+.parc-presentation h3 {
+background-color: $dark-black;
+}
+
+
 .info-icones{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2vh;
+  align-content: center;
   background-color: #243037;
+  justify-content: space-between;
   color: aliceblue;
-  padding-bottom: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  border-radius: 0.5rem;
+  margin: 9vh 15vh;
+  border-radius: $border-radius;
+  padding: 6vh 15vh;
 }
-.info-icones span{
+
+.info-icones div{
+  display: flex;
   background-color: #7fb4af;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  justify-content: space-between;
+
+  align-items: center;
+  gap: 2vh;
+  padding: 2vh;
+  border-radius: $border-radius;
 }
 .modal{
   text-align: center;
@@ -107,121 +98,86 @@ span{
 .modal.show{
   opacity: 1;
 }
-.modal-content{
-  background-color:#7fb4af;
-  padding: 2rem;
 
-}
 
-/* Responsive pour les écrans de moins de 768px */
-@media (max-width: 767px){
+.attractions-display-btn{
+  margin: 0 auto;
+  margin-bottom: 9vh;
+  display: flex;
+};
 
-  h1{
-    font-size: 2rem;
+@media screen and (max-width: 1023px){
+  .banner-homePage {
+    padding: 3vh;
   }
 
-  h2{
-    font-size: 2rem;
+  .banner-homePage h1{
+    width: 80%;
+    text-align: center;
+  }
+  .attractions-display-btn{
+    margin: 0 auto;
+    margin-bottom: 9vh;
+    display: flex;
+  };
+
+  .parc-presentation div {
+    flex-direction: column-reverse;
+    width: 100%;
   }
 
   .parc-presentation{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr;
-    gap: 20px;
-    align-items: start;
-    background-color: black;
-    margin-bottom: 8rem;
-    padding-bottom: 5rem;
-  }
-  
-  .parc-presentation h3 {
-    grid-column: 1 / -1;
-    justify-self: start;
-    align-self: center;
-    background-color: black;
-    order: 1; /* Le titre apparaît en premier */
-    font-size: 1.5rem;
     text-align: center;
   }
-  
+
   .parc-presentation p {
-    grid-column: 1 / -1; /* Le texte occupe toute la largeur */
-    align-self: center;
-    color: aliceblue;
-    margin-left: 0;
-    text-align: center;
-    order: 2; /* Le texte vient après le titre */
-    font-size: small;
-    line-height: 1.5rem;
-  }
-  
-  .parc-presentation img {
-    grid-column: 1 / -1;
     width: 100%;
-    height: auto; 
-    object-fit: cover; 
-    order: 3; /* L'image vient en dernier */
-    margin-top: 2rem;
-    
   }
+
+  .parc-presentation img {
+    width: 100%;
+  }
+
   .info-icones {
+    margin: 5vh;
+    padding: 5vh;
+    justify-content: center;
+  }
+
+  .info-icones div {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .info-icones div{
+    gap: 2vh;
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 490px){
+  .banner-homePage {
+    padding: 1vh;
+  }
+
+  .banner-homePage h1{
+    width: 90%;
+    text-align: center;
+  }
+
+  .attractions-display-btn{
+    margin: 0 2vh;
+    margin-bottom: 9vh;
+    display: flex;
+  };
+
+  .parc-presentation{
+    text-align: center;
+    padding: 5vh;
+  }
+
+  .info-icones{
     display: none;
   }
-  
-}
-/* Responsive pour les écrans entre 768px et 1024px */
-@media (min-width: 768px) and (max-width: 1700px){
-  .parc-presentation{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto 1fr;
-    gap: 20px;
-    align-items: start;
-    background-color: black;
-    margin-bottom: 8rem;
-    padding-bottom: 5rem;
-  }
-  
-  .parc-presentation h3 {
-    grid-column: 1 / -1;
-    justify-self: start;
-    align-self: center;
-    background-color: black;
-    order: 1; /* Le titre apparaît en premier */
-    font-size: 1.5rem;
-  }
-  
-  .parc-presentation p {
-    grid-column: 1 / -1; /* Le texte occupe toute la largeur */
-    align-self: center;
-    color: aliceblue;
-    margin-left: 0;
-    text-align: center;
-    order: 2; /* Le texte vient après le titre */
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-  
-  .parc-presentation img {
-    grid-column: 1 / -1;
-    width: 100%;
-    height: auto; 
-    object-fit: cover;
-    order: 3; /* L'image vient en dernier */
-    margin-top: 2rem;
-    
-    
-    
-}
-.info-icones{
-  margin: 0;
-}
-
-
-
-/* Responsive pour les écrans de 1025px et plus */
-@media (min-width: 1025px){
-  
-}
 }

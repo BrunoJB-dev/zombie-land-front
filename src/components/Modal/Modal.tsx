@@ -1,4 +1,6 @@
 import type { ReactNode } from "react";
+
+
 import './Modal.scss';
 
 interface ModalProps {
@@ -11,6 +13,7 @@ function Modal ({isOpen, onClose, children} : ModalProps) {
   if (!isOpen) {
     return null;
   }
+
 
   return (
 

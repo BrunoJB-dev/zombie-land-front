@@ -11,7 +11,7 @@
   margin: 4rem auto;
   border-radius: 20px;
   box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
-  max-width: 60%;
+  width: 60%;
 }
 
 .title-myReservation {
@@ -42,6 +42,7 @@
 
 .my-reservation-head{
   display: flex;
+  align-items: center;
   gap: 2vh;
 }
 
@@ -58,6 +59,7 @@
 
 .my-reservation-head img{
   max-width: 7vh;
+  max-height: 7vh;
 }
 
 .my-reservation-content{
@@ -137,10 +139,10 @@ font-size: large;
 
 @media (max-width: 2160px) {
   .myProfile {
-    max-width: 80%;
+    width: 80%;
   }
   .my-reservation {
-    max-width: 80%;
+    width: 80%;
   }
 }
 
@@ -152,10 +154,10 @@ font-size: large;
 
 @media (max-width: 1780px) {
   .myProfile {
-    max-width: 90%;
+    width: 90%;
   }
   .my-reservation {
-    max-width: 90%;
+    width: 90%;
     margin: 3vh 5vh;
   }
 }
@@ -201,4 +203,13 @@ font-size: large;
 .buttons-update{
   display: flex;
   gap: 2vh;
+}
+
+@media screen and (max-width: 1200px){
+
+}
+
+.no-reservation{
+  padding: 5vh;
+  text-align: center;
 }

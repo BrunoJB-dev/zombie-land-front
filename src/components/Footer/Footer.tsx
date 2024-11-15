@@ -17,7 +17,6 @@ function Footer() {
           
           <div className ="Help">
             <p>Aide</p>
-            <Link to="/">Foire aux questions</Link>
             <Link to="/">Adresse</Link>
             <Link to="/">Téléphone</Link>
           </div>

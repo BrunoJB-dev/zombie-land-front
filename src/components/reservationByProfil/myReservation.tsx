@@ -382,7 +382,7 @@ function MyReservation() {
             </div>
           )))
         ) : (
-          <p>Aucune réservation disponible.</p>
+          <p className='no-reservation'>Aucune réservation disponible.</p>
         )}
       </div>
     </div>

@@ -1,12 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { useAuth } from "../../AuthContext.tsx";
+import { useAuth } from '../../AuthContext.tsx';
+import { useEffect } from 'react';
 
-import "./Header.scss";
-import SignUpForm from "../SignupForm/SignupForm.tsx";
-import LoginForm from "../LoginForm/LoginForm.tsx";
-import Modal from "../Modal/Modal.tsx";
-import SearchBar from "../SearchBar/SearchBar.tsx";
+import './Header.scss';
+
+import SignUpForm from '../SignupForm/SignupForm.tsx';
+import LoginForm from '../LoginForm/LoginForm.tsx';
+import Modal from '../Modal/Modal.tsx';
+import SearchBar from '../SearchBar/SearchBar.tsx';
+import Burger from './Burger.tsx';
 
 function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,11 +21,21 @@ function Header() {
     setIsSearchBarVisible((prev) => !prev);
   };
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isModalOpen]);
+
   return (
     <>
       {/* Conteneur principal du Header */}
       <div className="header">
-        <Link className="logo" to='/'><img src="../../public/logo-zombieland.png" alt="logo zombieland" /></Link>
+        <Link className="logo" to="/">
+          <img src="../../public/logo-zombieland.png" alt="logo zombieland" />
+        </Link>
         <nav>
           <Link to="/">Accueil</Link>
           <Link to="/attractions">Découvrez les attractions</Link>
@@ -35,7 +48,11 @@ function Header() {
             onClick={toggleSearchBar} // Gérer le clic pour afficher/masquer la SearchBar
             style={{ cursor: 'pointer' }}
           />
-          <button type="button" className="user-button" onClick={() => setIsModalOpen(true)}>
+          <button
+            type="button"
+            className="user-button"
+            onClick={() => setIsModalOpen(true)}
+          >
             <i className="fa-solid fa-user fa-2xl" />
           </button>
           <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
@@ -43,7 +60,11 @@ function Header() {
             <LoginForm onClose={() => setIsModalOpen(false)} />
           </Modal>
         </div>
-        <Link className="booking" to="/reservation">Réserver</Link>
+        <Link className="booking" to="/reservation">
+          Réserver
+        </Link>
+
+        <Burger />
 
         {/* Bouton de déconnexion qui s'affiche uniquement si l'utilisateur est connecté */}
         {token && (
