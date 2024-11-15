@@ -13,6 +13,19 @@ export const ResetPassword: React.FC = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
 
+    //* Variables qui gèrent le changement d'icône et type du champ de mot de passe
+    const [type, setType] = useState('password');
+    const [icon, setIcon] = useState('fa-regular fa-eye-slash');
+    const handleToggle = () => {
+      if (type === 'password') {
+        setIcon('fa-regular fa-eye');
+        setType('text');
+      } else {
+        setIcon('fa-regular fa-eye-slash');
+        setType('password');
+      }
+    };
+
     //* Récupération du token généré en back dans l'url (coucou les QueryStrings)
     const token = searchParams.get('signature');
 
@@ -55,11 +68,13 @@ export const ResetPassword: React.FC = () => {
                             {error && <p>{error}</p>}
                             <div className='form-group'>
                                 <label htmlFor='newPassword'>Nouveau mot de passe : </label>
-                                <input type="password" id="newpassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+                                <input type={type} id="newpassword" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
+                                <i onClick={handleToggle} onKeyUp={handleToggle} className={icon} />
                             </div>
                             <div className='form-group'>
                                 <label htmlFor='confirmPassword'>Confirmer le nouveau mot de passe : </label>
-                                <input type="password" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                                <input type={type} id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                                <i onClick={handleToggle} onKeyUp={handleToggle} className={icon} />
                             </div>
                             <button className="reset-button" type="submit">Changer le mot de passe</button>
                         </form>
