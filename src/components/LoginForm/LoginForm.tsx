@@ -2,6 +2,7 @@ import './LoginForm.scss';
 
 import { useState } from 'react';
 import { useAuth } from '../../AuthContext';
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 interface LoginFormProps {
@@ -50,7 +51,7 @@ const LoginForm = ({onClose} : LoginFormProps) => {
           <input type={type} placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <span onClick={handleToggle} onKeyUp={handleToggle}><i className={icon}/></span>
         </div>
-        <p>Mot de passe oublié ?</p>
+        <p><Link to="/lost-password">Mot de passe oublié ?</Link></p>
         <div>
           <button type="submit">Se connecter</button>
         </div>
