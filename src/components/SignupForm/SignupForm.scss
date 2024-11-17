@@ -1,24 +1,22 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .SignUpSection {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
   padding: 10vh;
-  background-color: $light-green;
+  background-color: vars.$light-green;
   width: 50%;
   height: 60vh;
-  border-end-start-radius: $border-radius;
+  border-end-start-radius: vars.$border-radius;
   gap: 2vh;}
 
-
   .SignUpSection h2 {
-    background-color: $light-green;
+    background-color: vars.$light-green;
     padding: 0;
     margin: 0 auto;
 }
-
 
 .signup-form {
   display: flex;
@@ -31,10 +29,11 @@
 }
 
 .signup-form input {
-    background-color: $light-green;
-    border: solid 2px $colored-white;
-    width: 100%;
+  background-color: vars.$light-green;
+  border: solid 2px vars.$colored-white;
+  width: 100%;
 }
+
 .email {
   width: 100%;
 }
@@ -65,18 +64,18 @@
   }
 
 ::placeholder{
-  color: $colored-white;
+  color: vars.$colored-white;
 }
 
 ::-ms-input-placeholder {
-  color: $colored-white;
+  color: vars.$colored-white;
 }
 
 @media screen and (max-width: 1024px){
   .SignUpSection {
-  width: 100%;
-  height: 40vh;
-  padding: 3vh;
+    width: 100%;
+    height: 40vh;
+    padding: 3vh;
 } 
 .password-div i, .passwordConfirmation-div i{
   margin-top: 0;
@@ -88,8 +87,9 @@
 
 @media screen and (max-width: 900px){
   .SignUpSection {
-  height: 45vh;
+    height: 45vh;
   }
+  
   .SignUpSection button{
     padding: 1vh 3vh;
   }

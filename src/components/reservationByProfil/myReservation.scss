@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .my-reservation-test {
   display: flex;
@@ -15,7 +15,7 @@
 }
 
 .title-myReservation {
-  background-color: #243037;
+  background-color: vars.$dark-green;
   border-radius: 20px 20px 0 0;
 }
 
@@ -27,10 +27,10 @@
   width: 25%;
   margin: 3vh;
   color: aliceblue;
-  background-color: $dark-green;
-  padding: $padding-content;
-  border: 2px solid $medium-green;
-  border-radius: $border-radius;
+  background-color: vars.$dark-green;
+  padding: vars.$padding-content;
+  border: 2px solid vars.$medium-green;
+  border-radius: vars.$border-radius;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -53,7 +53,7 @@
 }
 
 .my-reservation-billet{
-  font-family: "Overhaul";
+  font-family: 'Overhaul', sans-serif;
   justify-content: center;
 }
 
@@ -69,15 +69,15 @@
 
 .my-reservation-button {
   display: flex;
-width: 100%;
-gap: 1vh;
-justify-content: space-between;
+  width: 100%;
+  gap: 1vh;
+  justify-content: space-between;
 }
 
 .reservation-button{
-  background-color: $light-green;
+  background-color: vars.$light-green;
   border: none;
-  box-shadow: $dark-black 0px 1px 2px 0px, $dark-black 0px 2px 6px 2px;
+  box-shadow: vars.$dark-black 0px 1px 2px 0px, vars.$dark-black 0px 2px 6px 2px;
   padding: 0.5vh 1vh;
   font-weight: normal;
   width: 45%;
@@ -85,9 +85,9 @@ justify-content: space-between;
 }
 
 .my-reservation-price{
-display: flex;
-justify-content: space-between;
-font-size: large;
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
 }
 
 .reservation-total{
@@ -98,7 +98,7 @@ font-size: large;
 
 .my-space{
   width: 70%;
-  border-bottom: 2px $colored-white dotted;
+  border-bottom: 2px vars.$colored-white dotted;
 }
 
 .my-totale-text{
@@ -107,14 +107,12 @@ font-size: large;
 }
 
 .my-total-price{
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   padding: 1vh 2vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   font-weight: 800;
   font-size: large;
 }
-
-
 
 .modal-myprofile h4{
   font-size: xx-large;
@@ -185,7 +183,7 @@ font-size: large;
 }
 
 .modal-myprofile-update{
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   z-index: 5;
 }
 
@@ -198,11 +196,11 @@ font-size: large;
   gap: 2vh;
 }
 
-@media screen and (max-width: 490px){
-.modal-myprofile-update{
-  padding: 1vh;
-  height: fit-content;
-}
+@media screen and (max-width: 490px) {
+  .modal-myprofile-update{
+    padding: 1vh;
+    height: fit-content;
+  }
 }
 
 .no-reservation{

@@ -1,25 +1,25 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .reservation-calendar{
   display: flex;
   flex-direction: column;
   width: 50%;
-  background-color: $light-green;
-  border-radius: $border-radius;
+  background-color: vars.$light-green;
+  border-radius: vars.$border-radius;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .reservation-calendar h3{
-  background-color: $dark-green;
+  background-color: vars.$dark-green;
   width: 100%;
   border-radius: 10px 10px 0 0;
-  padding: $padding-content;
+  padding: vars.$padding-content;
 }
 
 
 .reservation-container {
   display: flex;
-  padding: $padding-content;
+  padding: vars.$padding-content;
   justify-content: space-evenly;
   align-items: start;
   text-align: center;
@@ -27,32 +27,32 @@
 }
 
 .reservation-container p{
-margin-bottom: 2vh;
+  margin-bottom: 2vh;
 }
 
 .calendar-select{
- background-color: $dark-green;
- color: $colored-white;
+ background-color: vars.$dark-green;
+ color: vars.$colored-white;
  padding: 1vh 2vh;
- border-radius: $border-radius;
+ border-radius: vars.$border-radius;
  width: 100%;
  margin: 0;
 }
 
 .react-datepicker{
-z-index: 0;
+  z-index: 0;
 }
 .react-datepicker__day--selected{
-  background-color: $dark-green;
+  background-color: vars.$dark-green;
 }
 
 .react-datepicker__header, .react-datepicker__current-month, .react-datepicker__day-name {
-  background-color: $dark-green;
-  color: $colored-white;
+  background-color: vars.$dark-green;
+  color: vars.$colored-white;
 }
 
 .react-datepicker__month-container{
-  background-color: $colored-white;
+  background-color: vars.$colored-white;
 }
 
 @media screen and (max-width: 490px){

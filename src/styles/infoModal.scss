@@ -1,5 +1,5 @@
-@import"./reset.scss";
-@import "./vars.scss";
+@use"./reset.css";
+@use "./vars.scss";
 
 .modal-title{
   display: block;
@@ -7,10 +7,10 @@
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;;
 }
 .modal-text{
-  color: $colored-white;
-  background-color: $medium-green-transparent;
+  color: vars.$colored-white;
+  background-color: vars.$medium-green-transparent;
   padding: 3vh; 
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 .modal-car-park{
   background-image: url(/public/MadMaxCar.jpg);
@@ -34,7 +34,7 @@
   background-size: cover;
   height: fit-content;
   padding: 3vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 
@@ -43,9 +43,6 @@
 .access-img{
   display: flex;
   margin: 0 auto;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   width: 50%;
 }
-
-
-

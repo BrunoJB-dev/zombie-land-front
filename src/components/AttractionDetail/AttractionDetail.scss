@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner-detail{
   width: 100%;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   padding: 4rem;
   gap: 2rem;
 }
@@ -79,7 +79,7 @@
 
 .carousel .thumb.selected, .carousel .thumb:hover {
   border-radius: 20px;
-  border-color: $medium-green;
+  border-color: vars.$medium-green;
 }
 
 .carousel-slider {
@@ -182,6 +182,5 @@ margin: 5vh 0;
 .detail-icon div p{
   text-align: center;
 }
-
 
 }

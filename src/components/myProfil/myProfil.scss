@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .myProfile {
   border: solid 1px #2b050e;
@@ -9,7 +9,7 @@
 }
 
 .title-myProfile {
-  background-color: #243037;
+  background-color: vars.$dark-green;
   border-radius: 20px 20px 0 0;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .informations-label input {
-  background-color: #7fb4af;
+  background-color: vars.$light-green;
   width: 80%;
   border: none;
 }
@@ -72,13 +72,13 @@
   margin: 2rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #7fb4af;
+  background-color: vars.$light-black;
 }
 
 .button-style-delete{
-  background-color: $colored-white;
-  border: $red 1px solid;
-  color: $red
+  background-color: vars.$colored-white;
+  border: vars.$red 1px solid;
+  color: vars.$red
 }
 
 @media (max-width: 1024px) {
@@ -99,10 +99,9 @@
   }
 }
 
-
  .modal-myprofile{
   background-image: none;
-  background-color: $red;
+  background-color: vars.$red;
   display: flex;
   flex-direction: column;
   gap: 3vh;

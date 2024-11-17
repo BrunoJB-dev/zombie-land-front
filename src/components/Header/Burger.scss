@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 
 .burger-container, .nav-burger, .booking-burger, .logout-button-burger{
@@ -20,7 +20,7 @@
     width: 2rem;
     height: 0.25rem;
     border-radius: 10px;
-    background-color: $colored-white;
+    background-color: vars.$colored-white;
     z-index: 7;
   } 
 
@@ -32,7 +32,7 @@
     width: 40vh;
     right: 0;
     top: 0;
-    background-color: $dark-green;
+    background-color: vars.$dark-green;
     z-index: 6;
     gap: 2vh;
     align-items: flex-end;
@@ -86,7 +86,7 @@
   }
 
   .header .booking-burger:hover {
-    background-color: $red;
+    background-color: vars.$red;
     border: none;
   }
 
@@ -96,7 +96,7 @@
 
   .header .logout-button-burger{
     display: flex;
-    background-color: $light-green;
+    background-color: vars.$light-green;
     width: fit-content;
     padding: 1vh 4vh;
     margin-right: 4vh;

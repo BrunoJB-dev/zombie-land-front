@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .leaflet-control-zoom {
   display: flex;
@@ -9,20 +9,20 @@
 .leaflet-control-zoom-out {
   display: flex;
   border-radius: 0%;
-  color: #fff; 
+  color: vars.$white; 
   display: flex;
   padding: 0%;
-  border-color: #243037;
+  border-color: vars.$dark-green;
 }
 
 .leaflet-control-zoom-in span {
   justify-content: center;
-  background-color: #63878c;
+  background-color: vars.$medium-green;
 }
 
 .leaflet-control-zoom-out span {
   justify-content: center;
-  background-color: #63878c;
+  background-color: vars.$medium-green;
 }
 
 .leaflet-control-attribution {
@@ -33,9 +33,9 @@
 
 .leaflet-control-attribution a {
   border: none;
-  background-color: #fff;
+  background-color: vars.$white;
   border-radius: 0%;
-  color: #243037;
+  color: vars.$dark-green;
 }
 
 

@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 
 .element-404{
@@ -21,7 +21,7 @@
 .message-404{
   text-align: center;
   margin-top: 2rem;
-  font-family: Overhaul;
+  font-family: 'Overhaul', sans-serif;
   font-size: 2rem;
-  color: #BE3B40;
+  color: vars.$red;
 }

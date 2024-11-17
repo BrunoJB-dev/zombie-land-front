@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner-homePage{
   width: 100%;
@@ -19,19 +19,19 @@ h2{
 }
 
 .attractions-display-btn{
-  background-color: #63878C;
+  background-color: vars.$medium-green;
   border: none;
   cursor: pointer;
 }
 
 .attractions-display-btn:hover{
-  background-color: #BE3B40;
+  background-color: vars.$red;
 }
 
 .parc-presentation{
   display: flex;
   flex-direction: column;
-  background-color: $dark-black;
+  background-color: vars.$dark-black;
   gap: 5vh;
   padding: 5vh;
 }
@@ -44,48 +44,45 @@ h2{
 
 .parc-presentation img {
   width: 40%;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 
 .parc-presentation p {
-  color: $colored-white;
+  color: vars.$colored-white;
   width: 60%;
 }
 
-
 .parc-presentation h3 {
-background-color: $dark-black;
+background-color: vars.$dark-black;
 }
-
 
 .info-icones{
   display: flex;
   flex-wrap: wrap;
   gap: 2vh;
   align-content: center;
-  background-color: #243037;
+  background-color: vars.$dark-green;
   justify-content: space-between;
   color: aliceblue;
   margin: 9vh 15vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   padding: 6vh 15vh;
 }
 
 .info-icones div{
   display: flex;
-  background-color: #7fb4af;
+  background-color: vars.$light-green;
   justify-content: space-between;
 
   align-items: center;
   gap: 2vh;
   padding: 2vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 
 .modal.show{
   opacity: 1;
 }
-
 
 .attractions-display-btn{
   margin: 0 auto;

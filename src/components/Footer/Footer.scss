@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .zombies-footer{
   background-image: url('../../../public/footer.png');
@@ -10,8 +10,8 @@
 }
 
 .footer {
-  background: $dark-black;
-  color: $white;
+  background: vars.$dark-black;
+  color: vars.$white;
   display: flex;
   padding: 4vh 5vh;
   gap: 5vh;
@@ -26,7 +26,7 @@
     gap: 0.5vh;
     
     a {
-     background: $dark-black;
+     background: vars.$dark-black;
      padding: 0;
      font-size: small;
    }

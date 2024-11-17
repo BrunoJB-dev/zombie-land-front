@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner{
   width: 100%;
@@ -16,10 +16,10 @@
 .select-list {
   margin: 15vh auto 0 3vh;
   padding: 1vh 4vh;
-  background-color: $red;
+  background-color: vars.$red;
   border: none;
-  border-radius: $border-radius;
-  color: $white;
+  border-radius: vars.$border-radius;
+  color: vars.$white;
   font-weight: 600;
 }
 
