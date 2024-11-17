@@ -52,6 +52,21 @@
   width: 5%;
 }
 
+.forgotten-pwd{
+  font-weight: 800 !important;
+  font-size: 2vh;
+  margin-left: auto;
+  margin-bottom: 4vh;
+  color: $dark-green;
+  border-bottom: none;
+}
+
+.forgotten-pwd :hover{
+  background-color: transparent;
+  border-bottom: #BE3B40 2px solid;
+  border-radius: 0;
+}
+
 ::placeholder{
   color: $colored-white;
 }
