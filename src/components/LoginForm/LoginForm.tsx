@@ -62,7 +62,7 @@ const LoginForm = ({ onClose }: LoginFormProps) => {
           />
           <i onClick={handleToggle} onKeyUp={handleToggle} className={icon} />
         </div>
-        <p><Link className="forgotten-pwd" to="/lost-password">Mot de passe oublié ?</Link></p>
+        <p><Link className="forgotten-pwd" to="/lost-password" onClick={onClose}>Mot de passe oublié ?</Link></p>
         <div>
           <button type="submit">Se connecter</button>
         </div>
