@@ -1,5 +1,5 @@
 import "./APropos.scss"
-import parc from '../../../public/ZombieLand-HomePage-Banner.webp';
+import parc from '/ZombieLand-HomePage-Banner.webp';
 
 
 function APropos() {
