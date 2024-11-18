@@ -1,9 +1,9 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner-detail{
   width: 100%;
   height: 50vh;
-  background-image: url('../../../public/detail-page.webp');
+  background-image: url('detail-page.webp');
   background-size: cover;
   background-position: center 65%;
   display: flex;
@@ -45,7 +45,7 @@
   align-items: center;
   justify-content: space-evenly;
   border-radius: 10px;
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   padding: 4rem;
   gap: 2rem;
 }
@@ -74,11 +74,12 @@
 .carousel {
   display: flex;
   justify-content: center;
+  z-index: 0;
 }
 
 .carousel .thumb.selected, .carousel .thumb:hover {
   border-radius: 20px;
-  border-color: $medium-green;
+  border-color: vars.$medium-green;
 }
 
 .carousel-slider {
@@ -89,22 +90,97 @@
   border: none;
 }
 
-@media (max-width: 1024px) {
+.detail-time {
+  margin-bottom: -3vh;
+}
+
+
+@media (max-width: 1400px) {
+  .div-test {
+    display: flex;
+    justify-content: center;
+  }
   .article-img {
     flex-wrap: wrap;
     gap: 4rem;
+  }
+  .banner-detail {
+    background-position: center 15%;
   }
   .img {
     max-width: 80%;
     margin-left: 3rem;
   }
   .detail-icon{
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 1.2rem;
+    width: 80%;
+  }
+  .detail-icon div {
+    flex-direction: row;
+      max-width: 100%;
+      text-align: start;     
+  }
+  .detail-time {
+    margin-bottom: 0vh;
+  }
+  .banner-detail h1{
+    margin: auto;
+    font-size: 3.5vh;
   }
 }
 
-@media (max-width: 720px) {
 
+@media (max-width: 1400px) {
+  .div-article {
+    padding: 2vh;
+    text-align: center;
+  }
+  .carousel .thumbs{
+    padding: 0 !important; 
+    width: 100% !important;
+}
+  .carousel .thumb{
+     width: 50px !important; 
+}
+.carousel-root {
+  margin-left: 0;
+  width: 100%;
+}
+.article-img {
+  justify-content: center;
 }
 
+.control-arrow, .control-arrow::before{
+  display: none;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 20px auto;
+}
+
+.article-img p{
+margin: 5vh 0;
+}
+.detail-icon{
+  padding-top: 5vh;
+  gap: 5vh;
+  align-items: center;
+  text-align: center;
+}
+.div-test{
+  margin-top: 10vh;
+}
+
+.detail-icon div {
+  flex-direction: column;
+  height: fit-content;
+}
+
+.detail-icon div p{
+  text-align: center;
+}
+
+}

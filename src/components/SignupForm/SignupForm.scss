@@ -1,87 +1,97 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .SignUpSection {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  /* align-content: center; */
-  background-color: $light-green;
-  padding: 0;
+  justify-content: space-between;
+  align-content: space-between;
+  padding: 10vh;
+  background-color: vars.$light-green;
   width: 50%;
-  height: 75vh;
-  // position: fixed;
-  top: 15vh;
-  left: 18vh;
+  height: 60vh;
+  border-end-start-radius: vars.$border-radius;
+  gap: 2vh;}
 
-  h1 {
-    background-color: $light-green;
+  .SignUpSection h2 {
+    background-color: vars.$light-green;
     padding: 0;
     margin: 0 auto;
-  }
-
-  .password {
-    display: flex;
-    justify-content: space-between;
-    margin:0;
-    gap: 1vh;
-
-    div {
-      display: flex;
-    }
-
-    .fa-eye, .fa-eye-slash {
-      position: absolute;
-      font-weight: 600;
-      margin-left: 0.5vh;
-    }
-  }
-
-  .password div, .identity div {
-    width: 45%;
-  }
-
-  #password, #passwordConfirmation, #lastname, #firstname{
-    width: 100%;
-  }
-
-  .identity {
-    display: flex;
-    margin: 0;
-    justify-content: space-between;
-    gap: 1vh;
-  }
-
-  #email {
-    width: -webkit-fill-available;
-  }
 }
 
 .signup-form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 40%;
+  height: 80%;
   justify-content: space-between;
-
-  :nth-last-child(1){
-    align-self: center;
-  }
-
-   div {
-    margin: 1.5vh 0;
-  } 
-
-  input {
-    background-color: $light-green;
-    border: solid 2px $colored-white;
-    //width: -webkit-fill-available;
-  }
+  width: 100%;
+  gap: 2vh;
 }
 
+.signup-form input {
+  background-color: vars.$light-green;
+  border: solid 2px vars.$colored-white;
+  width: 100%;
+}
+
+.email {
+  width: 100%;
+}
+
+ .password, .identity {
+    display: flex;
+    justify-content: space-between;
+    margin:0;
+    gap: 2vh;
+    width: 100%;
+
+  }
+
+  .password-div, .passwordConfirmation-div, .lastname-div, .firstname-div {
+    display: flex;
+    align-items: center;
+    width: 45%;
+  }
+
+  .password-div i, .passwordConfirmation-div i{
+    margin-left: 1vh;
+    width: 5%;
+  }
+
+  .SignUpSection button {
+    width: 100%;
+  }
+
 ::placeholder{
-  color: $colored-white;
+  color: vars.$colored-white;
 }
 
 ::-ms-input-placeholder {
-  color: $colored-white;
+  color: vars.$colored-white;
 }
+
+@media screen and (max-width: 1024px) {
+  .SignUpSection {
+    width: 100%;
+    height: 40vh;
+    padding: 3vh;
+  } 
+
+  .password-div i, .passwordConfirmation-div i {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 0
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .SignUpSection {
+    height: 45vh;
+  }
+  
+  .SignUpSection button {
+    padding: 1vh 3vh;
+  }
+}
+

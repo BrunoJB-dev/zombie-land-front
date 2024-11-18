@@ -1,9 +1,9 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner-homePage{
   width: 100%;
   height: 50vh;
-  background-image: url('../../public/ZombieLand-HomePage-Banner.webp');
+  background-image: url('../../../public/ZombieLand-HomePage-Banner.webp');
   background-size: cover;
   background-position: center 33%;
   display: flex;
@@ -12,97 +12,156 @@
 .banner-homePage h1{
   margin: auto;
 }
+
 h2{
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 9vh;
 }
 
 .attractions-display-btn{
-  display: block;
-  margin: -5rem auto 7rem auto;
-  background-color: #63878C;
+  background-color: vars.$medium-green;
   border: none;
   cursor: pointer;
 }
+
 .attractions-display-btn:hover{
-  background-color: #BE3B40;
+  background-color: vars.$red;
 }
 
 .parc-presentation{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto 1fr;
-  gap: 20px;
-  align-items: start;
-  background-color: black;
-  margin-bottom: 8rem;
-  padding-bottom: 5rem;
-
+  display: flex;
+  flex-direction: column;
+  background-color: vars.$dark-black;
+  gap: 5vh;
+  padding: 5vh;
 }
 
-.parc-presentation h3{
-  grid-column: 1 / -1;
-  justify-self: start;
-  align-self: center;
-  background-color: black;
-}
+.parc-presentation div{
+  display: flex;
+  gap: 5vh;
+  align-items: center
+};
 
 .parc-presentation img{
-  grid-column: 1;  
+  width: 40%;
+  border-radius: vars.$border-radius;
 }
 
 .parc-presentation p{
-  grid-column: 2;
-  align-self: center;
-  color: aliceblue;
-  margin-left: 2rem;
+  color: vars.$colored-white;
+  width: 60%;
 }
 
-.attraction-img{
-  display: block;
-  margin: 0;
+.parc-presentation h3{
+background-color: vars.$dark-black;
 }
-span{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  
-}
+
 .info-icones{
   display: flex;
+  flex-wrap: wrap;
+  gap: 2vh;
+  align-content: center;
+  background-color: vars.$dark-green;
   justify-content: space-between;
-  background-color: #243037;
   color: aliceblue;
-  padding-bottom: 3rem;
-  margin-left: 20rem;
-  margin-right: 20rem;
-  border-radius: 0.5rem;
+  margin: 9vh 15vh;
+  border-radius: vars.$border-radius;
+  padding: 6vh 15vh;
 }
-.info-icones span{
-  background-color: #7fb4af;
-  padding: 1rem;
-  border-radius: 0.5rem;
-}
-.modal{
-  text-align: center;
-  background-color: rgb(190, 59, 64, 0.7);
-  margin-right: 40rem;
-  margin-left: 40rem;
-  padding: 2rem;
-  color: aliceblue;
-  transition: opacity 1s ease-in-out;
-  position: fixed;
-  top: 20rem;
-  left: 0;
-  border-radius: 0.5rem;
 
+.info-icones div{
+  display: flex;
+  background-color: vars.$light-green;
+  justify-content: space-between;
+
+  align-items: center;
+  gap: 2vh;
+  padding: 2vh;
+  border-radius: vars.$border-radius;
 }
+
 .modal.show{
   opacity: 1;
 }
-.modal-content{
-  background-color:#7fb4af;
-  padding: 2rem;
 
+.attractions-display-btn{
+  margin: 0 auto;
+  margin-bottom: 9vh;
+  display: flex;
+};
+
+@media screen and (max-width: 1023px){
+  .banner-homePage{
+    padding: 3vh;
+  }
+
+  .banner-homePage h1{
+    width: 80%;
+    text-align: center;
+  }
+  .attractions-display-btn{
+    margin: 0 auto;
+    margin-bottom: 9vh;
+    display: flex;
+  };
+
+  .parc-presentation div{
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .parc-presentation{
+    text-align: center;
+  }
+
+  .parc-presentation p{
+    width: 100%;
+  }
+
+  .parc-presentation img{
+    width: 100%;
+  }
+
+  .info-icones{
+    margin: 5vh;
+    padding: 5vh;
+    justify-content: center;
+  }
+
+  .info-icones div{
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .info-icones div{
+    gap: 2vh;
+    padding: 1vh;
+  }
+}
+
+@media screen and (max-width: 490px){
+  .banner-homePage{
+    padding: 1vh;
+  }
+
+  .banner-homePage h1{
+    width: 90%;
+    text-align: center;
+  }
+
+  .attractions-display-btn{
+    margin: 0 2vh;
+    margin-bottom: 9vh;
+    display: flex;
+  };
+
+  .parc-presentation{
+    text-align: center;
+    padding: 5vh;
+  }
+
+  .info-icones{
+    display: none;
+  }
 }

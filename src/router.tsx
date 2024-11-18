@@ -7,6 +7,10 @@ import ReservationPage from './pages/Reservation/ReservationPage';
 import { ProtectedRoute } from './components/ProtectedRoute/ProtectedRoute';
 import ProfilePage from './pages/myProfil/profilPage';
 import Error404 from './components/Error404/Error404';
+import { ResetPassword } from './components/ResetPassword/ResetPassword';
+import InformationPage from './pages/InformationPage/InformationPage';
+import APropos from './pages/APropos/APropos';
+import { ForgottenPassword } from './components/ForgottenPassword/ForgottenPassword';
 
 
 const router = createBrowserRouter([
@@ -30,8 +34,16 @@ const router = createBrowserRouter([
         path: '/reservation',
         element: <ReservationPage/>
       },
+      {
+        path: '/informations',
+        element: <InformationPage/>
+      },
+      {
+        path: '/propos',
+        element: <APropos/>
+      },
       /**
-       * Pour protéger une route, element prend des ()
+       *  Pour protéger une route, element prend des ()
        * et on encapsule le composant cible avec ProtectedRoute.
        */
       {
@@ -41,6 +53,14 @@ const router = createBrowserRouter([
             <ProfilePage/>
           </ProtectedRoute>
       )
+      },
+      {
+        path: '/lost-password',
+        element: <ForgottenPassword />
+      },
+      {
+        path: '/reset-password',
+        element: <ResetPassword />
       },
       {
         path: '*',

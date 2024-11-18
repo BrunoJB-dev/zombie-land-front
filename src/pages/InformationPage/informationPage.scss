@@ -1,0 +1,23 @@
+@use "../../styles/vars" as vars;
+
+.information-footer {
+  padding: 3vh;
+}
+
+.information-footer h2 {
+  margin-bottom: 3vh;
+}
+
+.information-footer h3 {
+  margin: 3vh 0;
+  padding: 1vh;
+  font-size: x-large;
+}
+
+.information-footer li {
+  gap: 2vh;
+}
+
+.map p {
+  margin: 3vh 3vh 0;
+}

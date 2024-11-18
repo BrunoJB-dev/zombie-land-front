@@ -2,19 +2,19 @@ import './LoginForm.scss';
 
 import { useState } from 'react';
 import { useAuth } from '../../AuthContext';
+import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 interface LoginFormProps {
-  onClose : () => void;
+  onClose: () => void;
 }
 
-const LoginForm = ({onClose} : LoginFormProps) => {
+const LoginForm = ({ onClose }: LoginFormProps) => {
   const { login } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [type, setType] = useState("password");
+  const [type, setType] = useState('password');
   const [icon, setIcon] = useState('fa-regular fa-eye-slash');
-
 
   const handleToggle = () => {
     if (type === 'password') {
@@ -24,7 +24,7 @@ const LoginForm = ({onClose} : LoginFormProps) => {
       setIcon('fa-regular fa-eye-slash');
       setType('password');
     }
-  }
+  };
 
   const navigate = useNavigate();
 
@@ -34,23 +34,35 @@ const LoginForm = ({onClose} : LoginFormProps) => {
     setEmail('');
     setPassword('');
     onClose();
-    navigate('/profile')
+    navigate('/profile');
   };
 
   return (
     <section className="login-section">
-      <h1>Se connecter</h1>
-       <form onSubmit={handleSubmit} className='login-form'>
-        <div>
-          <label htmlFor="email" aria-label="email"/>
-          <input type="email" placeholder="Adresse mail" value={email} onChange={(e) => setEmail(e.target.value)} required />
+      <h2>Se connecter</h2>
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className='email'>
+          <label htmlFor="email" aria-label="email" />
+          <input
+            type="email"
+            placeholder="Adresse mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
-        <div className='password-div'>
-          <label htmlFor="password" aria-label="password"/>
-          <input type={type} placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} required />
-          <span onClick={handleToggle} onKeyUp={handleToggle}><i className={icon}/></span>
+        <div className="password-login-div">
+          <label htmlFor="password" aria-label="password" />
+          <input
+            type={type}
+            placeholder="Mot de passe"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <i onClick={handleToggle} onKeyUp={handleToggle} className={icon} />
         </div>
-        <p>Mot de passe oublié ?</p>
+        <p><Link className="forgotten-pwd" to="/lost-password" onClick={onClose}>Mot de passe oublié ?</Link></p>
         <div>
           <button type="submit">Se connecter</button>
         </div>

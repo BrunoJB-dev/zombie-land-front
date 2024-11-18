@@ -1,0 +1,75 @@
+@use "../../styles/vars" as vars;
+
+// Conteneur principal pour positionner les résultats de manière flottante
+.searchBarContainer {
+  position: fixed;
+  right: 0;
+  top: 15vh;
+  width: 25%;
+  text-align: center;
+}
+
+// Style pour le champ de recherche
+.searchInput {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: vars.$medium-green-transparent;
+  color: vars.$dark-black;
+}
+
+.searchInput::placeholder {
+  color: vars.$dark-black;
+}
+
+// Conteneur des résultats de recherche flottant
+.resultsContainer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: vars.$white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+// Style pour le tableau des résultats
+.resultsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// Style pour chaque élément de résultat
+.resultItem {
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      text-decoration: underline;
+      color: #fafafa;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .searchBarContainer {
+    right: 4vh;
+    top: 47.5vh;
+    z-index: 100;
+    width: 50%;
+  }
+} 

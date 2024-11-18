@@ -1,49 +1,52 @@
-@import"./reset.scss";
-@import "./vars.scss";
-
-.modal-content{
-  display: block;
-  margin: 0 auto;
-  border-radius: 2rem;
-  background-color: #63878c;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;;
-}
+@use"./reset.css";
+@use "./vars" as vars;
 
 .modal-title{
   display: block;
   margin-bottom: 2rem;
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;;
 }
+
 .modal-text{
-  color: aliceblue;
-  margin-right: 50rem;
+  color: vars.$colored-white;
+  background-color: vars.$medium-green-transparent;
+  padding: 3vh; 
+  border-radius: vars.$border-radius;
 }
+
 .modal-car-park{
-  background-image: url(/public/MadMaxCar.jpg);
+  background-image: url(MadMaxCar.jpg);
   background-position: 50% 70%;
 }
+
 .modal-schedule{
-  background-image: url(/public/ClockTower.jpg);
+  background-image: url(ClockTower.jpg);
   background-position: 50% 30%;
 }
+
 .modal-disability{
-  background-image: url(/public/WheelchairGun.jpg);
+  background-image: url(WheelchairGun.jpg);
   background-position: 50% 20%;  
 }
-.modal-plan{
-  background-image: url(/public/CityII.jpg);
-  background-position: 50% 80%;  
 
+.modal-plan{
+  background-image: url(CityII.jpg);
+  background-position: 50% 80%;  
+  width: 100%;
 }
+
 .modal-car-park, .modal-disability, .modal-schedule, .modal-plan{
   background-size: cover;
+  height: fit-content;
+  padding: 3vh;
+  border-radius: vars.$border-radius;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
+
 .access-img{
-  display: block;
+  display: flex;
   margin: 0 auto;
-  border-radius: 2rem;
-  width: 40%;
+  border-radius: vars.$border-radius;
+  width: 50%;
 }
-
-
-

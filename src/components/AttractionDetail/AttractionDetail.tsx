@@ -22,7 +22,8 @@ function AttractionDetail({ detail }: AttractionListProps) {
             showThumbs={true}
             showStatus={false}
             infiniteLoop
-            stopOnHover>
+            stopOnHover
+            emulateTouch>
             <div>
               <img src={`http://localhost:3000/${detail.image}`} alt={detail.name} />
             </div>
@@ -46,11 +47,12 @@ function AttractionDetail({ detail }: AttractionListProps) {
         <div className='detail-icon'>
           <div>
             <i className="fa-solid fa-clock fa-2xl"/>
+            <p className='detail-time'>{detail.opening_time}</p>
             <p>{detail.closing_time}</p>
           </div>
           <div>
             <i className="fa-solid fa-restroom fa-2xl"/>
-            <p>{detail.height_restriction} cm</p>
+            <p>{detail.height_restriction} m</p>
           </div>
           <div>
             <i className="fa-brands fa-accessible-icon fa-2xl"/>
