@@ -1,7 +1,7 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars.scss" as vars;
 
 .header {
-  background-color: $dark-black;
+  background-color: vars.$dark-black;
   display: flex;
   padding: 1vh 5vh;
   justify-content: space-between;
@@ -11,22 +11,23 @@
   position: fixed;
   z-index: 1;
   width: 100%;
+
   a{
     background-color: transparent;
     font-weight: 500;
     text-align: center;
     transition: color 0.3s ease, text-shadow 0.3s ease;
-    border-bottom: $dark-black 2px solid;
+    border-bottom: vars.$dark-black 2px solid;
   };
 
   a:hover {
     background-color: transparent;
-    border-bottom: $red 2px solid;
+    border-bottom: vars.$red 2px solid;
     border-radius: 0
   };
 
   i{
-    color: $white;
+    color: vars.$white;
   };
 
   img{
@@ -48,14 +49,14 @@
   }
 
   .booking{
-    background-color: $red;
+    background-color: vars.$red;
     border: none;
   }
 
   .booking:hover{
-    background-color: $dark-green;
+    background-color: vars.$dark-green;
     border: none;
-    border-radius: $border-radius;
+    border-radius: vars.$border-radius;
   }
 
   .logo, .logo:hover {
@@ -68,13 +69,13 @@
     padding: 0;
   }
   .logout-button{
-    background-color: $light-green;
+    background-color: vars.$light-green;
     width: fit-content;
     padding: 1vh 4vh;
   }
 
   .logout-button:hover{
-background-color: $red;
+background-color: vars.$red;
   }
 };
 

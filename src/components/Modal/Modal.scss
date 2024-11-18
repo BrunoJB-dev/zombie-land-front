@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .modal-content {
   position: fixed;
@@ -7,16 +7,16 @@
   left: 10%;
   display: flex;
   flex-direction: column;
-  background-color: $colored-white;
+  background-color: vars.$colored-white;
   padding: 0;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   z-index: 100;
 }
 
 .modal-button {
   width: fit-content;
-  background-color: $colored-white;
-  color: $dark-black;
+  background-color: vars.$colored-white;
+  color: vars.$dark-black;
   padding: 2vh;
   margin: 1vh;
   border: none;
@@ -35,6 +35,8 @@
   .modal-content{
     top: 3vh;
   }
+  
   .children-div {
-flex-direction: column  };
+flex-direction: column  
+  };
 }
