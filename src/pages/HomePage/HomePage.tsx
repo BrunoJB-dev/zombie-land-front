@@ -63,7 +63,7 @@ function HomePage() {
       <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
       <AttractionList items={randomAttractions} />
 
-      <button type='button' className='attractions-display-btn' onClick={handleNavigation}>
+      <button type='button' className='attractions-display-btn' onClick={handleNavigation} aria-label='Voir toutes les attractions'>
         Voir toutes les attractions
       </button>
       

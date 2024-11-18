@@ -34,7 +34,7 @@ function Header() {
       {/* Conteneur principal du Header */}
       <div className="header">
         <Link className="logo" to="/">
-          <img src="../../public/logo-zombieland.png" alt="logo zombieland" />
+          <img src="../../public/logo-zombieland.webp" alt="logo zombieland" />
         </Link>
         <nav>
           <Link to="/">Accueil</Link>
@@ -52,6 +52,7 @@ function Header() {
             type="button"
             className="user-button"
             onClick={() => setIsModalOpen(true)}
+            aria-label='Se connecter ou créer un compte'
           >
             <i className="fa-solid fa-user fa-2xl" />
           </button>

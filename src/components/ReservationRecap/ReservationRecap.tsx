@@ -3,7 +3,6 @@ import instanceAxios from '../../utils/axios.ts';
 import { useAuth } from '../../AuthContext';
 
 import './ReservationRecap.scss';
-import { set } from 'react-datepicker/dist/date_utils';
 
 // Déclaration des types pour les props du composant ReservationRecap
 type ReservationRecapProps = {
@@ -147,7 +146,7 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
     <div className="reservation-recap">
       <div className="reservation-border">
         <div className="reservation-head">
-          <img src="../../../public/favicon.jpg" alt="" />
+          <img src="../../../public/favicon.webp" alt="" />
           <div>
             <p className="reservation-billet">
               {number} Billet(s) Daté(s) 1 jours

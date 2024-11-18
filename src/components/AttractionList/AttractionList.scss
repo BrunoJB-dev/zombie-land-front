@@ -19,6 +19,8 @@
 
 .attraction-card img {
   height: 60%;
+  width: auto;
+  object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
 
@@ -38,7 +40,7 @@
 
 .attraction-card div p {
   background-color: $light-green;
-  color: $colored-white;
+  color: $dark-black;
   padding: 0.5vh 1vh;
   width: fit-content;
   border-radius: 20px;
@@ -51,6 +53,7 @@
 
 .attraction-link {
   background-color: $medium-green;
+  color: $dark-black;
   padding: 1vh 2vh;
   width: fit-content;
   border-radius: $border-radius;

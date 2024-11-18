@@ -20,6 +20,7 @@ h2{
 
 .attractions-display-btn{
   background-color: #63878C;
+  color: $dark-black;
   border: none;
   cursor: pointer;
 }
@@ -44,6 +45,7 @@ h2{
 
 .parc-presentation img {
   width: 40%;
+  height: auto;
   border-radius: $border-radius;
 }
 
@@ -65,7 +67,7 @@ background-color: $dark-black;
   align-content: center;
   background-color: #243037;
   justify-content: space-between;
-  color: aliceblue;
+  color: $dark-black;
   margin: 9vh 15vh;
   border-radius: $border-radius;
   padding: 6vh 15vh;
