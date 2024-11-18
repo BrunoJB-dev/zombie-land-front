@@ -27,17 +27,6 @@ function myProfile() {
   useEffect(() => {
     instanceAxios.get('/api/profile').then(({ data }) => {
       setUser(data);
-    });
-  }, []); useEffect(() => {
-    instanceAxios.get('/api/profile').then(({ data }) => {
-      setUser(data);
-    });
-  }, []);
-
-
-  useEffect(() => {
-    instanceAxios.get('/api/profile').then(({ data }) => {
-      setUser(data);
       setFirstname(data.firstname);
       setLastname(data.lastname);
       setPseudo(data.pseudo);
