@@ -1,19 +1,19 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .reservation-recap{
-  padding: $padding-content;
-  background-color: $dark-green;
-  color: $colored-white;
-  border-radius: $border-radius;
+  padding: vars.$padding-content;
+  background-color: vars.$dark-green;
+  color: vars.$colored-white;
+  border-radius: vars.$border-radius;
   width: 100%;
   height: fit-content;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .reservation-border{
-  padding: $padding-content;
-  border: 2px solid $medium-green;
-  border-radius: $border-radius;
+  padding: vars.$padding-content;
+  border: 2px solid vars.$medium-green;
+  border-radius: vars.$border-radius;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -31,9 +31,8 @@
   gap: 1vh;
 }
 
-
 .reservation-billet{
-  font-family: "Overhaul";
+  font-family: 'Overhaul', sans-serif;
   justify-content: center;
 }
 
@@ -48,21 +47,21 @@
 }
 
 .reservation-content button{
-  background-color: $light-green;
+  background-color: vars.$light-green;
   border: none;
-  box-shadow: $dark-black 0px 1px 2px 0px, $dark-black 0px 2px 6px 2px;
+  box-shadow: vars.$dark-black 0px 1px 2px 0px, vars.$dark-black 0px 2px 6px 2px;
 }
 
 .reservation-price{
 display: flex;
-padding: $padding-content;
+padding: vars.$padding-content;
 justify-content: space-between;
 font-size: large;
 }
 
 .reservation-total{
   display: flex;
-  padding: $padding-content;
+  padding: vars.$padding-content;
   justify-content: flex-end;
   align-items: center;
   gap: 3vh;
@@ -70,7 +69,7 @@ font-size: large;
 
 .space{
   width: 70%;
-  border-bottom: 2px $colored-white dotted;
+  border-bottom: 2px vars.$colored-white dotted;
 }
 
 .totale-text{
@@ -79,15 +78,15 @@ font-size: large;
 }
 
 .total-price{
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   padding: 1vh 2vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   font-weight: 800;
   font-size: large;
 }
 
 .error-message{
- background-color: $red;
+ background-color: vars.$red;
  margin-top: 2vh;
  padding: 1vh;
  border-radius: 10px;
@@ -96,29 +95,31 @@ font-size: large;
 }
 
 .success-message{
-  background-color: $light-green;
+  background-color: vars.$light-green;
   margin-top: 2vh;
   padding: 1vh;
   border-radius: 10px;
   animation: fadeOut 3s ease-in-out forwards;
   animation-delay: 1s;
 }
+
 .warning-message, .error-auth-message{
   font-style: italic;
   font-weight: 500;
-  background-color: $colored-white;
-  color: $red;
+  background-color: vars.$colored-white;
+  color: vars.$red;
   margin-bottom: 2vh;
   width: fit-content;
   padding: 1vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 
 .error-auth-message{
-  background-color: $red;
-  color: $colored-white;
+  background-color: vars.$red;
+  color: vars.$colored-white;
 }
-@keyframes fadeOut {
+
+@keyframes fadeOut{
   0% {
     opacity: 1;
   }
@@ -142,11 +143,8 @@ font-size: large;
     padding: 3vh 0;
   }
 
-
   .reservation-border{
     border: none;
     padding: 0
   }
-
-  
 }

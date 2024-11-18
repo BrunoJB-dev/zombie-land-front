@@ -1,23 +1,23 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .login-section {
   display:flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   width: 50%;
   height: 60vh;
   padding: 10vh;
-  border-end-end-radius: $border-radius;
-  gap: 2vh;}
+  border-end-end-radius: vars.$border-radius;
+  gap: 2vh;
+}
 
   .login-section h2 {
-    background-color: $medium-green;
+    background-color: vars.$medium-green;
     padding: 0;
     margin: 0 auto;
 }
-
 
 .login-form {
   display: flex;
@@ -30,8 +30,8 @@
 }
 
 .login-form  input {
-    background-color: $medium-green;
-    border: solid 2px $colored-white;
+    background-color: vars.$medium-green;
+    border: solid 2px vars.$colored-white;
     width: 100%;
   }
 
@@ -41,6 +41,7 @@
     margin-left: auto;
     margin-bottom: 4vh;
   }
+
 .password-login-div{
   display: flex;
     align-items: center;
@@ -52,12 +53,27 @@
   width: 5%;
 }
 
+a.forgotten-pwd{
+  font-weight: 800 !important;
+  font-size: 2vh;
+  margin-left: auto;
+  margin-bottom: 4vh;
+  color: vars.$dark-green;
+  border-bottom: 0;
+}
+
+.forgotten-pwd :hover{
+  background-color: transparent;
+  border-bottom: vars.$red 2px solid;
+  border-radius: 0;
+}
+
 ::placeholder{
-  color: $colored-white;
+  color: vars.$colored-white;
 }
 
 ::-ms-input-placeholder {
-  color: $colored-white;
+  color: vars.$colored-white;
 }
 
 .login-section button{
@@ -68,16 +84,14 @@
 @media screen and (max-width: 1024px){
   .login-section {
     width: 100%;
-  height: 40vh;
-  padding: 3vh;
+    height: 40vh;
+    padding: 3vh;
 } 
 } 
 
 @media screen and (max-width: 900px){
   .login-section {
-  height: 45vh;
+    height: 45vh;
   }
-
-
 }
 

@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .my-reservation-test {
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.my-reservation{
+.my-reservation {
   border: solid 1px #2b050e;
   margin: 4rem auto;
   border-radius: 20px;
@@ -15,7 +15,7 @@
 }
 
 .title-myReservation {
-  background-color: #243037;
+  background-color: vars.$dark-green;
   border-radius: 20px 20px 0 0;
 }
 
@@ -23,14 +23,14 @@
   padding-left: 3vh;
 }
 
-.my-reservation-border{
+.my-reservation-border {
   width: 25%;
   margin: 3vh;
   color: aliceblue;
-  background-color: $dark-green;
-  padding: $padding-content;
-  border: 2px solid $medium-green;
-  border-radius: $border-radius;
+  background-color: vars.$dark-green;
+  padding: vars.$padding-content;
+  border: 2px solid vars.$medium-green;
+  border-radius: vars.$border-radius;
   display: flex;
   flex-direction: column;
   gap: 2vh;
@@ -40,65 +40,65 @@
   line-height: normal;
 }
 
-.my-reservation-head{
+.my-reservation-head {
   display: flex;
   align-items: center;
   gap: 2vh;
 }
 
-.my-reservation-head div{
+.my-reservation-head div {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
 
-.my-reservation-billet{
-  font-family: "Overhaul";
+.my-reservation-billet {
+  font-family: 'Overhaul', sans-serif;
   justify-content: center;
 }
 
-.my-reservation-head img{
+.my-reservation-head img {
   max-width: 7vh;
   max-height: 7vh;
 }
 
-.my-reservation-content{
+.my-reservation-content {
   display: flex;
   flex-direction: column;
 }
 
 .my-reservation-button {
   display: flex;
-width: 100%;
-gap: 1vh;
-justify-content: space-between;
+  width: 100%;
+  gap: 1vh;
+  justify-content: space-between;
 }
 
-.reservation-button{
-  background-color: $light-green;
+.reservation-button {
+  background-color: vars.$light-green;
   border: none;
-  box-shadow: $dark-black 0px 1px 2px 0px, $dark-black 0px 2px 6px 2px;
+  box-shadow: vars.$dark-black 0px 1px 2px 0px, vars.$dark-black 0px 2px 6px 2px;
   padding: 0.5vh 1vh;
   font-weight: normal;
   width: 45%;
   text-align: center;
 }
 
-.my-reservation-price{
-display: flex;
-justify-content: space-between;
-font-size: large;
+.my-reservation-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
 }
 
-.reservation-total{
+.reservation-total {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.my-space{
+.my-space {
   width: 70%;
-  border-bottom: 2px $colored-white dotted;
+  border-bottom: 2px vars.$colored-white dotted;
 }
 
 .my-totale-text{
@@ -107,14 +107,12 @@ font-size: large;
 }
 
 .my-total-price{
-  background-color: $medium-green;
+  background-color: vars.$medium-green;
   padding: 1vh 2vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   font-weight: 800;
   font-size: large;
 }
-
-
 
 .modal-myprofile h4{
   font-size: xx-large;
@@ -169,8 +167,8 @@ font-size: large;
   }
 }
 
-@media (max-width: 900px) {
 
+@media (max-width: 900px) {
   .my-reservation-test {
     display: block;
     margin: 0 auto;
@@ -184,28 +182,29 @@ font-size: large;
   }
 }
 
-.modal-myprofile-update{
-  background-color: $medium-green;
+.modal-myprofile-update {
+  background-color: vars.$medium-green;
   z-index: 5;
 }
 
-.reservation-calendar{
+.reservation-calendar {
   width: 100%;
 }
 
-.buttons-update{
+.buttons-update {
   display: flex;
   gap: 2vh;
 }
 
-@media screen and (max-width: 490px){
-.modal-myprofile-update{
-  padding: 1vh;
-  height: fit-content;
-}
+
+@media screen and (max-width: 490px) {
+  .modal-myprofile-update {
+    padding: 1vh;
+    height: fit-content;
+  }
 }
 
-.no-reservation{
+.no-reservation {
   padding: 5vh;
   text-align: center;
 }

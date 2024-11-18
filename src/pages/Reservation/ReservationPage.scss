@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner-reservation{
   width: 100%;
@@ -8,7 +8,6 @@
   background-position: center 33%;
   display: flex;
 }
-
 
 .banner-reservation h1{
   margin: auto;
@@ -24,23 +23,22 @@
   align-items: stretch;
   padding: 10vh 9vh;
   gap: 5vh;
-
 }
 
 @media screen and (max-width: 1200px){
   .calendar-recap{
-  padding: 10vh 9vh;
+    padding: 10vh 9vh;
+  }
 }
-}
+
 @media screen and (max-width: 1024px){
   .calendar-recap{
-  flex-direction: column;
-}
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 490px){
  .calendar-recap{
-  padding: 3vh;
+    padding: 3vh;
  } 
 }
-

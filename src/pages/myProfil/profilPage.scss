@@ -1,6 +1,6 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
-.banner-myProfil{
+.banner-myProfil {
   width: 100%;
   height: 50vh;
   background-image: url('../../../public/zombieland-mon-compte.webp');

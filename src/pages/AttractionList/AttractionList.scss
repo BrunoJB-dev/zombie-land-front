@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .banner{
   width: 100%;
@@ -13,32 +13,34 @@
   margin: auto;
 }
 
-.select-list {
+.select-list{
   margin: 15vh auto 0 3vh;
   padding: 1vh 4vh;
-  background-color: $red;
+  background-color: vars.$red;
   border: none;
-  border-radius: $border-radius;
-  color: $white;
+  border-radius: vars.$border-radius;
+  color: vars.$white;
   font-weight: 600;
 }
 
 @media screen and (max-width: 1023px){
-  .banner {
+  .banner{
     padding: 3vh;
   }
 
   .banner h1{
     width: 80%;
     text-align: center;
-  }}
+  }
+}
 
 @media screen and (max-width: 490px){
-  .banner {
+  .banner{
     padding: 1vh;
   }
 
   .banner h1{
     width: 90%;
     text-align: center;
-  }}
+  }
+}
