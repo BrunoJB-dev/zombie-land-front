@@ -48,6 +48,7 @@
 
 .reservation-content button{
   background-color: vars.$light-green;
+  color: vars.$dark-black;
   border: none;
   box-shadow: vars.$dark-black 0px 1px 2px 0px, vars.$dark-black 0px 2px 6px 2px;
 }
@@ -79,6 +80,7 @@ font-size: large;
 
 .total-price{
   background-color: vars.$medium-green;
+  color: vars.$dark-black;
   padding: 1vh 2vh;
   border-radius: vars.$border-radius;
   font-weight: 800;
@@ -96,6 +98,7 @@ font-size: large;
 
 .success-message{
   background-color: vars.$light-green;
+  color: vars.$dark-black;
   margin-top: 2vh;
   padding: 1vh;
   border-radius: 10px;

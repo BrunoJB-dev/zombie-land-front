@@ -4,6 +4,7 @@ import {useNavigate, useSearchParams} from 'react-router-dom';
 import instanceAxios from '../../utils/axios';
 
 import "./ResetPassword.scss";
+import { isAxiosError } from 'axios';
 
 export const ResetPassword: React.FC = () => {
     const [newPassword, setNewPassword] = useState('');
@@ -50,8 +51,10 @@ export const ResetPassword: React.FC = () => {
                 setIsSuccess(true);
                 setTimeout(() => navigate('/'), 3000)
             }
-        } catch (error) {
-            setError(error.response?.data?.message || 'Une erreur s\'est produite');
+        } catch (err) {
+            if(isAxiosError(err)){
+                setError(err.response?.data?.message || 'Une erreur s\'est produite');
+            }
         }
     }
 

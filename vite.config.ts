@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [
     react(), // Plugin React pour gérer les fichiers React
     viteCompression({
-      algorithm: 'brotliCompress', // Utiliser Brotli pour une meilleure compression (ou 'gzip')
-      ext: '.br',                  // Extension pour Brotli ('.gz' pour gzip)
+      algorithm: 'gzip', // Utiliser Brotli pour une meilleure compression (ou 'gzip')
+      ext: '.gz',                  // Extension pour Brotli ('.gz' pour gzip)
       threshold: 1024,             // Seulement compresser les fichiers > 1 KB
       verbose: true,               // Log des fichiers compressés
     }),

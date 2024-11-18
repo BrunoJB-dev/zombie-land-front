@@ -19,7 +19,7 @@ h2{
 }
 
 .attractions-display-btn{
-  color: $dark-black;
+  color: vars.$dark-black;
   background-color: vars.$medium-green;
   border: none;
   cursor: pointer;
@@ -64,7 +64,7 @@ background-color: vars.$dark-black;
   align-content: center;
   background-color: vars.$dark-green;
   justify-content: space-between;
-  color: $dark-black;
+  color: vars.$dark-black;
   margin: 9vh 15vh;
   border-radius: vars.$border-radius;
   padding: 6vh 15vh;
@@ -165,4 +165,9 @@ background-color: vars.$dark-black;
   .info-icones{
     display: none;
   }
+
+  .banner-homePage{
+height: 40vh;
+  }
+
 }

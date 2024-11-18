@@ -146,7 +146,7 @@ function ReservationRecap({ startDate, number }: ReservationRecapProps) {
     <div className="reservation-recap">
       <div className="reservation-border">
         <div className="reservation-head">
-          <img src="../../../public/favicon.webp" alt="" />
+          <img src="favicon.webp" alt="" />
           <div>
             <p className="reservation-billet">
               {number} Billet(s) Daté(s) 1 jours
