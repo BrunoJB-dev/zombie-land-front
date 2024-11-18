@@ -22,7 +22,25 @@
 .calendar-recap{
   display: flex;
   align-items: stretch;
-  padding: 10vh 15vh;
+  padding: 10vh 9vh;
   gap: 5vh;
 
 }
+
+@media screen and (max-width: 1200px){
+  .calendar-recap{
+  padding: 10vh 9vh;
+}
+}
+@media screen and (max-width: 1024px){
+  .calendar-recap{
+  flex-direction: column;
+}
+}
+
+@media screen and (max-width: 490px){
+ .calendar-recap{
+  padding: 3vh;
+ } 
+}
+

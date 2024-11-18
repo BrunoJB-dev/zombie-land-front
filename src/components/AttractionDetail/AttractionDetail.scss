@@ -74,6 +74,7 @@
 .carousel {
   display: flex;
   justify-content: center;
+  z-index: 0;
 }
 
 .carousel .thumb.selected, .carousel .thumb:hover {
@@ -132,6 +133,55 @@
 }
 
 
+@media (max-width: 1400px) {
+  .div-article {
+    padding: 2vh;
+    text-align: center;
+  }
+  .carousel .thumbs{
+    padding: 0 !important; 
+    width: 100% !important;
+}
+  .carousel .thumb{
+     width: 50px !important; 
+}
+.carousel-root {
+  margin-left: 0;
+  width: 100%;
+}
+.article-img {
+  justify-content: center;
+}
+
+.control-arrow, .control-arrow::before{
+  display: none;
+}
+
+.carousel .thumbs-wrapper {
+  margin: 20px auto;
+}
+
+.article-img p{
+margin: 5vh 0;
+}
+.detail-icon{
+  padding-top: 5vh;
+  gap: 5vh;
+  align-items: center;
+  text-align: center;
+}
+.div-test{
+  margin-top: 10vh;
+}
+
+.detail-icon div {
+  flex-direction: column;
+  height: fit-content;
+}
+
+.detail-icon div p{
+  text-align: center;
+}
 
 
-
+}

@@ -5,7 +5,10 @@ import instanceAxios from '../../utils/axios';
 import avatarFemme from '../../../public/avatar-femme.webp';
 import avatarHomme from '../../../public/avatar-homme.webp';
 import type { User } from '../../@types/user';
+import Modal from '../../components/Modal/Modal';
+
 import './myProfil.scss';
+import "../../components/Modal/Modal.scss"
 
 
 function myProfile() {
@@ -23,6 +26,19 @@ function myProfile() {
   const [city, setCity] = useState('');
 
   const { logout } = useAuth();
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isModalOpen]);
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Réinitialise le type pour éviter d'afficher le contenu précédent
+  };
+
 
   useEffect(() => {
     instanceAxios.get('/api/profile').then(({ data }) => {
@@ -189,7 +205,8 @@ function myProfile() {
         </button>
       </div>
       {isModalOpen && (
-        <div className="modal modal-myprofile">
+         <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <div className="modal-myprofile">
           <h4>Confirmer la suppression</h4>
           <p>
             Êtes-vous sûr de vouloir supprimer votre profil ? Cette action est
@@ -212,6 +229,7 @@ function myProfile() {
             </button>
           </div>
         </div>
+        </Modal>
       )}
     </div>
   );

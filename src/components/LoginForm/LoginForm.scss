@@ -3,62 +3,53 @@
 .login-section {
   display:flex;
   flex-direction: column;
-  justify-content: center;
-  // align-content: center;
+  justify-content: space-between;
+  align-content: space-between;
   background-color: $medium-green;
-  padding: 0;
   width: 50%;
-  height: 75vh;
-  /* position: fixed; */
-  left: 87vh;
+  height: 60vh;
+  padding: 10vh;
+  border-end-end-radius: $border-radius;
+  gap: 2vh;}
 
-  h1 {
+  .login-section h2 {
     background-color: $medium-green;
     padding: 0;
     margin: 0 auto;
-  }
 }
+
 
 .login-form {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  height: 40%;
+  height: 80%;
   justify-content: space-between;
+  width: 100%;
+  gap: 2vh;
+}
 
-  :nth-last-child(1){
-    align-self: center;
-  }
-
-  div {
-    margin: 1.5vh 0;
-  }
-
-  .password-div{
-    display: flex;
-  
-    .fa-eye, .fa-eye-slash {
-      position: absolute;
-      font-weight: 600;
-      margin-left: 1vh;
-    }
-  
-  }
-
-  input {
+.login-form  input {
     background-color: $medium-green;
     border: solid 2px $colored-white;
-    width: -webkit-fill-available;
+    width: 100%;
   }
 
-
-
-  p {
-    font-weight: bold;
+  .login-section p {
+    font-weight: 600;
     font-size: 2vh;
     margin-left: auto;
     margin-bottom: 4vh;
   }
+.password-login-div{
+  display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.password-login-div i{
+  margin-left: 1vh;
+  width: 5%;
 }
 
 ::placeholder{
@@ -68,3 +59,25 @@
 ::-ms-input-placeholder {
   color: $colored-white;
 }
+
+.login-section button{
+  padding: 1vh 3vh;
+  width: 100%;
+}
+
+@media screen and (max-width: 1024px){
+  .login-section {
+    width: 100%;
+  height: 40vh;
+  padding: 3vh;
+} 
+} 
+
+@media screen and (max-width: 900px){
+  .login-section {
+  height: 45vh;
+  }
+
+
+}
+

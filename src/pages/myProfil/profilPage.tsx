@@ -10,7 +10,7 @@ function ProfilePage() {
       <div className="banner-myProfil">
         <h1>Mon compte</h1>
       </div>
-      <div>
+      <div className="page-profile">
         <MyProfile/>
         <MyReservation/>
       </div>
