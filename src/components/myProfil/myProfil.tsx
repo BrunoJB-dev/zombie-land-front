@@ -73,7 +73,7 @@ function myProfile() {
           postal_code: postalCode,
           city
         });
-        setSuccessMessage('Vous avez mis à jour vortre profil avec succès !');
+        setSuccessMessage('Vous avez mis à jour votre profil avec succès !');
       } catch (error) {
         console.error("Erreur lors de la mise à jour du profil :", error);
         alert("Échec de la mise à jour");
