@@ -34,7 +34,7 @@ function Header() {
       {/* Conteneur principal du Header */}
       <div className="header">
         <Link className="logo" to="/">
-          <img src="../../public/logo-zombieland.png" alt="logo zombieland" />
+          <img src="logo-zombieland.png" alt="logo zombieland" />
         </Link>
         <nav>
           <Link to="/">Accueil</Link>

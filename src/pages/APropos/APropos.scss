@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .a-propos {
   display: flex;
@@ -9,7 +9,6 @@
 .article-apropos {
   width: 60%;
   padding-right: 3rem;
-  
 }
 
 .article-apropos p {
@@ -19,7 +18,7 @@
 .img-apropos {
   width: 40%;
   box-shadow: rgb(41, 12, 12) 0px 20px 30px -10px;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 
 .img-apropos img {

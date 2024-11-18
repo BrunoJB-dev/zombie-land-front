@@ -1,4 +1,4 @@
-@import "../../styles/vars.scss";
+@use "../../styles/vars" as vars;
 
 .information-footer {
   padding: 3vh;
@@ -6,7 +6,6 @@
 
 .information-footer h2 {
   margin-bottom: 3vh;
-  
 }
 
 .information-footer h3 {

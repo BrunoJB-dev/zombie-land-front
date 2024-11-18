@@ -1,5 +1,6 @@
-@import"./reset.scss";
-@import "./vars.scss";
+@use "vars" as vars;
+@use"./reset.css";
+@use "fonts" as fonts;
 
 //  Import de la police de titre
 
@@ -8,39 +9,35 @@
   src: url("./font/Overhaul.woff") format("woff");
 }
 
-// Import de la police de corps de texte (Noto Sans)
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
-html{
-  font-family: "Noto Sans", sans-serif;
-  background-color: $colored-white;
+html {
+  font-family: fonts.$font-family-Noto;
+  background-color: vars.$colored-white;
 }
 
-h1{
+h1 {
   font-family: 'Overhaul', sans-serif;
   font-size: 5vh;
-  color: $colored-white;
-  background-color: $medium-green-transparent;
-  border-radius: $border-radius;
+  color: vars.$colored-white;
+  background-color: vars.$medium-green-transparent;
+  border-radius: vars.$border-radius;
   width: fit-content;
-  padding: $padding-title;
-  text-shadow: 0px 6px 5px $dark-black;
+  padding: vars.$padding-title;
+  text-shadow: 0px 6px 5px vars.$padding-title;
 }
 
 h2 {
   font-family: 'Overhaul', sans-serif;
   font-size: 4vh;
-  color: $dark-black;
+  color: vars.$dark-black;
 }
 
 h3 {
   font-family: 'Overhaul', sans-serif;
   font-size: 3vh;
-  color: $colored-white;
-  background-color: $dark-green;
-  padding: $padding-title;
-  border-radius: $border-radius;
+  color: vars.$colored-white;
+  background-color: vars.$dark-green;
+  padding: vars.$padding-title;
+  border-radius: vars.$border-radius;
   width: fit-content;
 }
 
@@ -49,35 +46,35 @@ h3 {
 }
 
 a {
-  background-color: $medium-green;
-  color: $colored-white;
+  background-color: vars.$medium-green;
+  color: vars.$colored-white;
   padding: 1vh 4vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
   text-decoration: none;
 }
 
 a:hover {
-  background-color: $red;
+  background-color: vars.$red;
 }
 
 button {
   font-size: 2vh;
   font-weight: 800;
-  color: $colored-white;
-  background-color: $dark-green;
-  border-radius: $border-radius;
+  color: vars.$colored-white;
+  background-color: vars.$dark-green;
+  border-radius: vars.$border-radius;
   padding: 1vh 15vh;
 }
 
 input {
   padding: 1vh;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 }
 
 p {
   line-height: 3vh;
 }
 
-main{
+main {
   padding-top: 15vh;
 }

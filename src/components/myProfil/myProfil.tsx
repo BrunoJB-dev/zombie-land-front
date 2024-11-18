@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from "../../AuthContext.tsx";
 import instanceAxios from '../../utils/axios';
-import avatarFemme from '../../../public/avatar-femme.webp';
-import avatarHomme from '../../../public/avatar-homme.webp';
+import avatarFemme from '/avatar-femme.webp';
+import avatarHomme from '/avatar-homme.webp';
 import type { User } from '../../@types/user';
 import Modal from '../../components/Modal/Modal';
 
