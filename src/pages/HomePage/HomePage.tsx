@@ -70,7 +70,7 @@ function HomePage() {
       <section className='parc-presentation'>
         <h3>Le Parc d'Attractions Post-Apocalyptique le Plus Immersif au Monde !</h3>
         <div>
-          <img src="../../public/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" />
+          <img src="/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" />
           <p>
           Plongez dans un monde post-apocalyptique à ZombieLand, l'expérience immersive ultime où l'apocalypse des zombies prend vie. <br /> Ce parc d'attractions unique vous transporte dans un environnement dévasté, où chaque coin de rue est une nouvelle aventure terrifiante. <br /> Explorez 20 attractions palpitantes, allant des montagnes russes vertigineuses aux labyrinthes hantés, en passant par des expériences VR intenses et des maisons hantées effrayantes. <br />
           ZombieLand n'est pas pour les cœurs sensibles : des hordes de zombies animatroniques rôdent dans les zones dévastées, où les visiteurs doivent faire preuve de courage pour affronter des défis inattendus. <br /> Entre courses-poursuites avec les morts-vivants et manèges à sensations fortes, chaque visiteur est plongé dans un cauchemar vivant. Avec des décors post-apocalyptiques détaillés, des effets spéciaux à couper le souffle, et une ambiance angoissante, Zombie Land promet une montée d'adrénaline à chaque pas. <br />
