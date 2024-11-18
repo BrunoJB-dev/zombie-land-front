@@ -3,7 +3,7 @@
 .banner-homePage{
   width: 100%;
   height: 50vh;
-  background-image: url('../../public/ZombieLand-HomePage-Banner.webp');
+  background-image: url('../../../public/ZombieLand-HomePage-Banner.webp');
   background-size: cover;
   background-position: center 33%;
   display: flex;
@@ -42,17 +42,17 @@ h2{
   align-items: center
 };
 
-.parc-presentation img {
+.parc-presentation img{
   width: 40%;
   border-radius: vars.$border-radius;
 }
 
-.parc-presentation p {
+.parc-presentation p{
   color: vars.$colored-white;
   width: 60%;
 }
 
-.parc-presentation h3 {
+.parc-presentation h3{
 background-color: vars.$dark-black;
 }
 
@@ -91,7 +91,7 @@ background-color: vars.$dark-black;
 };
 
 @media screen and (max-width: 1023px){
-  .banner-homePage {
+  .banner-homePage{
     padding: 3vh;
   }
 
@@ -105,7 +105,7 @@ background-color: vars.$dark-black;
     display: flex;
   };
 
-  .parc-presentation div {
+  .parc-presentation div{
     flex-direction: column-reverse;
     width: 100%;
   }
@@ -114,21 +114,21 @@ background-color: vars.$dark-black;
     text-align: center;
   }
 
-  .parc-presentation p {
+  .parc-presentation p{
     width: 100%;
   }
 
-  .parc-presentation img {
+  .parc-presentation img{
     width: 100%;
   }
 
-  .info-icones {
+  .info-icones{
     margin: 5vh;
     padding: 5vh;
     justify-content: center;
   }
 
-  .info-icones div {
+  .info-icones div{
     width: fit-content;
   }
 }
@@ -141,7 +141,7 @@ background-color: vars.$dark-black;
 }
 
 @media screen and (max-width: 490px){
-  .banner-homePage {
+  .banner-homePage{
     padding: 1vh;
   }
 

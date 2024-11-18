@@ -1,6 +1,6 @@
 @use "vars" as vars;
 @use"./reset.css";
-@use "fonts";
+@use "fonts" as fonts;
 
 //  Import de la police de titre
 
@@ -9,12 +9,12 @@
   src: url("./font/Overhaul.woff") format("woff");
 }
 
-html{
-  font-family: "Noto Sans", sans-serif;
+html {
+  font-family: fonts.$font-family-Noto;
   background-color: vars.$colored-white;
 }
 
-h1{
+h1 {
   font-family: 'Overhaul', sans-serif;
   font-size: 5vh;
   color: vars.$colored-white;
@@ -75,6 +75,6 @@ p {
   line-height: 3vh;
 }
 
-main{
+main {
   padding-top: 15vh;
 }

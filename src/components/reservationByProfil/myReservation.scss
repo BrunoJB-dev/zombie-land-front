@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.my-reservation{
+.my-reservation {
   border: solid 1px #2b050e;
   margin: 4rem auto;
   border-radius: 20px;
@@ -23,7 +23,7 @@
   padding-left: 3vh;
 }
 
-.my-reservation-border{
+.my-reservation-border {
   width: 25%;
   margin: 3vh;
   color: aliceblue;
@@ -40,29 +40,29 @@
   line-height: normal;
 }
 
-.my-reservation-head{
+.my-reservation-head {
   display: flex;
   align-items: center;
   gap: 2vh;
 }
 
-.my-reservation-head div{
+.my-reservation-head div {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
 
-.my-reservation-billet{
+.my-reservation-billet {
   font-family: 'Overhaul', sans-serif;
   justify-content: center;
 }
 
-.my-reservation-head img{
+.my-reservation-head img {
   max-width: 7vh;
   max-height: 7vh;
 }
 
-.my-reservation-content{
+.my-reservation-content {
   display: flex;
   flex-direction: column;
 }
@@ -74,7 +74,7 @@
   justify-content: space-between;
 }
 
-.reservation-button{
+.reservation-button {
   background-color: vars.$light-green;
   border: none;
   box-shadow: vars.$dark-black 0px 1px 2px 0px, vars.$dark-black 0px 2px 6px 2px;
@@ -84,19 +84,19 @@
   text-align: center;
 }
 
-.my-reservation-price{
+.my-reservation-price {
   display: flex;
   justify-content: space-between;
   font-size: large;
 }
 
-.reservation-total{
+.reservation-total {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.my-space{
+.my-space {
   width: 70%;
   border-bottom: 2px vars.$colored-white dotted;
 }
@@ -167,8 +167,8 @@
   }
 }
 
-@media (max-width: 900px) {
 
+@media (max-width: 900px) {
   .my-reservation-test {
     display: block;
     margin: 0 auto;
@@ -182,28 +182,29 @@
   }
 }
 
-.modal-myprofile-update{
+.modal-myprofile-update {
   background-color: vars.$medium-green;
   z-index: 5;
 }
 
-.reservation-calendar{
+.reservation-calendar {
   width: 100%;
 }
 
-.buttons-update{
+.buttons-update {
   display: flex;
   gap: 2vh;
 }
 
+
 @media screen and (max-width: 490px) {
-  .modal-myprofile-update{
+  .modal-myprofile-update {
     padding: 1vh;
     height: fit-content;
   }
 }
 
-.no-reservation{
+.no-reservation {
   padding: 5vh;
   text-align: center;
 }

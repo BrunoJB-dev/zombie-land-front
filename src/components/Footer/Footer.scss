@@ -1,7 +1,7 @@
 @use "../../styles/vars" as vars;
 
 .zombies-footer{
-  background-image: url('../../../public/footer.png');
+  background-image: url('footer.png');
   background-repeat: repeat-x;
   background-size: contain;
   height: 100px;
@@ -16,9 +16,7 @@
   padding: 4vh 5vh;
   gap: 5vh;
   justify-content: space-evenly;
-
   z-index: 0;
-
 
   div {
     display: flex;
