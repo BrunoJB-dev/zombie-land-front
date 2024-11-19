@@ -13,11 +13,11 @@ import * as fs from 'node:fs';
   ]
 
   // Create a stream to write to
-  const stream = new SitemapStream( { hostname: 'http://localhost:3000...' } )
+  const stream = new SitemapStream( { hostname: 'http://localhost:3000' } )
 // Fonction pour générer le sitemap
 const generateSitemap = async () => {try {
   // Créez un flux pour écrire
-  const stream = new SitemapStream({ hostname: 'https://www.votre-domaine.com' });
+  const stream = new SitemapStream({ hostname: 'http://localhost:3000' });
 
   // Convertissez les liens en un flux lisible et connectez-le
   const sitemap = await streamToPromise(Readable.from(links).pipe(stream));
