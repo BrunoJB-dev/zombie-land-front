@@ -47,7 +47,7 @@ function ReservationCalendar({
       <div className="reservation-container">
         <div>
           <p>Choisissez votre date de visite</p>
-          <DatePicker selected={startDate} onChange={handleDateChange} inline />
+          <DatePicker selected={startDate} onChange={handleDateChange} inline minDate={new Date()} />
         </div>
         <div>
           <label htmlFor="calendar-select">Choisissez le nombre de billets que vous souhaitez</label>
