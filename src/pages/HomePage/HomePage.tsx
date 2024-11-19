@@ -8,6 +8,7 @@ import InfoCarPark from '../../components/InfoCarPark/InfoCarPark';
 import InfoDisability from '../../components/InfoDisabilityAccess/InfoDisability';
 import InfoSchedules from '../../components/InfoSchedules/InfoSchedules';
 import InfoPlan from '../../components/InfoPlan/InfoPlan';
+
 import "./HomePage.scss";
 import "../../components/Modal/Modal.scss"
 
@@ -56,7 +57,19 @@ function HomePage() {
 
   return (
     <main>
-      <div className="banner-homePage">
+      <div className="banner-homePage" style={{
+    backgroundImage: "url('/ZombieLand-HomePage-Banner.webp')",
+    backgroundSize: "cover",
+    backgroundPosition: "center 33%",
+    width: "100%",
+    height: "50vh",
+    minHeight: "300px",
+    aspectRatio: "16 / 9",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#fff", // Ajoute une couleur au texte si nécessaire
+  }}>
         <h1>Bienvenue à ZombieLand</h1>
       </div>
       
@@ -70,7 +83,7 @@ function HomePage() {
       <section className='parc-presentation'>
         <h3>Le Parc d'Attractions Post-Apocalyptique le Plus Immersif au Monde !</h3>
         <div>
-          <img src="/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" />
+          <img src="/ZombieLand-HomePage-Banner.webp" alt="ZombieLand-Banner" loading="lazy" />
           <p>
           Plongez dans un monde post-apocalyptique à ZombieLand, l'expérience immersive ultime où l'apocalypse des zombies prend vie. <br /> Ce parc d'attractions unique vous transporte dans un environnement dévasté, où chaque coin de rue est une nouvelle aventure terrifiante. <br /> Explorez 20 attractions palpitantes, allant des montagnes russes vertigineuses aux labyrinthes hantés, en passant par des expériences VR intenses et des maisons hantées effrayantes. <br />
           ZombieLand n'est pas pour les cœurs sensibles : des hordes de zombies animatroniques rôdent dans les zones dévastées, où les visiteurs doivent faire preuve de courage pour affronter des défis inattendus. <br /> Entre courses-poursuites avec les morts-vivants et manèges à sensations fortes, chaque visiteur est plongé dans un cauchemar vivant. Avec des décors post-apocalyptiques détaillés, des effets spéciaux à couper le souffle, et une ambiance angoissante, Zombie Land promet une montée d'adrénaline à chaque pas. <br />

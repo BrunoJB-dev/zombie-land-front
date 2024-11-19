@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteCompression from 'vite-plugin-compression';
 
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -24,12 +26,8 @@ export default defineConfig({
     outDir: 'dist',
     minify: 'esbuild',
      // Répertoire de sortie pour la construction
-     terserOptions: {
-      compress: {
-        drop_console: true, // Supprime les console.log
-        drop_debugger: true // Supprime les debugger
-      }
-    }
+     cssCodeSplit: true,
+     
   },
   
 });
