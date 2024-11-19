@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import type { Attraction } from "../../@types/attraction";
 import instanceAxios from "../../utils/axios";
 import AttractionDetail from "../../components/AttractionDetail/AttractionDetail";
+import { useNavigate } from "react-router-dom";
 
 import "./AttractionDetail.scss";
 
@@ -12,13 +13,23 @@ function AttractionDetailPage() {
 
   const [detail, setDetail] = useState<Attraction>();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    instanceAxios.get(`/api/attractions/${params.id}`).then(({data}) => {
-      setDetail(data)
-      console.log(data);    
+    instanceAxios
+    .get(`/api/attractions/${params.id}`)
+    .then((response) => {
+      setDetail(response.data) 
+    })
+    .catch((error) => {
+      if (error.response && error.response.status === 404) {
+        navigate('/404');
+      } else {
+        console.error('Erreur lors de la récupération de l\'attraction:', error);
+      }
     })
   }, [
-    params.id,
+    params.id, navigate
   ])
 
   return (
