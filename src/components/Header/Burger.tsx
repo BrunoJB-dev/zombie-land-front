@@ -36,7 +36,7 @@ function Burger() {
 
   return (
     <div>
-      <div className="burger-container" onClick={toggleBurger}>
+      <div className="burger-container" onClick={toggleBurger} onKeyDown={toggleBurger}>
         <div className="burger burger1"> </div>
         <div className="burger burger2"> </div>
         <div className="burger burger3"> </div>
@@ -60,7 +60,8 @@ function Burger() {
             {/* Icône de loupe avec toggle pour la SearchBar */}
             <i
               className="fa-solid fa-magnifying-glass fa-2xl icons-burger-header"
-              onClick={toggleSearchBar} // Gérer le clic pour afficher/masquer la SearchBar
+              onClick={toggleSearchBar}
+              onKeyDown={toggleSearchBar} // Gérer le clic pour afficher/masquer la SearchBar
               style={{ cursor: 'pointer' }}
             />
             <button
