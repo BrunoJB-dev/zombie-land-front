@@ -22,7 +22,14 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    minify: 'esbuild', // Répertoire de sortie pour la construction
+    minify: 'esbuild',
+     // Répertoire de sortie pour la construction
+     terserOptions: {
+      compress: {
+        drop_console: true, // Supprime les console.log
+        drop_debugger: true // Supprime les debugger
+      }
+    }
   },
   
 });
