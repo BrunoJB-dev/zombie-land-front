@@ -47,7 +47,7 @@ function AttractionListPage() {
       <div className='banner'>
         <h1>Liste des attractions</h1>
       </div>
-<h2>Découvrir toutes les acctractions</h2>
+<h2>Découvrir toutes les attractions</h2>
       <label className='label' htmlFor="category-filter">Trier : </label>
       <select className='select-list' value={filter} onChange={handleFilterChange} id='category-filter'>
         <option value="">Toutes les catégories</option>

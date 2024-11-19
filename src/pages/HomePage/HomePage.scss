@@ -7,6 +7,9 @@
   background-size: cover;
   background-position: center 33%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9; /* Ratio standard */
 }
 
 .banner-homePage h1{
@@ -35,6 +38,8 @@ h2{
   background-color: vars.$dark-black;
   gap: 5vh;
   padding: 5vh;
+  width: 100%;
+  height: auto;
 }
 
 .parc-presentation div{
@@ -46,6 +51,8 @@ h2{
 .parc-presentation img{
   width: 40%;
   border-radius: vars.$border-radius;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
 .parc-presentation p{

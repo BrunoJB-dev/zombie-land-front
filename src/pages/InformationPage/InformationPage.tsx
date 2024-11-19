@@ -3,7 +3,7 @@ import "./informationPage.scss";
 
 function InformationPage() {
   return (
-    <div>
+    <main>
       <div id="adress" className="map">
         <LeafletMap/> 
         <p>Le parc "Zombieland est situé sur la commune d'Hébécrevon située dans le département de la Manche</p>
@@ -13,13 +13,15 @@ function InformationPage() {
           <h2 id="mentions-legales">Mentions légales</h2>
           <p>Dernière mise à jour : 13/11/2024</p>
           <h3>Information générales</h3>
-          <li>Nom du Site : "Zombieland"</li>
-          <li>Éditeur du Site : Team Zombieland</li>
-          <li>Adresse de l'Éditeur : Situé sur la commune d'Hébécrevon</li>
-          <li id="contact">Téléphone : 02-41-97-28-12 (numéro de téléphone fictif)</li>
-          <li>Adresse e-mail : zombieland.zombie@gmail.com (adresse email fictive)</li>
-          <li>Numéro d'immatriculation : N° de siret: 123 456 789 00012 (numéro de SIRET fictif)</li>
-          <li>Directeur de la Publication : Team Zombieland Quinoa</li>
+          <ul>
+            <li>Nom du Site : "Zombieland"</li>
+            <li>Éditeur du Site : Team Zombieland</li>
+            <li>Adresse de l'Éditeur : Situé sur la commune d'Hébécrevon</li>
+            <li id="contact">Téléphone : 02-41-97-28-12 (numéro de téléphone fictif)</li>
+            <li>Adresse e-mail : zombieland.zombie@gmail.com (adresse email fictive)</li>
+            <li>Numéro d'immatriculation : N° de siret: 123 456 789 00012 (numéro de SIRET fictif)</li>
+            <li>Directeur de la Publication : Team Zombieland Quinoa</li>
+          </ul>
         </div>
         <div>
           <h3>Propriété Intellectuelle</h3>
@@ -68,9 +70,11 @@ function InformationPage() {
           <h3>Utilisation du Site</h3>
           <p>L'Utilisateur s'engage à utiliser le Site conformément aux présentes CGU et aux lois en vigueur. Toute utilisation abusive du Site, notamment la diffusion de contenus illégaux ou la tentative de piratage, est strictement interdite</p>
           <p>L'Utilisateur s'interdit notamment de :</p>
-          <li>Publier des informations fausses ou trompeuses.</li>
-          <li>Perturber le bon fonctionnement du Site.</li>
-          <li>Accéder ou tenter d’accéder à des parties non publiques du Site sans autorisation.</li>
+          <ul>
+            <li>Publier des informations fausses ou trompeuses.</li>
+            <li>Perturber le bon fonctionnement du Site.</li>
+            <li>Accéder ou tenter d’accéder à des parties non publiques du Site sans autorisation.</li>
+          </ul>
         </div>
         <div>
           <h3>Données Personnelles</h3>
@@ -110,7 +114,7 @@ function InformationPage() {
           <p>Conformément aux dispositions légales en vigueur, le Client dispose d’un délai de dix (10) jours pour exercer son droit de rétractation sans avoir à justifier. Ce délai court à compter de la réservation.</p>
         </div>
       </article>
-    </div>
+    </main>
   )
 }
 

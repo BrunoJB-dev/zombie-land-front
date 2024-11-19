@@ -12,7 +12,7 @@ function AttractionList({ items }: AttractionListProps) {
     <section className='attraction-container'>
       {items.map((attraction) => (
         <div className='attraction-card' key={attraction.id}>
-          <img src={`http://localhost:3000/${attraction.image}`} alt={attraction.name}/>
+          <img src={`http://localhost:3000/${attraction.image}`} alt={attraction.name} loading="lazy" />
           <div className='attraction-title'>
             <p>{attraction.categories[0].name}</p>
             <h3> {attraction.name}</h3>
