@@ -238,7 +238,7 @@ function MyReservation() {
               <div key={reservation.id} className="my-reservation-border">
                 {/* Contenu de chaque réservation */}
                 <div className="my-reservation-head">
-                  <img src="/favicon.jpg" alt="Favicon" />
+                  <img src="/favicon.webp" alt="Favicon" />
                   <div>
                     <p className="my-reservation-billet">
                       {reservation.ticket} Billet(s) Daté(s) 1 jour
@@ -366,7 +366,7 @@ function MyReservation() {
             
             <div key={reservation.id} className="my-reservation-border">
               <div className="my-reservation-head">
-                <img src="../../../public/favicon.jpg" alt="Favicon" />
+                <img src="../../../public/favicon.webp" alt="Favicon" />
                 <div>
                   <p className="my-reservation-billet">
                     {reservation.ticket} Billet(s) Daté(s) 1 jour

@@ -50,8 +50,8 @@ function ReservationCalendar({
           <DatePicker selected={startDate} onChange={handleDateChange} inline />
         </div>
         <div>
-          <p> Choisissez le nombre de billets que vous souhaitez</p>
-          <select className='calendar-select' value={number} onChange={handleNumberChange}>
+          <label htmlFor="calendar-select">Choisissez le nombre de billets que vous souhaitez</label>
+          <select id='calendar-select' className='calendar-select' value={number} onChange={handleNumberChange}>
           {placeholder && <option value="">Faire mon choix </option>}
             <option value="1">1</option>
             <option value="2">2</option>

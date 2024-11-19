@@ -1,5 +1,5 @@
 import '../../styles/infoModal.scss';
-import  plan  from '/public/plan-du-parc.webp';
+import  plan  from '/Plan.webp';
 
 
 function InfoPlan() {

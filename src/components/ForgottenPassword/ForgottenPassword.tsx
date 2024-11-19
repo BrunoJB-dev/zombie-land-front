@@ -3,13 +3,13 @@ import { useNavigate } from "react-router-dom";
 import instanceAxios from "../../utils/axios";
 
 import "./ForgottenPassword.scss";
+import axios from "axios";
 
-interface ForgottenPasswordProps {
-  onClose : () => void;
-}
+// interface ForgottenPasswordProps {
+//   onClose : () => void;
+// }
 
-export const ForgottenPassword: React.FC = ({onClose} : ForgottenPasswordProps) => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+export const ForgottenPassword = () => {
   const [email, setEmail] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -26,11 +26,11 @@ export const ForgottenPassword: React.FC = ({onClose} : ForgottenPasswordProps) 
         setIsSuccess(true);
         setTimeout(() => navigate('/'), 3000)
       }
-    } catch (error) {
-      setError(error.response?.data?.message || 'Une erreur s\'est produite');
+    } catch (err) {
+      if(axios.isAxiosError((err))){
+        setError(err.response?.data?.message || 'Une erreur s\'est produite');
+      }
     }
-
-    onClose=() => setIsModalOpen(false);
   }
 
   return (

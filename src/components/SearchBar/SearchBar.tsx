@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import instanceAxios from '../../utils/axios.ts';
 import type { Attraction } from '../../@types/attraction.ts';
 import './SearchBar.scss';
@@ -13,10 +13,8 @@ function SearchBar() {
   const [attractions, setAttractions] = useState<Attraction[]>([]);
   
   // State to store the filtered list of attractions based on the search input
-  const [filteredAttractions, setFilteredAttractions] = useState<{ name: string, id: string }[]>([]);
+  const [filteredAttractions, setFilteredAttractions] = useState<Attraction[]>([]);
 
-  // Initialize the navigation hook to programmatically navigate to other routes
-  const navigate = useNavigate();
 
   // Fetch attractions from the API once the component mounts
   useEffect(() => {

@@ -1,7 +1,7 @@
 @use "../../styles/vars" as vars;
 
 .zombies-footer{
-  background-image: url('footer.png');
+  background-image: url('../../assets/footer.webp');
   background-repeat: repeat-x;
   background-size: contain;
   height: 100px;
@@ -43,5 +43,10 @@
 
   .footer .Tips{
     text-align: center;
+    gap: 2vh;
+  }
+
+  .footer a {
+    font-size: medium;
   }
 }
