@@ -73,7 +73,7 @@ function HomePage() {
         <h1>Bienvenue à ZombieLand</h1>
       </div>
       
-      <h2 className="catch-phrase-homePage">Vos attractions favorites</h2>
+      <h2 className="catch-phrase-homePage">Une sélection de nos attractions</h2>
       <AttractionList items={randomAttractions} />
 
       <button type='button' className='attractions-display-btn' onClick={handleNavigation} aria-label='Voir toutes les attractions'>
